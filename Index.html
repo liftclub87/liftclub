@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lift Club - Plan de Entrenamiento</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    background:#eceae4;
+    font-family:Poppins,sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:30px;
+}
+
+.phone{
+
+    width:420px;
+    background:white;
+    border-radius:30px;
+    padding:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+}
+
+h1{
+
+    font-family:Anton;
+    letter-spacing:1px;
+    margin-top:0;
+
+}
+
+.card{
+
+    background:#fafafa;
+    border-left:8px solid #D9A441;
+    padding:18px;
+    margin-bottom:20px;
+    border-radius:15px;
+
+}
+
+.card.red{
+
+    border-left-color:#C4483E;
+
+}
+
+.badge{
+
+    background:#D9A441;
+    color:white;
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:15px;
+
+}
+
+.red .badge{
+
+    background:#C4483E;
+
+}
+
+input[type=text]{
+
+    width:100%;
+    border:none;
+    border-bottom:2px solid #ddd;
+    font-size:18px;
+    padding:5px;
+    margin-bottom:15px;
+    outline:none;
+
+}
+
+.editRow{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+
+}
+
+.editRow input{
+
+    text-align:center;
+
+}
+
+.small{
+
+    width:55px;
+    font-size:22px;
+    font-family:Anton;
+    border:none;
+    border-bottom:2px solid #bbb;
+    outline:none;
+
+}
+
+.medium{
+
+    width:75px;
+    font-size:22px;
+    font-family:Anton;
+    border:none;
+    border-bottom:2px solid #bbb;
+    outline:none;
+
+}
+
+.rpe{
+
+    width:50px;
+    font-size:18px;
+    text-align:center;
+    border:none;
+    border-bottom:2px solid #bbb;
+    outline:none;
+
+}
+
+button{
+
+    width:100%;
+    padding:16px;
+    background:#222;
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+
+}
+
+button:hover{
+
+    background:#444;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="phone">
+
+<h1>DÍA 1 · INTENSIDAD ALTA</h1>
+
+<!-- TARJETA 1 -->
+
+<div class="card">
+
+<div class="badge">TÉCNICA</div>
+
+<input type="text" value="Arranque / Snatch">
+
+<div class="editRow">
+
+<input class="small" type="number" value="5">
+
+×
+
+<input class="small" type="number" value="2">
+
+@
+
+<input class="medium" type="number" value="85">
+
+kg
+
+&nbsp;&nbsp;&nbsp;
+
+RPE
+
+<input class="rpe" type="number" value="8">
+
+</div>
+
+</div>
+
+<!-- TARJETA 2 -->
+
+<div class="card red">
+
+<div class="badge">FUERZA</div>
+
+<input type="text" value="Sentadilla Trasera">
+
+<div class="editRow">
+
+<input class="small" type="number" value="4">
+
+×
+
+<input class="small" type="number" value="3">
+
+@
+
+<input class="medium" type="number" value="120">
+
+kg
+
+&nbsp;&nbsp;&nbsp;
+
+RPE
+
+<input class="rpe" type="number" value="8">
+
+</div>
+
+</div>
+
+<button onclick="guardar()">
+
+Guardar entrenamiento
+
+</button>
+
+</div>
+
+<script>
+
+function guardar(){
+
+alert("Entrenamiento guardado correctamente.");
+
+}
+
+</script>
+
+</body>
+
+</html>
