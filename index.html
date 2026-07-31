@@ -3,247 +3,422 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Lift Club - Plan de Entrenamiento</title>
+<title>Lift Club</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Noto+Sans+SC:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+  :root{
+    --bg:#0F0F0F;
+    --cyan:#5FCAE7;
+    --pink:#ED1D7E;
+    --yellow:#FDD700;
+    --paper:#17181A;
+    --line:#26282B;
+    --muted:#8b9096;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
     margin:0;
-    background:#eceae4;
-    font-family:Poppins,sans-serif;
-    display:flex;
-    justify-content:center;
-    padding:30px;
-}
+    background:var(--bg);
+    font-family:'Inter',sans-serif;
+    color:#EDEFF1;
+  }
 
-.phone{
+  ::selection{ background:var(--pink); color:#fff; }
 
-    width:420px;
-    background:white;
-    border-radius:30px;
-    padding:25px;
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
+  /* ---------- NAV ---------- */
 
-}
-
-h1{
-
-    font-family:Anton;
-    letter-spacing:1px;
-    margin-top:0;
-
-}
-
-.card{
-
-    background:#fafafa;
-    border-left:8px solid #D9A441;
-    padding:18px;
-    margin-bottom:20px;
-    border-radius:15px;
-
-}
-
-.card.red{
-
-    border-left-color:#C4483E;
-
-}
-
-.badge{
-
-    background:#D9A441;
-    color:white;
-    display:inline-block;
-    padding:5px 12px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:bold;
-    margin-bottom:15px;
-
-}
-
-.red .badge{
-
-    background:#C4483E;
-
-}
-
-input[type=text]{
-
-    width:100%;
-    border:none;
-    border-bottom:2px solid #ddd;
-    font-size:18px;
-    padding:5px;
-    margin-bottom:15px;
-    outline:none;
-
-}
-
-.editRow{
-
+  nav{
     display:flex;
     align-items:center;
+    justify-content:space-between;
+    padding:20px 40px;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(10px);
+    z-index:10;
+  }
+
+  nav img.logo{
+    height:26px;
+    display:block;
+  }
+
+  .navLinks{
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .navLinks a{
+    color:#c9cdd1;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:9px 18px;
+    border-radius:999px;
+    transition:all .15s ease;
+  }
+
+  .navLinks a:hover{
+    color:#fff;
+    background:var(--paper);
+  }
+
+  .navLinks a.active{
+    background:var(--cyan);
+    color:var(--bg);
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    max-width:1100px;
+    margin:0 auto;
+    padding:100px 32px 60px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .hero .glyphBg{
+    position:absolute;
+    top:-40px;
+    right:-10px;
+    font-family:'Noto Sans SC', sans-serif;
+    font-weight:900;
+    font-size:280px;
+    color:var(--cyan);
+    opacity:.06;
+    line-height:1;
+    pointer-events:none;
+    user-select:none;
+  }
+
+  .hero .kicker{
+    display:inline-flex;
+    align-items:center;
     gap:8px;
-    flex-wrap:wrap;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin-bottom:26px;
+  }
 
-}
+  .hero .kicker .dot{
+    width:6px;
+    height:6px;
+    background:var(--yellow);
+    transform:rotate(45deg);
+    display:inline-block;
+  }
 
-.editRow input{
-
-    text-align:center;
-
-}
-
-.small{
-
-    width:55px;
-    font-size:22px;
-    font-family:Anton;
-    border:none;
-    border-bottom:2px solid #bbb;
-    outline:none;
-
-}
-
-.medium{
-
-    width:75px;
-    font-size:22px;
-    font-family:Anton;
-    border:none;
-    border-bottom:2px solid #bbb;
-    outline:none;
-
-}
-
-.rpe{
-
-    width:50px;
-    font-size:18px;
-    text-align:center;
-    border:none;
-    border-bottom:2px solid #bbb;
-    outline:none;
-
-}
-
-button{
-
+  .hero img.wordmark{
+    max-width:460px;
     width:100%;
-    padding:16px;
-    background:#222;
-    color:white;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
+    height:auto;
+    margin:0 auto 22px;
+    display:block;
+  }
+
+  .hero p{
+    color:var(--muted);
     font-size:16px;
+    max-width:520px;
+    margin:0 auto;
+    line-height:1.6;
+  }
 
-}
+  .heroBtns{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    margin-top:34px;
+    flex-wrap:wrap;
+  }
 
-button:hover{
+  .btn{
+    font-family:'Inter',sans-serif;
+    display:inline-block;
+    text-decoration:none;
+    padding:15px 32px;
+    border-radius:10px;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
 
-    background:#444;
+  .btn.primary{
+    background:var(--cyan);
+    color:var(--bg);
+  }
 
-}
+  .btn.primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(95,202,231,.25);
+  }
+
+  .btn.ghost{
+    background:transparent;
+    color:#fff;
+    border:1px solid var(--line);
+  }
+
+  .btn.ghost:hover{
+    border-color:var(--cyan);
+    color:var(--cyan);
+  }
+
+  /* ---------- PILARES (caracteres) ---------- */
+
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px 32px 100px;
+  }
+
+  .sectionHead{
+    margin:80px 0 36px;
+  }
+
+  .sectionHead .eyebrow{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:10px;
+  }
+
+  .sectionHead h2{
+    font-family:'Bungee', sans-serif;
+    font-size:28px;
+    font-weight:400;
+    letter-spacing:.5px;
+    margin:0;
+    color:#fff;
+  }
+
+  .pilaresGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(190px,1fr));
+    gap:16px;
+  }
+
+  .pilar{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:26px 22px;
+    text-align:center;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+
+  .pilar:hover{
+    border-color:var(--cyan);
+    transform:translateY(-4px);
+  }
+
+  .pilar .glyph{
+    font-family:'Noto Sans SC', sans-serif;
+    font-weight:900;
+    font-size:52px;
+    color:var(--cyan);
+    line-height:1;
+    margin-bottom:16px;
+  }
+
+  .pilar:nth-child(2) .glyph{ color:var(--pink); }
+  .pilar:nth-child(4) .glyph{ color:var(--yellow); }
+
+  .pilar h3{
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    margin:0 0 6px;
+    color:#fff;
+  }
+
+  .pilar p{
+    font-size:12.5px;
+    color:var(--muted);
+    margin:0;
+    line-height:1.5;
+  }
+
+  /* ---------- ANUNCIOS ---------- */
+
+  .announceGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
+    gap:16px;
+  }
+
+  .announce{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cyan);
+    border-radius:14px;
+    padding:22px;
+  }
+
+  .announce.pink{ border-left-color:var(--pink); }
+  .announce.yellow{ border-left-color:var(--yellow); }
+
+  .announce .tag{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:10px;
+  }
+
+  .announce h3{
+    font-size:16px;
+    margin:0 0 8px;
+    color:#fff;
+  }
+
+  .announce p{
+    font-size:13.5px;
+    color:var(--muted);
+    margin:0;
+    line-height:1.55;
+  }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:var(--muted);
+    padding:30px 0 40px;
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:640px){
+    nav{ padding:16px 20px; }
+    .navLinks a{ padding:8px 12px; font-size:11px; }
+    .hero{ padding:70px 20px 40px; }
+    .hero .glyphBg{ font-size:160px; }
+    .sectionHead{ margin:56px 0 24px; }
+  }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="phone">
+<nav>
+  <img class="logo" src="assets/logo.png" alt="Lift Club">
+  <div class="navLinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+</nav>
 
-<h1>DÍA 1 · INTENSIDAD ALTA</h1>
+<div class="hero">
+  <div class="glyphBg">稳</div>
+  <span class="kicker"><span class="dot"></span>Halterofilia &middot; Costa Rica</span>
+  <img class="wordmark" src="assets/logo.png" alt="Lift Club">
+  <p>Anuncios del club, avisos importantes y acceso al panel de entrenamiento de cada atleta, todo en un solo lugar.</p>
+  <div class="heroBtns">
+    <a href="dashboard.html" class="btn primary">Ir al Dashboard</a>
+    <a href="#anuncios" class="btn ghost">Ver anuncios</a>
+  </div>
+</div>
 
-<!-- TARJETA 1 -->
+<div class="wrap">
 
-<div class="card">
+  <div class="sectionHead">
+    <div class="eyebrow">Metodología</div>
+    <h2>Pilares técnicos</h2>
+  </div>
 
-<div class="badge">TÉCNICA</div>
+  <div class="pilaresGrid" id="pilaresGrid"></div>
 
-<input type="text" value="Arranque / Snatch">
+  <div class="sectionHead" id="anuncios">
+    <div class="eyebrow">Comunicados</div>
+    <h2>Anuncios y noticias</h2>
+  </div>
 
-<div class="editRow">
-
-<input class="small" type="number" value="5">
-
-×
-
-<input class="small" type="number" value="2">
-
-@
-
-<input class="medium" type="number" value="85">
-
-kg
-
-&nbsp;&nbsp;&nbsp;
-
-RPE
-
-<input class="rpe" type="number" value="8">
+  <div class="announceGrid" id="announceGrid"></div>
 
 </div>
 
-</div>
-
-<!-- TARJETA 2 -->
-
-<div class="card red">
-
-<div class="badge">FUERZA</div>
-
-<input type="text" value="Sentadilla Trasera">
-
-<div class="editRow">
-
-<input class="small" type="number" value="4">
-
-×
-
-<input class="small" type="number" value="3">
-
-@
-
-<input class="medium" type="number" value="120">
-
-kg
-
-&nbsp;&nbsp;&nbsp;
-
-RPE
-
-<input class="rpe" type="number" value="8">
-
-</div>
-
-</div>
-
-<button onclick="guardar()">
-
-Guardar entrenamiento
-
-</button>
-
-</div>
+<footer>Lift Club &middot; Actualizado por el coach</footer>
 
 <script>
 
-function guardar(){
+  // Pilares técnicos: edita este arreglo para actualizar los 5 conceptos.
+  const pilares = [
+    { glyph: "快", titulo: "Velocidad", texto: "Rapidez de la barra bajo el cuerpo en la fase de recepción." },
+    { glyph: "低", titulo: "Posición baja", texto: "Profundidad y control en la recepción del arranque y envión." },
+    { glyph: "时", titulo: "Tempo", texto: "Timing entre el tirón, la extensión y el cambio de dirección." },
+    { glyph: "稳", titulo: "Estabilidad", texto: "Solidez en el punto de bloqueo y en la sentadilla de recepción." },
+    { glyph: "近", titulo: "Cercanía", texto: "Trayectoria de la barra pegada al cuerpo durante todo el movimiento." },
+  ];
 
-alert("Entrenamiento guardado correctamente.");
+  const pGrid = document.getElementById("pilaresGrid");
+  pilares.forEach(p => {
+    const el = document.createElement("div");
+    el.className = "pilar";
+    el.innerHTML = `
+      <div class="glyph">${p.glyph}</div>
+      <h3>${p.titulo}</h3>
+      <p>${p.texto}</p>
+    `;
+    pGrid.appendChild(el);
+  });
 
-}
+  // Anuncios: edita este arreglo para actualizar el Home.
+  const anuncios = [
+    {
+      tag: "Aviso",
+      color: "",
+      titulo: "Bienvenidos al nuevo sitio",
+      texto: "Este panel reemplaza la versión anterior en Canva. Aquí encontrarás toda la información del club."
+    },
+    {
+      tag: "Próximo evento",
+      color: "pink",
+      titulo: "Panamericano / Sudamericano - Guayaquil",
+      texto: "Delegación de Lift Club viaja a Ecuador a finales de agosto. Más detalles próximamente."
+    },
+    {
+      tag: "Recordatorio",
+      color: "yellow",
+      titulo: "Entrenamientos de la semana",
+      texto: "Revisa tu plan actualizado en la sección Dashboard, ingresando con tu perfil de atleta."
+    }
+  ];
+
+  const aGrid = document.getElementById("announceGrid");
+  anuncios.forEach(a => {
+    const el = document.createElement("div");
+    el.className = "announce" + (a.color ? " " + a.color : "");
+    el.innerHTML = `
+      <div class="tag">${a.tag}</div>
+      <h3>${a.titulo}</h3>
+      <p>${a.texto}</p>
+    `;
+    aGrid.appendChild(el);
+  });
 
 </script>
 
 </body>
-
 </html>
