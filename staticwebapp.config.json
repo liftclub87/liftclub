@@ -1,0 +1,38 @@
+{
+  "routes": [
+    {
+      "route": "/Dana.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/Gian.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/Kevin.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/Maroto.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/Melina.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/Melisson.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/Sebas.html",
+      "allowedRoles": ["authenticated"]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "redirect": "/.auth/login/aad",
+      "statusCode": 302
+    }
+  }
+}
