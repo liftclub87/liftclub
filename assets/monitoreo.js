@@ -1,33 +1,17 @@
 /*
   monitoreo.js
-  Lógica compartida para leer monitoreo.csv y renderizar los 4 gráficos de un
-  atleta (sueño, RPE, reps falladas, fase del periodo), agrupados por mes.
-  Se usa igual en cada página de monitoreo — solo llaman a renderMonitoreo("Nombre").
+  Lee monitoreo.csv y dibuja los 4 gráficos de un atleta, mostrando solo sus
+  últimas 16 sesiones (~4 semanas) individuales, no promedios por mes.
 */
 
-function agruparPorMes(filas, campo, tipo) {
-  // tipo: "promedio" o "suma"
-  const meses = {};
-  filas.forEach(f => {
-    const mes = f["Fecha"].slice(0, 7); // "2026-05"
-    const valor = parseFloat(f[campo]);
-    if (isNaN(valor)) return;
-    if (!meses[mes]) meses[mes] = [];
-    meses[mes].push(valor);
-  });
-  const labels = Object.keys(meses).sort();
-  const datos = labels.map(m => {
-    const vals = meses[m];
-    if (tipo === "suma") return vals.reduce((a, b) => a + b, 0);
-    return vals.reduce((a, b) => a + b, 0) / vals.length;
-  });
-  return { labels, datos };
+function claveOrden(fila) {
+  return fila["Anio"] * 10000 + fila["Mes"] * 100 + fila["Dia"];
 }
 
-function nombreMes(mesKey) {
-  const [anio, mes] = mesKey.split("-");
-  const nombres = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
-  return nombres[parseInt(mes, 10) - 1] + " " + anio.slice(2);
+function etiquetaFecha(fila) {
+  const dia = String(fila["Dia"]).padStart(2, "0");
+  const mes = String(fila["Mes"]).padStart(2, "0");
+  return `${dia}/${mes}`;
 }
 
 function renderMonitoreo(nombreAtleta) {
@@ -35,8 +19,9 @@ function renderMonitoreo(nombreAtleta) {
     download: true,
     header: true,
     skipEmptyLines: true,
+    dynamicTyping: true,
     complete: function (results) {
-      const filas = results.data.filter(r => r["Nombre"] === nombreAtleta);
+      let filas = results.data.filter(r => r["Nombre"] === nombreAtleta);
 
       if (filas.length === 0) {
         document.getElementById("monitoreoContenedor").innerHTML =
@@ -44,19 +29,22 @@ function renderMonitoreo(nombreAtleta) {
         return;
       }
 
+      // Ordenar por fecha y quedarnos solo con las últimas 16 sesiones (~4 semanas)
+      filas.sort((a, b) => claveOrden(a) - claveOrden(b));
+      filas = filas.slice(-16);
+
+      const labels = filas.map(etiquetaFecha);
       const colorCyan = "#5FCAE7";
       const colorPink = "#ED1D7E";
       const colorYellow = "#FDD700";
 
-      // Gráfico 1: Sueño (promedio mensual)
-      const sueno = agruparPorMes(filas, "Sueño", "promedio");
       new Chart(document.getElementById("chartSueno"), {
         type: "line",
         data: {
-          labels: sueno.labels.map(nombreMes),
+          labels,
           datasets: [{
-            label: "Horas de sueño (promedio)",
-            data: sueno.datos,
+            label: "Horas de sueño",
+            data: filas.map(f => f["Sueño"]),
             borderColor: colorCyan,
             backgroundColor: colorCyan + "33",
             tension: 0.3,
@@ -66,15 +54,13 @@ function renderMonitoreo(nombreAtleta) {
         options: chartOptions("Horas")
       });
 
-      // Gráfico 2: RPE (promedio mensual)
-      const rpe = agruparPorMes(filas, "RPE", "promedio");
       new Chart(document.getElementById("chartRPE"), {
         type: "line",
         data: {
-          labels: rpe.labels.map(nombreMes),
+          labels,
           datasets: [{
-            label: "RPE (promedio)",
-            data: rpe.datos,
+            label: "RPE",
+            data: filas.map(f => f["RPE"]),
             borderColor: colorPink,
             backgroundColor: colorPink + "33",
             tension: 0.3,
@@ -84,28 +70,25 @@ function renderMonitoreo(nombreAtleta) {
         options: chartOptions("RPE (0-10)")
       });
 
-      // Gráfico 3: Reps falladas (suma mensual)
-      const fallos = agruparPorMes(filas, "RepsFalladas", "suma");
       new Chart(document.getElementById("chartFallos"), {
         type: "bar",
         data: {
-          labels: fallos.labels.map(nombreMes),
+          labels,
           datasets: [{
-            label: "Reps falladas (total)",
-            data: fallos.datos,
+            label: "Reps falladas",
+            data: filas.map(f => f["RepsFalladas"]),
             backgroundColor: colorYellow,
           }]
         },
         options: chartOptions("Reps falladas")
       });
 
-      // Gráfico 4: Fase del periodo (solo si hay datos, es decir, solo atletas mujeres)
-      const conFase = filas.filter(f => f["FasePeriodo"] && f["FasePeriodo"].trim() !== "");
+      const conFase = filas.filter(f => f["FasePeriodo"] && String(f["FasePeriodo"]).trim() !== "");
       const chartFaseEl = document.getElementById("chartFaseWrap");
       if (conFase.length > 0) {
         const conteo = {};
         conFase.forEach(f => {
-          const fase = f["FasePeriodo"].trim();
+          const fase = String(f["FasePeriodo"]).trim();
           conteo[fase] = (conteo[fase] || 0) + 1;
         });
         new Chart(document.getElementById("chartFase"), {
