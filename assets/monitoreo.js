@@ -1,17 +1,31 @@
 /*
   monitoreo.js
-  Lee monitoreo.csv y dibuja los 4 gráficos de un atleta, mostrando solo sus
-  últimas 16 sesiones (~4 semanas) individuales, no promedios por mes.
+  Lee monitoreo.csv, toma las últimas 16 sesiones (~4 semanas) de un atleta,
+  las agrupa en 4 bloques cronológicos de 4 sesiones, y grafica el promedio
+  (o suma, según la variable) de cada bloque como barras semanales.
 */
 
 function claveOrden(fila) {
   return fila["Anio"] * 10000 + fila["Mes"] * 100 + fila["Dia"];
 }
 
-function etiquetaFecha(fila) {
-  const dia = String(fila["Dia"]).padStart(2, "0");
-  const mes = String(fila["Mes"]).padStart(2, "0");
-  return `${dia}/${mes}`;
+function agruparEnBloques(filas, tamanoBloque) {
+  const bloques = [];
+  for (let i = 0; i < filas.length; i += tamanoBloque) {
+    bloques.push(filas.slice(i, i + tamanoBloque));
+  }
+  return bloques;
+}
+
+function promedio(valores) {
+  const nums = valores.filter(v => typeof v === "number" && !isNaN(v));
+  if (nums.length === 0) return null;
+  return nums.reduce((a, b) => a + b, 0) / nums.length;
+}
+
+function suma(valores) {
+  const nums = valores.filter(v => typeof v === "number" && !isNaN(v));
+  return nums.reduce((a, b) => a + b, 0);
 }
 
 function renderMonitoreo(nombreAtleta) {
@@ -29,42 +43,39 @@ function renderMonitoreo(nombreAtleta) {
         return;
       }
 
-      // Ordenar por fecha y quedarnos solo con las últimas 16 sesiones (~4 semanas)
       filas.sort((a, b) => claveOrden(a) - claveOrden(b));
       filas = filas.slice(-16);
 
-      const labels = filas.map(etiquetaFecha);
+      const bloques = agruparEnBloques(filas, 4);
+      const labels = bloques.map((_, i) => `Semana ${i + 1}`);
+
       const colorCyan = "#5FCAE7";
       const colorPink = "#ED1D7E";
       const colorYellow = "#FDD700";
 
       new Chart(document.getElementById("chartSueno"), {
-        type: "line",
+        type: "bar",
         data: {
           labels,
           datasets: [{
-            label: "Horas de sueño",
-            data: filas.map(f => f["Sueño"]),
-            borderColor: colorCyan,
-            backgroundColor: colorCyan + "33",
-            tension: 0.3,
-            fill: true,
+            label: "Horas de sueño (promedio semanal)",
+            data: bloques.map(b => promedio(b.map(f => f["Sueño"]))),
+            backgroundColor: colorCyan,
+            borderRadius: 6,
           }]
         },
         options: chartOptions("Horas")
       });
 
       new Chart(document.getElementById("chartRPE"), {
-        type: "line",
+        type: "bar",
         data: {
           labels,
           datasets: [{
-            label: "RPE",
-            data: filas.map(f => f["RPE"]),
-            borderColor: colorPink,
-            backgroundColor: colorPink + "33",
-            tension: 0.3,
-            fill: true,
+            label: "RPE (promedio semanal)",
+            data: bloques.map(b => promedio(b.map(f => f["RPE"]))),
+            backgroundColor: colorPink,
+            borderRadius: 6,
           }]
         },
         options: chartOptions("RPE (0-10)")
@@ -75,9 +86,10 @@ function renderMonitoreo(nombreAtleta) {
         data: {
           labels,
           datasets: [{
-            label: "Reps falladas",
-            data: filas.map(f => f["RepsFalladas"]),
+            label: "Reps falladas (total semanal)",
+            data: bloques.map(b => suma(b.map(f => f["RepsFalladas"]))),
             backgroundColor: colorYellow,
+            borderRadius: 6,
           }]
         },
         options: chartOptions("Reps falladas")
