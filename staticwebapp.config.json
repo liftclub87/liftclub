@@ -2,31 +2,31 @@
   "routes": [
     {
       "route": "/Dana.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["dana"]
     },
     {
       "route": "/Gian.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["gian"]
     },
     {
       "route": "/Kevin.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["kevin"]
     },
     {
       "route": "/Maroto.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["maroto"]
     },
     {
       "route": "/Melina.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["melina"]
     },
     {
       "route": "/Melisson.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["melisson"]
     },
     {
       "route": "/Sebas.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["sebas"]
     }
   ],
   "responseOverrides": {
