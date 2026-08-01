@@ -140,6 +140,30 @@
     transform:translateY(-2px);
   }
 
+  .sectionHead{
+    margin:60px 0 24px;
+    padding-top:36px;
+    border-top:1px solid var(--line);
+  }
+
+  .sectionHead .eyebrow{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:10px;
+  }
+
+  .sectionHead h1{
+    font-family:'Bungee', sans-serif;
+    font-size:26px;
+    font-weight:400;
+    letter-spacing:.5px;
+    margin:0;
+    color:#fff;
+  }
+
   .grid{
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
@@ -263,6 +287,13 @@
 
   <div class="grid" id="athleteGrid"></div>
 
+  <div class="sectionHead">
+    <div class="eyebrow">Monitoreo</div>
+    <h1>Rendimiento y bienestar</h1>
+  </div>
+
+  <div class="grid" id="monitoreoGrid"></div>
+
 </div>
 
 <footer>Lift Club &middot; Actualizado por el coach</footer>
@@ -281,6 +312,30 @@
   ];
 
   const grid = document.getElementById("athleteGrid");
+
+  // Lista de atletas con monitoreo disponible: agrega aquí conforme construyas más páginas.
+  const monitoreo = [
+    { nombre: "Dana", categoria: "Rendimiento y bienestar", archivo: "Dana_monitoreo.html" },
+  ];
+
+  const mGrid = document.getElementById("monitoreoGrid");
+  monitoreo.forEach(a => {
+    const card = document.createElement("a");
+    card.className = "athlete";
+    card.href = a.archivo;
+    card.innerHTML = `
+      <div class="initial">${a.nombre.charAt(0)}</div>
+      <div>
+        <div class="tag">${a.categoria}</div>
+        <h2>${a.nombre}</h2>
+      </div>
+      <div class="go">
+        Ver gráficos
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </div>
+    `;
+    mGrid.appendChild(card);
+  });
 
   atletas.forEach(a => {
     const card = document.createElement("a");
