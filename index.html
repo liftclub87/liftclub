@@ -361,6 +361,7 @@
 
 <footer>Lift Club &middot; Actualizado por el coach</footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
 
   // Pilares técnicos: edita este arreglo para actualizar los 5 conceptos.
@@ -384,38 +385,28 @@
     pGrid.appendChild(el);
   });
 
-  // Anuncios: edita este arreglo para actualizar el Home.
-  const anuncios = [
-    {
-      tag: "Aviso",
-      color: "",
-      titulo: "Bienvenidos al nuevo sitio",
-      texto: "Este panel reemplaza la versión anterior en Canva. Aquí encontrarás toda la información del club."
-    },
-    {
-      tag: "Próximo evento",
-      color: "pink",
-      titulo: "Panamericano / Sudamericano - Guayaquil",
-      texto: "Delegación de Lift Club viaja a Ecuador a finales de agosto. Más detalles próximamente."
-    },
-    {
-      tag: "Recordatorio",
-      color: "yellow",
-      titulo: "Entrenamientos de la semana",
-      texto: "Revisa tu plan actualizado en la sección Dashboard, ingresando con tu perfil de atleta."
-    }
-  ];
-
+  // Anuncios: ahora se leen desde anuncios.csv (edita ese archivo, no este script).
   const aGrid = document.getElementById("announceGrid");
-  anuncios.forEach(a => {
-    const el = document.createElement("div");
-    el.className = "announce" + (a.color ? " " + a.color : "");
-    el.innerHTML = `
-      <div class="tag">${a.tag}</div>
-      <h3>${a.titulo}</h3>
-      <p>${a.texto}</p>
-    `;
-    aGrid.appendChild(el);
+
+  Papa.parse("anuncios.csv?v=" + Date.now(), {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function (results) {
+      results.data.forEach(a => {
+        const el = document.createElement("div");
+        el.className = "announce" + (a["Color"] ? " " + a["Color"] : "");
+        el.innerHTML = `
+          <div class="tag">${a["Tag"]}</div>
+          <h3>${a["Titulo"]}</h3>
+          <p>${a["Texto"]}</p>
+        `;
+        aGrid.appendChild(el);
+      });
+    },
+    error: function () {
+      aGrid.innerHTML = `<p style="color:var(--muted);font-size:14px;">No se pudieron cargar los anuncios.</p>`;
+    }
   });
 
 </script>
