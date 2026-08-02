@@ -268,8 +268,7 @@
     <thead>
       <tr>
         <th>Ejercicio</th>
-        <th style="text-align:right">Objetivo (%)</th>
-        <th>Referencia (kg)</th>
+        <th style="text-align:right">Objetivo (kg)</th>
       </tr>
     </thead>
     <tbody id="resultadoBody"></tbody>
@@ -277,13 +276,7 @@
 
   <div class="notaFinal" id="notaFinal" style="display:none;">
     <h3>¿Cómo interpretar estos números?</h3>
-    <p>En la metodología china de halterofilia, los valores y proporciones de la Tabla 6-2 (relación porcentual entre el envión y los ejercicios de apoyo) se deben usar como una <strong>referencia</strong>, no como reglas matemáticas absolutas. Sirven como guía para diseñar planes de entrenamiento y para verificar de forma práctica el impacto de las cargas aplicadas — su uso actual es principalmente de <strong>diagnóstico individual</strong>.</p>
-    <p>La relación entre los ejercicios de apoyo y los levantamientos olímpicos ayuda al entrenador a identificar el origen de un estancamiento, en dos escenarios:</p>
-    <ul>
-      <li><strong>Deficiencia de fuerza básica (accesorios débiles):</strong> si el rendimiento en un ejercicio de apoyo está por debajo del porcentaje de la tabla (ej. una sentadilla trasera que no llega al 131% del envión), la fuerza estructural es insuficiente para soportar incrementos en los levantamientos olímpicos, y aumenta el riesgo de lesión. La prioridad debe ser el entrenamiento de fuerza.</li>
-      <li><strong>Deficiencia técnica (accesorios excesivamente fuertes):</strong> si el atleta tiene una fuerza muy por encima de lo esperado (ej. una sentadilla muy por encima del 131%) pero su envión sigue bajo, tiene la fuerza necesaria pero no logra transferirla a la barra por una técnica ineficiente. Aquí, seguir buscando fuerza es contraproducente — el enfoque debe ser el refinamiento técnico.</li>
-    </ul>
-    <p>Así, la Tabla 6-2 funciona como un mapa dinámico para evaluar si el atleta necesita más base física, o si está desperdiciando su fuerza por una mala biomecánica.</p>
+    <p>Estos valores son una referencia, no una regla exacta. Compara tu marca real en cada ejercicio con el objetivo calculado: si queda <strong>por debajo</strong>, te falta fuerza base en ese movimiento — prioriza fuerza. Si la supera bastante pero tu envión no mejora, ya tienes la fuerza pero no la estás transfiriendo adecuadamente — prioriza el trabajo técnico.</p>
   </div>
 
 </div>
@@ -292,18 +285,16 @@
 
 <script>
 
-  // Cada ejercicio: porcentaje del C&J (o rango), y el método alternativo por diferencia en kg.
-  // direccion: "resta" = el ejercicio suele pesar MENOS que el C&J
-  //            "suma"  = el ejercicio suele pesar MÁS que el C&J (son ejercicios de fuerza base)
+  // Cada ejercicio: porcentaje del C&J (o rango de porcentaje para Rack Jerk).
   const ejercicios = [
-    { nombre: "Military Press",  pctMin: 55,  pctMax: 55,  kg: 70,  direccion: "resta" },
-    { nombre: "Push Press",      pctMin: 78,  pctMax: 78,  kg: 35,  direccion: "resta" },
-    { nombre: "Power Jerk",      pctMin: 87,  pctMax: 87,  kg: 20,  direccion: "resta" },
-    { nombre: "Rack Jerk",       pctMin: 103, pctMax: 110, kg: 16,  direccion: "suma" },
-    { nombre: "Front Squat",     pctMin: 118, pctMax: 118, kg: 30,  direccion: "suma" },
-    { nombre: "Back Squat",      pctMin: 131, pctMax: 131, kg: 50,  direccion: "suma" },
-    { nombre: "Power Clean",     pctMin: 80,  pctMax: 80,  kg: 32,  direccion: "resta" },
-    { nombre: "Snatch",          pctMin: 80,  pctMax: 80,  kg: 32,  direccion: "resta" },
+    { nombre: "Military Press",  pctMin: 55,  pctMax: 55 },
+    { nombre: "Push Press",      pctMin: 78,  pctMax: 78 },
+    { nombre: "Power Jerk",      pctMin: 87,  pctMax: 87 },
+    { nombre: "Rack Jerk",       pctMin: 103, pctMax: 110 },
+    { nombre: "Front Squat",     pctMin: 118, pctMax: 118 },
+    { nombre: "Back Squat",      pctMin: 131, pctMax: 131 },
+    { nombre: "Power Clean",     pctMin: 80,  pctMax: 80 },
+    { nombre: "Snatch",          pctMin: 80,  pctMax: 80 },
   ];
 
   function calcular() {
@@ -318,20 +309,14 @@
     }
 
     body.innerHTML = ejercicios.map(e => {
-      const pctTexto = e.pctMin === e.pctMax ? `${e.pctMin}%` : `${e.pctMin}–${e.pctMax}%`;
       const pesoPct = e.pctMin === e.pctMax
-        ? Math.round(cj * e.pctMin / 100)
+        ? `${Math.round(cj * e.pctMin / 100)}`
         : `${Math.round(cj * e.pctMin / 100)}–${Math.round(cj * e.pctMax / 100)}`;
-
-      const pesoKg = e.direccion === "resta"
-        ? Math.round(cj - e.kg)
-        : Math.round(cj + e.kg);
 
       return `
         <tr>
           <td>${e.nombre}</td>
           <td class="peso" style="text-align:right">${pesoPct} kg</td>
-          <td>${e.direccion === "resta" ? "−" : "+"}${e.kg} kg (${pesoKg} kg)</td>
         </tr>
       `;
     }).join("");
