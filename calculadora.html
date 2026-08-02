@@ -177,16 +177,48 @@
     font-size:16px;
   }
 
-  td.nota{
-    color:var(--muted);
-    font-size:12px;
-  }
-
   .leyenda{
     font-size:12px;
     color:var(--muted);
     margin-top:18px;
     line-height:1.6;
+  }
+
+  .notaFinal{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:14px;
+    padding:22px 24px;
+    margin-top:20px;
+  }
+
+  .notaFinal h3{
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin:0 0 14px;
+  }
+
+  .notaFinal p{
+    font-size:13px;
+    color:#c9cdd1;
+    line-height:1.6;
+    margin:0 0 12px;
+  }
+
+  .notaFinal ul{
+    margin:0 0 12px;
+    padding-left:20px;
+  }
+
+  .notaFinal li{
+    font-size:13px;
+    color:#c9cdd1;
+    line-height:1.6;
+    margin-bottom:10px;
   }
 
   footer{
@@ -199,8 +231,6 @@
   @media (max-width:640px){
     nav{ padding:16px 20px; }
     .wrap{ padding:36px 20px 60px; }
-    td.nota{ display:none; }
-    thead th:nth-child(3){ display:none; }
   }
 
 </style>
@@ -240,13 +270,21 @@
         <th>Ejercicio</th>
         <th style="text-align:right">Objetivo (%)</th>
         <th>Referencia (kg)</th>
-        <th>Nota</th>
       </tr>
     </thead>
     <tbody id="resultadoBody"></tbody>
   </table>
 
-  <div class="leyenda" id="leyenda"></div>
+  <div class="notaFinal" id="notaFinal" style="display:none;">
+    <h3>¿Cómo interpretar estos números?</h3>
+    <p>En la metodología china de halterofilia, los valores y proporciones de la Tabla 6-2 (relación porcentual entre el envión y los ejercicios de apoyo) se deben usar como una <strong>referencia</strong>, no como reglas matemáticas absolutas. Sirven como guía para diseñar planes de entrenamiento y para verificar de forma práctica el impacto de las cargas aplicadas — su uso actual es principalmente de <strong>diagnóstico individual</strong>.</p>
+    <p>La relación entre los ejercicios de apoyo y los levantamientos olímpicos ayuda al entrenador a identificar el origen de un estancamiento, en dos escenarios:</p>
+    <ul>
+      <li><strong>Deficiencia de fuerza básica (accesorios débiles):</strong> si el rendimiento en un ejercicio de apoyo está por debajo del porcentaje de la tabla (ej. una sentadilla trasera que no llega al 131% del envión), la fuerza estructural es insuficiente para soportar incrementos en los levantamientos olímpicos, y aumenta el riesgo de lesión. La prioridad debe ser el entrenamiento de fuerza.</li>
+      <li><strong>Deficiencia técnica (accesorios excesivamente fuertes):</strong> si el atleta tiene una fuerza muy por encima de lo esperado (ej. una sentadilla muy por encima del 131%) pero su envión sigue bajo, tiene la fuerza necesaria pero no logra transferirla a la barra por una técnica ineficiente. Aquí, seguir buscando fuerza es contraproducente — el enfoque debe ser el refinamiento técnico.</li>
+    </ul>
+    <p>Así, la Tabla 6-2 funciona como un mapa dinámico para evaluar si el atleta necesita más base física, o si está desperdiciando su fuerza por una mala biomecánica.</p>
+  </div>
 
 </div>
 
@@ -272,7 +310,7 @@
     const cj = parseFloat(document.getElementById("cjInput").value);
     const tabla = document.getElementById("tablaResultado");
     const body = document.getElementById("resultadoBody");
-    const leyenda = document.getElementById("leyenda");
+    const notaFinal = document.getElementById("notaFinal");
 
     if (!cj || cj <= 0) {
       alert("Ingresa un peso válido de Clean & Jerk.");
@@ -289,22 +327,17 @@
         ? Math.round(cj - e.kg)
         : Math.round(cj + e.kg);
 
-      const nota = e.direccion === "resta"
-        ? "Si tu marca real es mayor a esto, conviene trabajar la técnica del envión."
-        : "Si tu marca real es menor a esto, conviene trabajar la fuerza base.";
-
       return `
         <tr>
           <td>${e.nombre}</td>
           <td class="peso" style="text-align:right">${pesoPct} kg</td>
           <td>${e.direccion === "resta" ? "−" : "+"}${e.kg} kg (${pesoKg} kg)</td>
-          <td class="nota">${nota}</td>
         </tr>
       `;
     }).join("");
 
     tabla.style.display = "table";
-    leyenda.innerHTML = `Objetivo (%): peso esperado como porcentaje de tu Clean &amp; Jerk. Referencia (kg): método alternativo, sumando o restando un valor fijo a tu marca. Ambos deberían dar resultados parecidos — si difieren mucho, es una señal de un desbalance específico a trabajar.`;
+    notaFinal.style.display = "block";
   }
 
   document.getElementById("cjInput").addEventListener("keypress", function(e) {
