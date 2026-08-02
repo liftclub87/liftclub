@@ -1,7 +1,15 @@
 {
   "routes": [
     {
+      "route": "/portal.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
       "route": "/Dana.html",
+      "allowedRoles": ["dana", "admin"]
+    },
+    {
+      "route": "/Dana_monitoreo.html",
       "allowedRoles": ["dana", "admin"]
     },
     {
