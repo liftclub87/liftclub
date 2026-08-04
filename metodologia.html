@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lift Club - Metodología</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Noto+Sans+SC:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --bg:#0F0F0F;
+    --cyan:#5FCAE7;
+    --pink:#ED1D7E;
+    --yellow:#FDD700;
+    --paper:#17181A;
+    --line:#26282B;
+    --muted:#8b9096;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Inter',sans-serif;
+    color:#EDEFF1;
+  }
+
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 40px;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(10px);
+    z-index:10;
+  }
+
+  nav img.logo{ height:26px; }
+
+  .navLinks{ display:flex; gap:6px; }
+
+  .navLinks a{
+    color:#c9cdd1;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:9px 18px;
+    border-radius:999px;
+  }
+
+  .navLinks a:hover{ color:#fff; background:var(--paper); }
+  .navLinks a.active{ background:var(--cyan); color:var(--bg); }
+
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:50px 32px 100px;
+  }
+
+  .sectionHead{
+    margin-bottom:36px;
+  }
+
+  .sectionHead .eyebrow{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:10px;
+  }
+
+  .sectionHead h1{
+    font-family:'Bungee', sans-serif;
+    font-size:30px;
+    font-weight:400;
+    letter-spacing:.5px;
+    margin:0;
+    color:#fff;
+  }
+
+  .pilaresGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(190px,1fr));
+    gap:16px;
+  }
+
+  .pilar{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:26px 22px;
+    text-align:center;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+
+  .pilar:hover{
+    border-color:var(--cyan);
+    transform:translateY(-4px);
+  }
+
+  .pilar .glyph{
+    font-family:'Noto Sans SC', sans-serif;
+    font-weight:900;
+    font-size:52px;
+    color:var(--cyan);
+    line-height:1;
+    margin-bottom:16px;
+  }
+
+  .pilar:nth-child(2) .glyph{ color:var(--pink); }
+  .pilar:nth-child(4) .glyph{ color:var(--yellow); }
+
+  .pilar h3{
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    margin:0 0 6px;
+    color:#fff;
+  }
+
+  .pilar p{
+    font-size:12.5px;
+    color:var(--muted);
+    margin:0;
+    line-height:1.5;
+  }
+
+  @media (max-width:640px){
+    nav{ padding:16px 20px; }
+    .wrap{ padding:36px 20px 60px; }
+  }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img class="logo" src="assets/logo.png" alt="Lift Club">
+  <div class="navLinks">
+    <a href="portal.html">Portal</a>
+    <a href="metodologia.html" class="active">Metodología</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="sectionHead">
+    <div class="eyebrow">Solo para miembros</div>
+    <h1>Pilares técnicos</h1>
+  </div>
+
+  <div class="pilaresGrid" id="pilaresGrid"></div>
+
+</div>
+
+<script>
+
+  const pilares = [
+    { glyph: "快", titulo: "Velocidad", texto: "Rapidez de la barra bajo el cuerpo en la fase de recepción." },
+    { glyph: "低", titulo: "Posición baja", texto: "Profundidad y control en la recepción del arranque y envión." },
+    { glyph: "时", titulo: "Tempo", texto: "Timing entre el tirón, la extensión y el cambio de dirección." },
+    { glyph: "稳", titulo: "Estabilidad", texto: "Solidez en el punto de bloqueo y en la sentadilla de recepción." },
+    { glyph: "近", titulo: "Cercanía", texto: "Trayectoria de la barra pegada al cuerpo durante todo el movimiento." },
+  ];
+
+  const pGrid = document.getElementById("pilaresGrid");
+  pilares.forEach(p => {
+    const el = document.createElement("div");
+    el.className = "pilar";
+    el.innerHTML = `
+      <div class="glyph">${p.glyph}</div>
+      <h3>${p.titulo}</h3>
+      <p>${p.texto}</p>
+    `;
+    pGrid.appendChild(el);
+  });
+
+</script>
+
+</body>
+</html>

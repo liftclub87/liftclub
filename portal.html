@@ -86,6 +86,42 @@
 
   /* ---- Vista personalizada de atleta ---- */
 
+  .loginBtns{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:340px;
+    margin-top:30px;
+  }
+
+  a.loginBtn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-decoration:none;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.3px;
+    padding:16px 24px;
+    border-radius:12px;
+    transition:transform .15s ease;
+  }
+
+  a.loginBtn:hover{ transform:translateY(-2px); }
+
+  a.loginBtn.microsoft{
+    background:#fff;
+    color:#1a1a1a;
+  }
+
+  a.loginBtn.google{
+    background:var(--paper);
+    color:#fff;
+    border:1px solid var(--line);
+  }
+
   .miPanel{
     display:flex;
     flex-direction:column;
@@ -217,6 +253,7 @@
     <a href="index.html">Home</a>
     <a href="ranking.html">Ranking</a>
     <a href="calculadora.html">Calculadora</a>
+    <a href="metodologia.html">Metodología</a>
   </div>
 </nav>
 
@@ -316,12 +353,23 @@
       `<p class="empty">Tu cuenta inició sesión correctamente, pero todavía no tiene un rol asignado. Contacta al coach para que te agregue.</p>`;
   }
 
+  function renderLogin() {
+    document.getElementById("tituloPortal").textContent = "Ingresar";
+    document.getElementById("contenido").innerHTML = `
+      <p class="empty" style="margin-bottom:20px;">Elige con qué cuenta quieres iniciar sesión.</p>
+      <div class="loginBtns">
+        <a href="/.auth/login/aad?post_login_redirect_uri=/portal.html" class="loginBtn microsoft">Ingresar con Microsoft</a>
+        <a href="/.auth/login/google?post_login_redirect_uri=/portal.html" class="loginBtn google">Ingresar con Google</a>
+      </div>
+    `;
+  }
+
   fetch("/.auth/me")
     .then(r => r.json())
     .then(data => {
       const principal = data.clientPrincipal;
       if (!principal) {
-        window.location.href = "/.auth/login/aad?post_login_redirect_uri=/portal.html";
+        renderLogin();
         return;
       }
       const roles = principal.userRoles || [];

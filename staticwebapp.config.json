@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "route": "/portal.html",
+      "route": "/metodologia.html",
       "allowedRoles": ["authenticated"]
     },
     {
@@ -39,8 +39,18 @@
   ],
   "responseOverrides": {
     "401": {
-      "redirect": "/.auth/login/aad",
+      "redirect": "/portal.html",
       "statusCode": 302
+    }
+  },
+  "auth": {
+    "identityProviders": {
+      "google": {
+        "registration": {
+          "clientIdSettingName": "GOOGLE_CLIENT_ID",
+          "clientSecretSettingName": "GOOGLE_CLIENT_SECRET"
+        }
+      }
     }
   }
 }

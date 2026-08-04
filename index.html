@@ -301,6 +301,12 @@
     line-height:1.55;
   }
 
+  .contactoBtns{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
   footer{
     text-align:center;
     font-size:12px;
@@ -334,9 +340,9 @@
 
 <div class="hero">
   <div class="glyphBg">稳</div>
-  
+  <span class="kicker"><span class="dot"></span>Halterofilia &middot; Costa Rica</span>
   <img class="wordmark" src="assets/logo.png" alt="Lift Club">
-  <p>Anuncios del club, avisos importantes y acceso al panel de entrenamiento de cada atleta, todo en un solo lugar.</p>
+  <p>El entrenamiento no se pierde, solo se transforma.</p>
   <div class="heroBtns">
     <a href="portal.html" class="btn primary">Ingresar</a>
     <a href="#anuncios" class="btn ghost">Ver anuncios</a>
@@ -345,13 +351,6 @@
 
 <div class="wrap">
 
-  <div class="sectionHead">
-    <div class="eyebrow">Metodología</div>
-    <h2>Pilares técnicos</h2>
-  </div>
-
-  <div class="pilaresGrid" id="pilaresGrid"></div>
-
   <div class="sectionHead" id="anuncios">
     <div class="eyebrow">Comunicados</div>
     <h2>Anuncios y noticias</h2>
@@ -359,33 +358,22 @@
 
   <div class="announceGrid" id="announceGrid"></div>
 
+  <div class="sectionHead">
+    <div class="eyebrow">Contacto</div>
+    <h2>Escríbenos</h2>
+  </div>
+
+  <div class="contactoBtns">
+    <a href="https://www.instagram.com/liftclub87?igsh=bnFha28xMzYwYTdh" target="_blank" rel="noopener" class="btn ghost">Instagram</a>
+    <a href="mailto:gestion@liftclub87.com" class="btn ghost">gestion@liftclub87.com</a>
+  </div>
+
 </div>
 
-<footer>LiftClub &middot; By Christopher Linton &middot; 2026</footer>
+<footer>Lift Club &middot; Actualizado por el coach</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
-
-  // Pilares técnicos: edita este arreglo para actualizar los 5 conceptos.
-  const pilares = [
-    { glyph: "快", titulo: "Velocidad", texto: "Rapidez de la barra bajo el cuerpo en la fase de recepción." },
-    { glyph: "低", titulo: "Posición baja", texto: "Profundidad y control en la recepción del arranque y envión." },
-    { glyph: "时", titulo: "Tempo", texto: "Timing entre el tirón, la extensión y el cambio de dirección." },
-    { glyph: "稳", titulo: "Estabilidad", texto: "Solidez en el punto de bloqueo y en la sentadilla de recepción." },
-    { glyph: "近", titulo: "Cercanía", texto: "Trayectoria de la barra pegada al cuerpo durante todo el movimiento." },
-  ];
-
-  const pGrid = document.getElementById("pilaresGrid");
-  pilares.forEach(p => {
-    const el = document.createElement("div");
-    el.className = "pilar";
-    el.innerHTML = `
-      <div class="glyph">${p.glyph}</div>
-      <h3>${p.titulo}</h3>
-      <p>${p.texto}</p>
-    `;
-    pGrid.appendChild(el);
-  });
 
   // Anuncios: ahora se leen desde anuncios.csv (edita ese archivo, no este script).
   const aGrid = document.getElementById("announceGrid");
