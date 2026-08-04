@@ -113,7 +113,8 @@
   }
 
   .hero p{
-    color:var(--muted);
+    color:var(--pink);
+    font-weight:600;
     font-size:16px;
     max-width:520px;
     margin:0 auto;
@@ -363,7 +364,7 @@
     skipEmptyLines: true,
     complete: function (results) {
       if (!results.data || results.data.length === 0) {
-        aGrid.innerHTML = `<p style="color:var(--pink);font-size:14px;">Información en construcción.</p>`;
+        aGrid.innerHTML = `<p style="color:var(--muted);font-size:14px;">Información en construcción.</p>`;
         return;
       }
       results.data.forEach(a => {
@@ -378,7 +379,7 @@
       });
     },
     error: function () {
-      aGrid.innerHTML = `<p style="color:var(--pink);font-size:14px;">Información en construcción.</p>`;
+      aGrid.innerHTML = `<p style="color:var(--muted);font-size:14px;">Información en construcción.</p>`;
     }
   });
 
