@@ -104,26 +104,6 @@
     user-select:none;
   }
 
-  .hero .kicker{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:var(--pink);
-    margin-bottom:26px;
-  }
-
-  .hero .kicker .dot{
-    width:6px;
-    height:6px;
-    background:var(--yellow);
-    transform:rotate(45deg);
-    display:inline-block;
-  }
-
   .hero img.wordmark{
     max-width:460px;
     width:100%;
@@ -340,7 +320,6 @@
 
 <div class="hero">
   <div class="glyphBg">稳</div>
-  <span class="kicker"><span class="dot"></span>Halterofilia &middot; Costa Rica</span>
   <img class="wordmark" src="assets/logo.png" alt="Lift Club">
   <p>El entrenamiento no se pierde, solo se transforma.</p>
   <div class="heroBtns">
@@ -370,7 +349,7 @@
 
 </div>
 
-<footer>Lift Club &middot; Actualizado por el coach</footer>
+<footer>LiftClub87 by Christopher Linton | 2026</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
@@ -383,6 +362,10 @@
     header: true,
     skipEmptyLines: true,
     complete: function (results) {
+      if (!results.data || results.data.length === 0) {
+        aGrid.innerHTML = `<p style="color:var(--pink);font-size:14px;">Información en construcción.</p>`;
+        return;
+      }
       results.data.forEach(a => {
         const el = document.createElement("div");
         el.className = "announce" + (a["Color"] ? " " + a["Color"] : "");
@@ -395,7 +378,7 @@
       });
     },
     error: function () {
-      aGrid.innerHTML = `<p style="color:var(--muted);font-size:14px;">No se pudieron cargar los anuncios.</p>`;
+      aGrid.innerHTML = `<p style="color:var(--pink);font-size:14px;">Información en construcción.</p>`;
     }
   });
 
