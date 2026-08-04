@@ -2,55 +2,71 @@
   "routes": [
     {
       "route": "/metodologia.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": [
+        "authenticated"
+      ]
     },
     {
       "route": "/Dana.html",
-      "allowedRoles": ["dana", "admin"]
+      "allowedRoles": [
+        "dana",
+        "admin"
+      ]
     },
     {
       "route": "/Dana_monitoreo.html",
-      "allowedRoles": ["dana", "admin"]
+      "allowedRoles": [
+        "dana",
+        "admin"
+      ]
     },
     {
       "route": "/Gian.html",
-      "allowedRoles": ["gian", "admin"]
+      "allowedRoles": [
+        "gian",
+        "admin"
+      ]
     },
     {
       "route": "/Kevin.html",
-      "allowedRoles": ["kevin", "admin"]
+      "allowedRoles": [
+        "kevin",
+        "admin"
+      ]
     },
     {
       "route": "/Maroto.html",
-      "allowedRoles": ["maroto", "admin"]
+      "allowedRoles": [
+        "maroto",
+        "admin"
+      ]
     },
     {
       "route": "/Melina.html",
-      "allowedRoles": ["melina", "admin"]
+      "allowedRoles": [
+        "melina",
+        "admin"
+      ]
     },
     {
       "route": "/Melisson.html",
-      "allowedRoles": ["melisson", "admin"]
+      "allowedRoles": [
+        "melisson",
+        "admin"
+      ]
     },
     {
       "route": "/Sebas.html",
-      "allowedRoles": ["sebas", "admin"]
+      "allowedRoles": [
+        "sebas",
+        "admin"
+      ]
     }
   ],
   "responseOverrides": {
     "401": {
       "redirect": "/portal.html",
       "statusCode": 302
-    }
-  },
-  "auth": {
-    "identityProviders": {
-      "google": {
-        "registration": {
-          "clientIdSettingName": "GOOGLE_CLIENT_ID",
-          "clientSecretSettingName": "GOOGLE_CLIENT_SECRET"
-        }
-      }
     }
   }
 }
