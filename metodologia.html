@@ -66,8 +66,80 @@
     padding:50px 32px 100px;
   }
 
+  .filosofiaIntro{
+    font-size:14.5px;
+    color:#c9cdd1;
+    line-height:1.7;
+    max-width:720px;
+    margin:0 0 18px;
+  }
+
+  .saberesGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:16px;
+    margin:24px 0 34px;
+  }
+
+  .saber{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cyan);
+    border-radius:16px;
+    padding:22px;
+  }
+
+  .saber:nth-child(2){ border-left-color:var(--pink); }
+  .saber:nth-child(3){ border-left-color:var(--yellow); }
+
+  .saber h3{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:16px;
+    letter-spacing:.5px;
+    margin:0 0 10px;
+    color:#fff;
+  }
+
+  .saber p{
+    font-size:13px;
+    color:var(--muted);
+    margin:0;
+    line-height:1.5;
+  }
+
+  .filosofiaCierre{
+    font-size:14.5px;
+    color:#c9cdd1;
+    line-height:1.7;
+    max-width:720px;
+    margin:0 0 50px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+  }
+
+  .filosofiaCierre .brand{
+    color:var(--cyan);
+    font-weight:700;
+  }
+
+  .filosofiaCierre .diamond{
+    color:var(--pink);
+  }
+
+  .filosofiaCierre sup{
+    color:var(--pink);
+    font-size:11px;
+  }
+
   .sectionHead{
     margin-bottom:36px;
+  }
+
+  .sectionHead:nth-of-type(2){
+    margin-top:50px;
+    padding-top:36px;
+    border-top:1px solid var(--line);
   }
 
   .sectionHead .eyebrow{
@@ -158,6 +230,32 @@
 
   <div class="sectionHead">
     <div class="eyebrow">Solo para miembros</div>
+    <h1>Filosofía: Los Tres Saberes</h1>
+  </div>
+
+  <p class="filosofiaIntro">Un proceso de entrenamiento sin un marco filosófico sería correr sin dirección. A través de estos años hemos aprendido que lo que realmente transforma no es solo levantar peso: es entender por qué lo levantamos, cómo lo levantamos, y qué tipo de persona nos convertimos al hacerlo.</p>
+
+  <p class="filosofiaIntro">Por eso aquí trabajamos con los Tres Saberes:</p>
+
+  <div class="saberesGrid">
+    <div class="saber">
+      <h3>El Saber</h3>
+      <p>El conocimiento conceptual.</p>
+    </div>
+    <div class="saber">
+      <h3>El Saber Hacer</h3>
+      <p>El conocimiento técnico.</p>
+    </div>
+    <div class="saber">
+      <h3>El Saber Ser</h3>
+      <p>Entrenar el carácter junto con la fuerza física y mental.</p>
+    </div>
+  </div>
+
+  <p class="filosofiaCierre">Si levantas en <span class="brand">Lift <span class="diamond">&#9671;</span> Club<sup>87</sup></span>, aprendes integrando estos tres aspectos unidos. Porque no formamos solo atletas: formamos personas que entienden que el levantamiento es un camino.</p>
+
+  <div class="sectionHead">
+    <div class="eyebrow">Metodología</div>
     <h1>Pilares técnicos</h1>
   </div>
 
