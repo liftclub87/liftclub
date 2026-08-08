@@ -1,6 +1,10 @@
 {
   "routes": [
     {
+      "route": "/general.html",
+      "allowedRoles": ["general", "admin"]
+    },
+    {
       "route": "/metodologia.html",
       "allowedRoles": [
         "authenticated"
