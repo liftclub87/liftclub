@@ -44,7 +44,7 @@
 
   nav img.logo{ height:26px; }
 
-  .navLinks{ display:flex; gap:6px; flex-wrap:wrap; }
+  .navLinks{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
 
   .navLinks a{
     color:#c9cdd1;
@@ -84,7 +84,7 @@
     color:#fff;
   }
 
-  /* ---- Vista personalizada de atleta ---- */
+  /* ---- Vista de login ---- */
 
   .loginBtns{
     display:flex;
@@ -121,6 +121,8 @@
     color:#fff;
     border:1px solid var(--line);
   }
+
+  /* ---- Vista personalizada de atleta ---- */
 
   .miPanel{
     display:flex;
@@ -242,6 +244,11 @@
     font-size:14px;
   }
 
+  @media (max-width:640px){
+    nav{ padding:16px 20px; }
+    .wrap{ padding:40px 20px 60px; }
+  }
+
 </style>
 </head>
 
@@ -253,7 +260,6 @@
     <a href="index.html">Home</a>
     <a href="ranking.html">Ranking</a>
     <a href="calculadora.html">Calculadora</a>
-    <a href="metodologia.html">Metodología</a>
   </div>
 </nav>
 
@@ -278,11 +284,11 @@
     dana:     { nombre: "Dana",     plan: "Dana.html",     monitoreo: "Dana_monitoreo.html" },
     gian:     { nombre: "Gian",     plan: null,            monitoreo: null },
     kevin:    { nombre: "Kevin",    plan: null,            monitoreo: null },
-    maroto:   { nombre: "Maroto",   plan: null,             monitoreo: null },
+    maroto:   { nombre: "Maroto",   plan: null,            monitoreo: null },
     melina:   { nombre: "Melina",   plan: null,            monitoreo: null },
     melisson: { nombre: "Melisson", plan: "Melisson.html", monitoreo: null },
     sebas:    { nombre: "Sebas",    plan: null,            monitoreo: null },
-    andres:   { nombre: "Andres",   plan: null,             monitoreo: null },
+    andres:   { nombre: "Andres",   plan: null,            monitoreo: null },
     elena:    { nombre: "Elena",    plan: null,            monitoreo: null },
   };
 
