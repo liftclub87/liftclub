@@ -31,8 +31,6 @@
 
   ::selection{ background:var(--pink); color:#fff; }
 
-  /* ---------- NAV ---------- */
-
   nav{
     display:flex;
     align-items:center;
@@ -46,16 +44,9 @@
     z-index:10;
   }
 
-  nav img.logo{
-    height:26px;
-    display:block;
-  }
+  nav img.logo{ height:26px; display:block; }
 
-  .navLinks{
-    display:flex;
-    align-items:center;
-    gap:6px;
-  }
+  .navLinks{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
 
   .navLinks a{
     color:#c9cdd1;
@@ -69,17 +60,8 @@
     transition:all .15s ease;
   }
 
-  .navLinks a:hover{
-    color:#fff;
-    background:var(--paper);
-  }
-
-  .navLinks a.active{
-    background:var(--cyan);
-    color:var(--bg);
-  }
-
-  /* ---------- HERO ---------- */
+  .navLinks a:hover{ color:#fff; background:var(--paper); }
+  .navLinks a.active{ background:var(--cyan); color:var(--bg); }
 
   .hero{
     max-width:1100px;
@@ -163,8 +145,6 @@
     color:var(--cyan);
   }
 
-  /* ---------- PILARES (caracteres) ---------- */
-
   .wrap{
     max-width:1100px;
     margin:0 auto;
@@ -192,56 +172,6 @@
     margin:0;
     color:#fff;
   }
-
-  .pilaresGrid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(190px,1fr));
-    gap:16px;
-  }
-
-  .pilar{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:26px 22px;
-    text-align:center;
-    transition:border-color .2s ease, transform .2s ease;
-  }
-
-  .pilar:hover{
-    border-color:var(--cyan);
-    transform:translateY(-4px);
-  }
-
-  .pilar .glyph{
-    font-family:'Noto Sans SC', sans-serif;
-    font-weight:900;
-    font-size:52px;
-    color:var(--cyan);
-    line-height:1;
-    margin-bottom:16px;
-  }
-
-  .pilar:nth-child(2) .glyph{ color:var(--pink); }
-  .pilar:nth-child(4) .glyph{ color:var(--yellow); }
-
-  .pilar h3{
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:.5px;
-    text-transform:uppercase;
-    margin:0 0 6px;
-    color:#fff;
-  }
-
-  .pilar p{
-    font-size:12.5px;
-    color:var(--muted);
-    margin:0;
-    line-height:1.5;
-  }
-
-  /* ---------- ANUNCIOS ---------- */
 
   .announceGrid{
     display:grid;
@@ -316,6 +246,7 @@
     <a href="index.html" class="active">Home</a>
     <a href="ranking.html">Ranking</a>
     <a href="calculadora.html">Calculadora</a>
+    <a href="recursos.html">Recursos</a>
     <a href="portal.html">Ingresar</a>
   </div>
 </nav>
@@ -356,7 +287,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
 
-  // Anuncios: ahora se leen desde anuncios.csv (edita ese archivo, no este script).
   const aGrid = document.getElementById("announceGrid");
 
   Papa.parse("anuncios.csv?v=" + Date.now(), {
