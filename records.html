@@ -203,6 +203,22 @@
 
   .sinmarca{ color:var(--muted); font-size:13px; }
 
+  .notaCategorias{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:12px;
+    padding:14px 18px;
+    margin-top:16px;
+  }
+
+  .notaCategorias p{
+    margin:0;
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
   .empty{
     color:var(--muted);
     font-size:14px;
@@ -220,7 +236,6 @@
   @media (max-width:640px){
     nav{ padding:16px 20px; }
     .wrap{ padding:36px 20px 60px; }
-    .holder{ display:none; }
   }
 
 </style>
@@ -272,6 +287,10 @@
     <tbody id="recordsBody"></tbody>
   </table>
 
+  <div class="notaCategorias">
+    <p>Estos records nacionales están basados en las categorías nuevas utilizadas en el Campeonato Nacional FEHACO-DMC 2026.</p>
+  </div>
+
 </div>
 
 <footer>Lift Club &middot; Records actualizados por categoría, sujetos a ratificación oficial</footer>
@@ -286,12 +305,33 @@
   const ordenCat = ["49","53","55","57","60","61","65","69","70","75","77","85","86","95","110",
                      ">86",">77",">95",">110"];
 
+  function nombreCorto(nombreCompleto) {
+    if (!nombreCompleto) return "";
+    const partes = nombreCompleto.trim().split(/\s+/);
+    return partes.slice(0, 2).join(" ");
+  }
+
   function celda(fila, clase) {
     if (!fila || !fila["Marca"] || parseFloat(fila["Marca"]) === 0) {
       return `<td class="${clase}"><span class="sinmarca">Sin marca</span></td>`;
     }
-    const nombre = fila["Nombre"] ? `<span class="holder">${fila["Nombre"]}</span>` : "";
+    const nombre = fila["Nombre"] ? `<span class="holder">${nombreCorto(fila["Nombre"])}</span>` : "";
     return `<td class="${clase}"><span class="marca">${fila["Marca"]} kg</span>${nombre}</td>`;
+  }
+
+  function celdaTotal(filaTotal, filaArranque, filaEnvion) {
+    if (!filaTotal || !filaTotal["Marca"] || parseFloat(filaTotal["Marca"]) === 0) {
+      return `<td class="total"><span class="sinmarca">Sin marca</span></td>`;
+    }
+    let nombreTexto = "";
+    const nA = filaArranque ? filaArranque["Nombre"] : "";
+    const nE = filaEnvion ? filaEnvion["Nombre"] : "";
+    if (nA && nE && nA === nE) {
+      nombreTexto = `<span class="holder">${nombreCorto(nA)}</span>`;
+    } else if (nA || nE) {
+      nombreTexto = `<span class="holder">Marca combinada</span>`;
+    }
+    return `<td class="total"><span class="marca">${filaTotal["Marca"]} kg</span>${nombreTexto}</td>`;
   }
 
   function dibujarTabla() {
@@ -323,7 +363,7 @@
           <td class="cat">${cat} kg</td>
           ${celda(g["Arranque"], "arranque")}
           ${celda(g["Envion"], "envion")}
-          ${celda(g["Total"], "total")}
+          ${celdaTotal(g["Total"], g["Arranque"], g["Envion"])}
         </tr>
       `;
     }).join("");
