@@ -149,6 +149,7 @@
   }
 
   a.accionBtn:nth-child(2){ border-left-color:var(--pink); }
+  a.accionBtn:nth-child(3){ border-left-color:var(--yellow); }
 
   a.accionBtn:hover{
     transform:translateY(-3px);
@@ -308,6 +309,7 @@
       <div class="miPanel">
         ${botonAccion("Ver mi plan de entrenamiento", a.plan)}
         ${botonAccion("Ver mi monitoreo", a.monitoreo)}
+        ${botonAccion("Calculadora de Carga e Intensidad", "carga-intensidad.html")}
       </div>
     `;
   }
@@ -352,6 +354,19 @@
       }
     });
     html += `</div>`;
+
+    html += `
+      <div class="sectionHead">
+        <div class="eyebrow">Herramientas</div>
+        <h2>Utilidades del club</h2>
+      </div>
+      <div class="grid">
+        <a href="carga-intensidad.html" class="athlete">
+          <div class="initial">◇</div>
+          <h3>Carga e Intensidad</h3>
+        </a>
+      </div>
+    `;
 
     document.getElementById("contenido").innerHTML = html;
   }

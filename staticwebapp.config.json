@@ -1,70 +1,48 @@
 {
   "routes": [
     {
+      "route": "/carga-intensidad.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/metodologia.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
       "route": "/general.html",
       "allowedRoles": ["general", "admin"]
     },
     {
-      "route": "/metodologia.html",
-      "allowedRoles": [
-        "authenticated"
-      ]
-    },
-    {
       "route": "/Dana.html",
-      "allowedRoles": [
-        "dana",
-        "admin"
-      ]
+      "allowedRoles": ["dana", "admin"]
     },
     {
       "route": "/Dana_monitoreo.html",
-      "allowedRoles": [
-        "dana",
-        "admin"
-      ]
+      "allowedRoles": ["dana", "admin"]
     },
     {
       "route": "/Gian.html",
-      "allowedRoles": [
-        "gian",
-        "admin"
-      ]
+      "allowedRoles": ["gian", "admin"]
     },
     {
       "route": "/Kevin.html",
-      "allowedRoles": [
-        "kevin",
-        "admin"
-      ]
+      "allowedRoles": ["kevin", "admin"]
     },
     {
       "route": "/Maroto.html",
-      "allowedRoles": [
-        "maroto",
-        "admin"
-      ]
+      "allowedRoles": ["maroto", "admin"]
     },
     {
       "route": "/Melina.html",
-      "allowedRoles": [
-        "melina",
-        "admin"
-      ]
+      "allowedRoles": ["melina", "admin"]
     },
     {
       "route": "/Melisson.html",
-      "allowedRoles": [
-        "melisson",
-        "admin"
-      ]
+      "allowedRoles": ["melisson", "admin"]
     },
     {
       "route": "/Sebas.html",
-      "allowedRoles": [
-        "sebas",
-        "admin"
-      ]
+      "allowedRoles": ["sebas", "admin"]
     }
   ],
   "responseOverrides": {
