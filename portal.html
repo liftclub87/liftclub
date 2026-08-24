@@ -282,16 +282,16 @@
 
   // Mapa de roles a sus páginas de plan/monitoreo. null = todavía no construida.
   const ATLETAS = {
-    general:  { nombre: "Plan General", plan: "general.html", monitoreo: null },
-    dana:     { nombre: "Dana",     plan: "Dana.html",     monitoreo: "Dana_monitoreo.html" },
-    gian:     { nombre: "Gian",     plan: null,            monitoreo: null },
-    kevin:    { nombre: "Kevin",    plan: null,            monitoreo: null },
-    maroto:   { nombre: "Maroto",   plan: null,            monitoreo: null },
-    melina:   { nombre: "Melina",   plan: null,            monitoreo: null },
-    melisson: { nombre: "Melisson", plan: "Melisson.html", monitoreo: null },
-    sebas:    { nombre: "Sebas",    plan: null,            monitoreo: null },
-    andres:   { nombre: "Andres",   plan: null,            monitoreo: null },
-    elena:    { nombre: "Elena",    plan: null,            monitoreo: null },
+    general:  { nombre: "Plan General", plan: "general.html", monitoreo: null,               personalizado: false },
+    dana:     { nombre: "Dana",     plan: "general.html", monitoreo: "Dana_monitoreo.html", personalizado: false },
+    gian:     { nombre: "Gian",     plan: "general.html", monitoreo: null,                  personalizado: false },
+    kevin:    { nombre: "Kevin",    plan: "general.html", monitoreo: null,                  personalizado: false },
+    maroto:   { nombre: "Maroto",   plan: "general.html", monitoreo: null,                  personalizado: false },
+    melina:   { nombre: "Melina",   plan: "general.html", monitoreo: null,                  personalizado: false },
+    melisson: { nombre: "Melisson", plan: "Melisson.html", monitoreo: null,                 personalizado: true  },
+    sebas:    { nombre: "Sebas",    plan: "general.html", monitoreo: null,                  personalizado: false },
+    andres:   { nombre: "Andres",   plan: "general.html", monitoreo: null,                  personalizado: false },
+    elena:    { nombre: "Elena",    plan: "general.html", monitoreo: null,                  personalizado: false },
   };
 
   function botonAccion(texto, href) {
@@ -304,10 +304,11 @@
   function renderVistaAtleta(clave) {
     const a = ATLETAS[clave];
     const titulo = clave === "general" ? "Bienvenido" : `Hola, ${a.nombre}`;
+    const textoPlan = a.personalizado ? "Ver mi plan de entrenamiento" : "Plan";
     document.getElementById("tituloPortal").textContent = titulo;
     document.getElementById("contenido").innerHTML = `
       <div class="miPanel">
-        ${botonAccion("Ver mi plan de entrenamiento", a.plan)}
+        ${botonAccion(textoPlan, a.plan)}
         ${botonAccion("Ver mi monitoreo", a.monitoreo)}
         ${botonAccion("Calculadora de Carga e Intensidad", "carga-intensidad.html")}
       </div>
@@ -324,12 +325,15 @@
       </div>
       <div class="grid">
     `;
+    const planesMostrados = new Set();
     Object.entries(ATLETAS).forEach(([clave, a]) => {
-      if (a.plan) {
+      if (a.plan && !planesMostrados.has(a.plan)) {
+        planesMostrados.add(a.plan);
+        const etiqueta = a.personalizado ? a.nombre : "Plan General";
         html += `
           <a href="${a.plan}" class="athlete">
-            <div class="initial">${a.nombre.charAt(0)}</div>
-            <h3>${a.nombre}</h3>
+            <div class="initial">${a.personalizado ? a.nombre.charAt(0) : "◇"}</div>
+            <h3>${etiqueta}</h3>
           </a>
         `;
       }

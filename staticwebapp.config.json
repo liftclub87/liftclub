@@ -10,7 +10,7 @@
     },
     {
       "route": "/general.html",
-      "allowedRoles": ["general", "admin"]
+      "allowedRoles": ["authenticated"]
     },
     {
       "route": "/Dana.html",
