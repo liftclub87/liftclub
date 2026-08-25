@@ -242,6 +242,37 @@
     font-style:italic;
   }
 
+  .notaAjuste{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:14px;
+    padding:18px 20px;
+    margin-bottom:30px;
+  }
+
+  .notaAjuste p{
+    margin:0 0 10px;
+    font-size:12.5px;
+    color:#c9cdd1;
+    line-height:1.6;
+  }
+
+  .notaAjuste p:last-child{ margin-bottom:0; }
+
+  .notaAjuste ul{
+    margin:0;
+    padding-left:18px;
+  }
+
+  .notaAjuste li{
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  .notaAjuste strong{ color:#fff; }
+
   .empty{
     color:var(--muted);
     font-size:14px;
@@ -276,6 +307,15 @@
     <p class="sub">Ingresa tu máximo (PR) actual en cada movimiento. El plan calcula el peso de trabajo automáticamente según el porcentaje de cada ejercicio.</p>
     <div class="marcasGrid" id="marcasGrid"></div>
     <button onclick="recalcular()">Calcular pesos</button>
+  </div>
+
+  <div class="notaAjuste">
+    <p>A pesar de los porcentajes, el plan puede ajustarse en la intensidad: si no logras completar el peso establecido, realiza el <strong>peso más próximo</strong> que sí cumpla estos tres criterios en cada repetición:</p>
+    <ul>
+      <li><strong>Sin dolor</strong></li>
+      <li><strong>Técnico</strong></li>
+      <li><strong>Con cierta exigencia</strong></li>
+    </ul>
   </div>
 
   <div id="planContenedor">
