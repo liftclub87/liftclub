@@ -1,35 +1,35 @@
-﻿Semana,Día,Ejercicio,Series,Repeticiones,KG,Porcentaje
-SEMANA 1,DÍA 1,Arr.Parado+Sent,6,3,61,65%
-SEMANA 1,DÍA 1,Back Squat+Pausa,5,6,73,72%
-SEMANA 1,DÍA 2,Envión,6,3,63,66%
-SEMANA 1,DÍA 2,Front Squat Dinámica,5,6,74,72%
-SEMANA 1,DÍA 2,Clean Pull Hombros,4,5,77,71%
-SEMANA 1,DÍA 3,Yerk Rack,3,3,60,63%
-SEMANA 1,DÍA 4,Arranque,6,3,62,66%
-SEMANA 1,DÍA 4,Back Squat,5,6,92,75%
-SEMANA 1,DÍA 4,Snatch Pull Hombros,4,5,76,71%
-SEMANA 2,DÍA 1,Arr.Parado+Sent,6,4,63,67%
-SEMANA 2,DÍA 1,Back Squat+Pausa,5,7,74,73%
-SEMANA 2,DÍA 2,Envión,6,4,65,68%
-SEMANA 2,DÍA 2,Front Squat Dinámica,5,7,75,73%
-SEMANA 2,DÍA 2,Clean Pull Hombros,4,6,77,71%
-SEMANA 2,DÍA 3,Yerk Rack,3,4,61,64%
-SEMANA 2,DÍA 4,Arranque,6,4,64,68%
-SEMANA 2,DÍA 4,Back Squat,5,7,94,76%
-SEMANA 2,DÍA 4,Snatch Pull Hombros,4,6,76,71%
-SEMANA 3,DÍA 1,Arr.Parado+Sent,5,3,72,75%
-SEMANA 3,DÍA 1,Back Squat+Pausa,4,5,78,77%
-SEMANA 3,DÍA 2,Envión,5,3,74,76%
-SEMANA 3,DÍA 2,Front Squat Dinámica,4,5,79,77%
-SEMANA 3,DÍA 2,Clean Pull Hombros,3,4,80,73%
-SEMANA 3,DÍA 3,Yerk Rack,2,3,73,71%
-SEMANA 3,DÍA 4,Arranque,5,3,73,76%
-SEMANA 3,DÍA 4,Back Squat,4,5,100,80%
-SEMANA 3,DÍA 4,Snatch Pull Hombros,3,4,78,73%
-SEMANA 4,DÍA 1,Arr.Parado+Sent,3,2,70,73%
-SEMANA 4,DÍA 1,Back Squat+Pausa,2,3,77,75%
-SEMANA 4,DÍA 2,Envión,3,2,72,74%
-SEMANA 4,DÍA 2,Front Squat Dinámica,2,3,78,75%
-SEMANA 4,DÍA 3,Yerk Rack,2,2,65,65%
-SEMANA 4,DÍA 4,Arranque,5,1,—,85-90%
-SEMANA 4,DÍA 4,Back Squat,2,2,95,76%
+﻿Semana,Día,Patrón,Carga,Ejercicio,Series,Repeticiones,KG,Porcentaje,Volumen_Semana
+SEMANA 1,DÍA 1,A,MEDIA,Arranque Completo,6,3,61,65%,193
+SEMANA 1,DÍA 1,A,MEDIA,Front Squat Pausa,5,5,73,72%,193
+SEMANA 1,DÍA 2,A,ALTA,Envión Completo,6,3,63,66%,193
+SEMANA 1,DÍA 2,A,ALTA,Front Squat Dinámica,5,6,74,72%,193
+SEMANA 1,DÍA 2,A,ALTA,Clean Pull,4,5,77,71%,193
+SEMANA 1,DÍA 3,A,BAJA,Jerk Rack,3,3,60,63%,193
+SEMANA 1,DÍA 4,A,ALTA,Arranque Completo,6,4,62,66%,193
+SEMANA 1,DÍA 4,A,ALTA,Back Squat,5,6,92,75%,193
+SEMANA 1,DÍA 4,A,ALTA,Snatch Pull,4,5,76,71%,193
+SEMANA 2,DÍA 1,B,MEDIA,Envión Completo,6,4,65,68%,237
+SEMANA 2,DÍA 1,B,MEDIA,Front Squat Dinámica,5,6,75,73%,237
+SEMANA 2,DÍA 2,B,ALTA,Arranque Completo,6,4,63,67%,237
+SEMANA 2,DÍA 2,B,ALTA,Back Squat Pausa,5,7,74,73%,237
+SEMANA 2,DÍA 2,B,ALTA,Snatch Pull,4,6,77,71%,237
+SEMANA 2,DÍA 3,B,BAJA,Arranque Pausa Baja,3,4,61,64%,237
+SEMANA 2,DÍA 4,B,ALTA,Envión Completo,6,4,65,68%,237
+SEMANA 2,DÍA 4,B,ALTA,Back Squat,5,7,94,76%,237
+SEMANA 2,DÍA 4,B,ALTA,Clean Pull Hombros,4,6,77,71%,237
+SEMANA 3,DÍA 1,A,MEDIA,Arranque Completo,5,3,72,75%,135
+SEMANA 3,DÍA 1,A,MEDIA,Front Squat Pausa,4,4,78,77%,135
+SEMANA 3,DÍA 2,A,ALTA,Envión Completo,5,3,74,76%,135
+SEMANA 3,DÍA 2,A,ALTA,Front Squat Dinámica,4,5,79,77%,135
+SEMANA 3,DÍA 2,A,ALTA,Clean Pull,3,4,80,73%,135
+SEMANA 3,DÍA 3,A,BAJA,Jerk Rack,2,3,73,71%,135
+SEMANA 3,DÍA 4,A,ALTA,Arranque Completo,5,3,73,76%,135
+SEMANA 3,DÍA 4,A,ALTA,Back Squat,4,5,100,80%,135
+SEMANA 3,DÍA 4,A,ALTA,Snatch Pull,3,4,78,73%,135
+SEMANA 4,DÍA 1,B,MEDIA,Envión Ligero,3,2,70,73%,37
+SEMANA 4,DÍA 1,B,MEDIA,Front Squat Pausa,2,2,77,75%,37
+SEMANA 4,DÍA 2,B,ALTA,Arranque,3,2,72,74%,37
+SEMANA 4,DÍA 2,B,ALTA,Front Squat,2,2,78,75%,37
+SEMANA 4,DÍA 3,B,BAJA,Arranque Técnico,2,2,65,65%,37
+SEMANA 4,DÍA 4,B,ALTA,Envión Test 1RM,5,1,—,85-90%,37
+SEMANA 4,DÍA 4,B,ALTA,Back Squat,2,2,95,76%,37
