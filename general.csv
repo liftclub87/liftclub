@@ -1,8 +1,35 @@
-Dia,Bloque,Ejercicio,Series,Reps,Enfoque,Porcentaje,MovimientoBase
-Día 1,Fuerza + Técnica base,Sentadilla trasera,4,8,Fuerza,70,SentadillaTrasera
-Día 1,Fuerza + Técnica base,Press militar,3,10,Fuerza,,
-Día 1,Fuerza + Técnica base,Remo con barra,3,10,Fuerza,,
-Día 2,Técnica olímpica,Arranque (técnica),5,3,Técnica,60,Arranque
-Día 2,Técnica olímpica,Envión (técnica),5,2,Técnica,55,Envion
-Día 2,Técnica olímpica,Sentadilla frontal,4,6,Fuerza,65,SentadillaDelantera
-Día 2,Técnica olímpica,Plancha (core),3,30 seg,Core,,
+﻿Semana,Día,Ejercicio,Series,Repeticiones,KG,Porcentaje
+SEMANA 1,DÍA 1,Arr.Parado+Sent,6,3,61,65%
+SEMANA 1,DÍA 1,Back Squat+Pausa,5,6,73,72%
+SEMANA 1,DÍA 2,Envión,6,3,63,66%
+SEMANA 1,DÍA 2,Front Squat Dinámica,5,6,74,72%
+SEMANA 1,DÍA 2,Clean Pull Hombros,4,5,77,71%
+SEMANA 1,DÍA 3,Yerk Rack,3,3,60,63%
+SEMANA 1,DÍA 4,Arranque,6,3,62,66%
+SEMANA 1,DÍA 4,Back Squat,5,6,92,75%
+SEMANA 1,DÍA 4,Snatch Pull Hombros,4,5,76,71%
+SEMANA 2,DÍA 1,Arr.Parado+Sent,6,4,63,67%
+SEMANA 2,DÍA 1,Back Squat+Pausa,5,7,74,73%
+SEMANA 2,DÍA 2,Envión,6,4,65,68%
+SEMANA 2,DÍA 2,Front Squat Dinámica,5,7,75,73%
+SEMANA 2,DÍA 2,Clean Pull Hombros,4,6,77,71%
+SEMANA 2,DÍA 3,Yerk Rack,3,4,61,64%
+SEMANA 2,DÍA 4,Arranque,6,4,64,68%
+SEMANA 2,DÍA 4,Back Squat,5,7,94,76%
+SEMANA 2,DÍA 4,Snatch Pull Hombros,4,6,76,71%
+SEMANA 3,DÍA 1,Arr.Parado+Sent,5,3,72,75%
+SEMANA 3,DÍA 1,Back Squat+Pausa,4,5,78,77%
+SEMANA 3,DÍA 2,Envión,5,3,74,76%
+SEMANA 3,DÍA 2,Front Squat Dinámica,4,5,79,77%
+SEMANA 3,DÍA 2,Clean Pull Hombros,3,4,80,73%
+SEMANA 3,DÍA 3,Yerk Rack,2,3,73,71%
+SEMANA 3,DÍA 4,Arranque,5,3,73,76%
+SEMANA 3,DÍA 4,Back Squat,4,5,100,80%
+SEMANA 3,DÍA 4,Snatch Pull Hombros,3,4,78,73%
+SEMANA 4,DÍA 1,Arr.Parado+Sent,3,2,70,73%
+SEMANA 4,DÍA 1,Back Squat+Pausa,2,3,77,75%
+SEMANA 4,DÍA 2,Envión,3,2,72,74%
+SEMANA 4,DÍA 2,Front Squat Dinámica,2,3,78,75%
+SEMANA 4,DÍA 3,Yerk Rack,2,2,65,65%
+SEMANA 4,DÍA 4,Arranque,5,1,—,85-90%
+SEMANA 4,DÍA 4,Back Squat,2,2,95,76%
