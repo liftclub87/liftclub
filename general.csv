@@ -1,35 +1,35 @@
 ﻿Semana,Día,Patrón,Carga,Ejercicio,Series,Repeticiones,KG,Porcentaje,Volumen_Semana
-SEMANA 1,DÍA 1,A,MEDIA,Arr. Parado+Sent,6,3,61,65%,193
-SEMANA 1,DÍA 1,A,MEDIA,Sent.Del+Pausa,5,5,73,72%,193
-SEMANA 1,DÍA 2,A,ALTA,Envión,6,3,63,66%,193
-SEMANA 1,DÍA 2,A,ALTA,Sent.Del.Dinámica,5,6,74,72%,193
-SEMANA 1,DÍA 2,A,ALTA,Clean Pull +Hombros,4,5,77,71%,193
-SEMANA 1,DÍA 3,A,BAJA,Jerk Rack,3,3,60,63%,193
-SEMANA 1,DÍA 4,A,ALTA,Arranque,6,4,62,66%,193
-SEMANA 1,DÍA 4,A,ALTA,Sentadilla,5,6,92,75%,193
-SEMANA 1,DÍA 4,A,ALTA,Halón Arr. Alto,4,5,76,71%,193
-SEMANA 2,DÍA 1,B,MEDIA,Envión,6,4,65,68%,237
-SEMANA 2,DÍA 1,B,MEDIA,Sent.Del.Dinámica,5,6,75,73%,237
-SEMANA 2,DÍA 2,B,ALTA,Arranque,6,4,63,67%,237
-SEMANA 2,DÍA 2,B,ALTA,Sentadilla,5,7,74,73%,237
-SEMANA 2,DÍA 2,B,ALTA,Halón Arr. Alto,4,6,77,71%,237
-SEMANA 2,DÍA 3,B,BAJA,Arranque Pausa Baja,3,4,61,64%,237
-SEMANA 2,DÍA 4,B,ALTA,Envión,6,4,65,68%,237
-SEMANA 2,DÍA 4,B,ALTA,Sentadilla,5,7,94,76%,237
-SEMANA 2,DÍA 4,B,ALTA,Halón Env +Hombros,4,6,77,71%,237
-SEMANA 3,DÍA 1,A,MEDIA,Arranque,5,3,72,75%,135
-SEMANA 3,DÍA 1,A,MEDIA,Sent.Del+Pausa,4,4,78,77%,135
-SEMANA 3,DÍA 2,A,ALTA,Envión,5,3,74,76%,135
-SEMANA 3,DÍA 2,A,ALTA,Sent.Del.Dinámica,4,5,79,77%,135
-SEMANA 3,DÍA 2,A,ALTA,Halón Env +Hombros,3,4,80,73%,135
-SEMANA 3,DÍA 3,A,BAJA,Jerk Rack,2,3,73,71%,135
-SEMANA 3,DÍA 4,A,ALTA,Arranque,5,3,73,76%,135
-SEMANA 3,DÍA 4,A,ALTA,Sentadilla,4,5,100,80%,135
-SEMANA 3,DÍA 4,A,ALTA,Halón Arr. Alto,3,4,78,73%,135
-SEMANA 4,DÍA 1,B,MEDIA,Clean Colgado Parado,3,2,70,73%,37
-SEMANA 4,DÍA 1,B,MEDIA,Sent. Delante,2,2,77,75%,37
-SEMANA 4,DÍA 2,B,ALTA,Arranque,3,2,72,74%,37
-SEMANA 4,DÍA 2,B,ALTA,Sentadilla,2,2,78,75%,37
-SEMANA 4,DÍA 3,B,BAJA,Arranque,2,2,65,65%,37
-SEMANA 4,DÍA 4,B,ALTA,Envión,5,1,—,85-90%,37
-SEMANA 4,DÍA 4,B,ALTA,Sentadilla,2,2,95,76%,37
+SEMANA 1,DÍA 1,A,MEDIA,Arr. Parado+Sent,4,3,61,65%,150
+SEMANA 1,DÍA 1,A,MEDIA,Sent.Del+Pausa,5,4,73,72%,150
+SEMANA 1,DÍA 2,A,ALTA,Envión,6,3,63,66%,150
+SEMANA 1,DÍA 2,A,ALTA,Sent.Del.Dinámica,5,5,74,72%,150
+SEMANA 1,DÍA 2,A,ALTA,Clean Pull +Hombros,4,4,77,71%,150
+SEMANA 1,DÍA 3,A,BAJA,Jerk Rack,3,3,60,63%,150
+SEMANA 1,DÍA 4,A,ALTA,Arranque,6,2,62,66%,150
+SEMANA 1,DÍA 4,A,ALTA,Sentadilla,5,5,92,75%,150
+SEMANA 1,DÍA 4,A,ALTA,Halón Arr. Alto,4,4,76,71%,150
+SEMANA 2,DÍA 1,B,MEDIA,Envión,6,4,65,68%,220
+SEMANA 2,DÍA 1,B,MEDIA,Sent.Del.Dinámica,5,5,75,73%,220
+SEMANA 2,DÍA 2,B,ALTA,Arranque,6,4,63,67%,220
+SEMANA 2,DÍA 2,B,ALTA,Sentadilla,5,7,74,73%,220
+SEMANA 2,DÍA 2,B,ALTA,Halón Arr. Alto,4,6,77,71%,220
+SEMANA 2,DÍA 3,B,BAJA,Arranque Pausa Baja,3,4,61,64%,220
+SEMANA 2,DÍA 4,B,ALTA,Envión,6,4,65,68%,220
+SEMANA 2,DÍA 4,B,ALTA,Sentadilla,5,5,94,76%,220
+SEMANA 2,DÍA 4,B,ALTA,Halón Env +Hombros,4,6,77,71%,220
+SEMANA 3,DÍA 1,A,MEDIA,Arranque,5,3,72,75%,125
+SEMANA 3,DÍA 1,A,MEDIA,Sent.Del+Pausa,4,4,78,77%,125
+SEMANA 3,DÍA 2,A,ALTA,Envión,5,3,74,76%,125
+SEMANA 3,DÍA 2,A,ALTA,Sent.Del.Dinámica,4,5,79,77%,125
+SEMANA 3,DÍA 2,A,ALTA,Halón Env +Hombros,3,5,80,73%,125
+SEMANA 3,DÍA 3,A,BAJA,Jerk Rack,2,3,73,71%,125
+SEMANA 3,DÍA 4,A,ALTA,Arranque,5,2,73,76%,125
+SEMANA 3,DÍA 4,A,ALTA,Sentadilla,4,5,100,80%,125
+SEMANA 3,DÍA 4,A,ALTA,Halón Arr. Alto,3,4,78,73%,125
+SEMANA 4,DÍA 1,B,MEDIA,Clean Colgado Parado,4,3,70,73%,75
+SEMANA 4,DÍA 1,B,MEDIA,Sent. Delante,3,4,77,75%,75
+SEMANA 4,DÍA 2,B,ALTA,Arranque,5,3,72,74%,75
+SEMANA 4,DÍA 2,B,ALTA,Sentadilla,4,4,78,75%,75
+SEMANA 4,DÍA 3,B,BAJA,Arranque Pausa,2,3,65,65%,75
+SEMANA 4,DÍA 4,B,ALTA,Envión,5,1,—,85-90%,75
+SEMANA 4,DÍA 4,B,ALTA,Sentadilla,3,3,95,76%,75
