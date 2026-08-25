@@ -90,6 +90,30 @@
     text-decoration:none;
   }
 
+  .prepFisicaBtn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    background:transparent;
+    color:var(--pink);
+    border:1px solid var(--pink);
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:11px 20px;
+    border-radius:10px;
+    margin-bottom:24px;
+    transition:transform .15s ease, background .15s ease;
+  }
+
+  .prepFisicaBtn:hover{
+    background:rgba(237,29,126,.1);
+    transform:translateY(-2px);
+  }
+
   /* ---- Tarjeta de marcas personales ---- */
 
   .marcasCard{
@@ -301,6 +325,11 @@
     <h1>Plan</h1>
     <a href="portal.html" class="backLink">&larr; Volver al Portal</a>
   </div>
+
+  <a href="https://liftclub87.net/culturismo" target="_blank" rel="noopener" class="prepFisicaBtn">
+    Preparación Física
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+  </a>
 
   <div class="marcasCard">
     <h2>Tus marcas</h2>
