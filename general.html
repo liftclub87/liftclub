@@ -367,10 +367,12 @@
   // Detecta a cuál de las 4 marcas pertenece un ejercicio, por palabras clave en su nombre.
   function detectarMovimiento(nombreEjercicio) {
     const n = (nombreEjercicio || "").toLowerCase();
-    if (n.includes("front squat")) return "FrontSquat";
-    if (n.includes("back squat")) return "BackSquat";
-    if (n.includes("snatch") || n.includes("arr") ) return "Arranque";
-    if (n.includes("envi") || n.includes("clean") || n.includes("yerk") || n.includes("jerk")) return "Envion";
+    if (n.includes("front squat") || n.includes("delante") || n.includes("frontal") || n.includes("del+") || n.includes("del.") || n.includes(".del")) {
+      return "FrontSquat";
+    }
+    if (n.includes("snatch") || n.includes("arr")) return "Arranque";
+    if (n.includes("env") || n.includes("clean") || n.includes("yerk") || n.includes("jerk")) return "Envion";
+    if (n.includes("back squat") || n.includes("sent") || n.includes("squat")) return "BackSquat";
     return null;
   }
 

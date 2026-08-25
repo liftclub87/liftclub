@@ -280,9 +280,10 @@
 
 <script>
 
-  // Mapa de roles a sus páginas de plan/monitoreo. null = todavía no construida.
+  // Mapa de roles a sus páginas de plan/monitoreo.
+  // personalizado:true = plan individual (muestra el nombre); false = usa el plan general (muestra "Plan").
   const ATLETAS = {
-    general:  { nombre: "Plan General", plan: "general.html", monitoreo: null,               personalizado: false },
+    general:  { nombre: "Plan General", plan: "general.html", monitoreo: null,                 personalizado: false },
     dana:     { nombre: "Dana",     plan: "general.html", monitoreo: "Dana_monitoreo.html", personalizado: false },
     gian:     { nombre: "Gian",     plan: "general.html", monitoreo: null,                  personalizado: false },
     kevin:    { nombre: "Kevin",    plan: "general.html", monitoreo: null,                  personalizado: false },
@@ -329,7 +330,7 @@
     Object.entries(ATLETAS).forEach(([clave, a]) => {
       if (a.plan && !planesMostrados.has(a.plan)) {
         planesMostrados.add(a.plan);
-        const etiqueta = a.personalizado ? a.nombre : "Plan General";
+        const etiqueta = a.personalizado ? a.nombre : "Plan";
         html += `
           <a href="${a.plan}" class="athlete">
             <div class="initial">${a.personalizado ? a.nombre.charAt(0) : "◇"}</div>
