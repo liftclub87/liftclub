@@ -1,20 +1,16 @@
 {
   "routes": [
     {
-      "route": "/portal.html",
-      "allowedRoles": ["authenticated"]
-    },
-    {
       "route": "/carga-intensidad.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["admin", "general", "melisson", "dana", "gian", "kevin", "maroto", "melina", "sebas", "andres", "elena"]
     },
     {
       "route": "/metodologia.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["admin", "general", "melisson", "dana", "gian", "kevin", "maroto", "melina", "sebas", "andres", "elena"]
     },
     {
       "route": "/general.html",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["admin", "general", "dana", "gian", "kevin", "maroto", "melina", "sebas", "andres", "elena"]
     },
     {
       "route": "/Dana.html",
