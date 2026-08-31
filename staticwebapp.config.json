@@ -12,6 +12,10 @@
   },
   "routes": [
     {
+      "route": "/portal.html",
+      "allowedRoles": ["authenticated"]
+    },
+    {
       "route": "/carga-intensidad.html",
       "allowedRoles": ["authenticated"]
     },
