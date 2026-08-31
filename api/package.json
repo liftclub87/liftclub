@@ -1,7 +1,6 @@
 {
   "name": "liftclub-api",
   "version": "1.0.0",
-  "description": "Funcion de asignacion de roles para Lift Club",
-  "main": "GetRoles/index.js"
+  "description": "Funcion de asignacion de roles para Lift Club"
 }
 
