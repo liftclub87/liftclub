@@ -1,4 +1,15 @@
 {
+  "auth": {
+    "identityProviders": {
+      "google": {
+        "userDetails": "from_id_token",
+        "registration": {
+          "clientIdSettingName": "GOOGLE_CLIENT_ID",
+          "clientSecretSettingName": "GOOGLE_CLIENT_SECRET"
+        }
+      }
+    }
+  },
   "routes": [
     {
       "route": "/carga-intensidad.html",
