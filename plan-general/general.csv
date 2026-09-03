@@ -1,0 +1,61 @@
+﻿Semana,Atleta,Dia,Bloque,Ejercicio,Series,Reps,Enfoque,Porcentaje,Kg,Reps>=70%
+1,GENERAL,Día 1,Arranque (Media),Arr+OverHeadSquat,4,3,,0.8,67,12
+1,GENERAL,Día 1,Arranque (Media),Arr.Colgado,3,2,,0.7,81,6
+1,GENERAL,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,5,3,,0.8,76,15
+1,GENERAL,Día 1,Arranque (Media),Sentadilla Detrás,4,3,,0.8,76,12
+1,GENERAL,Día 2,Envión (Alta),Envión,4,2,,0.75,75,8
+1,GENERAL,Día 2,Envión (Alta),Clean Colgado,3,2,,0.7,70,6
+1,GENERAL,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,5,3,,0.95,95,15
+1,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,4,,0.8,80,12
+1,GENERAL,Día 3,Envion(Baja),Clean Colgado Parado,3,3,,0.7,70,9
+1,GENERAL,Día 3,Envion(Baja),Yerk desde Rack,3,3,,0.8,114,9
+1,GENERAL,Día 3,Envion(Baja),Sentadilla Delante con Pausa,4,3,,0.85,122,12
+1,GENERAL,Día 4,Arranque (Alto),Arranque,4,2,,0.85,85,8
+1,GENERAL,Día 4,Arranque (Alto),Halón Arr. Colg. Alto,4,3,,0.9,86,12
+1,GENERAL,Día 4,Arranque (Alto),Sentadilla Detrás,4,3,,0.8,92,12
+1,GENERAL,Día 4,Arranque (Alto),Salto Arr. Técnico,3,5,,0.85,85,15
+2,GENERAL,Día 1,Arranque (Media),Arr+OverHeadSquat,4,5,,0.7,67,20
+2,GENERAL,Día 1,Arranque (Media),Arr.Colgado,3,4,,0.7,81,12
+2,GENERAL,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,5,5,,0.8,76,25
+2,GENERAL,Día 1,Arranque (Media),Sentadilla Detrás,4,5,,0.8,76,20
+2,GENERAL,Día 2,Envión (Alta),Envión,4,4,,0.75,75,16
+2,GENERAL,Día 2,Envión (Alta),Clean Colgado,3,4,,0.7,70,12
+2,GENERAL,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,5,5,,0.95,95,25
+2,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,6,,0.8,80,18
+2,GENERAL,Día 3,Envion(Baja),Clean Colgado Parado,3,5,,0.7,70,15
+2,GENERAL,Día 3,Envion(Baja),Yerk desde Rack,3,5,,0.8,114,15
+2,GENERAL,Día 3,Envion(Baja),Sentadilla Delante con Pausa,4,5,,0.85,122,20
+2,GENERAL,Día 4,Arranque (Alto),Arranque,4,4,,0.85,85,16
+2,GENERAL,Día 4,Arranque (Alto),Halón Arr. Colg. Alto,4,5,,0.9,86,20
+2,GENERAL,Día 4,Arranque (Alto),Sentadilla Detrás,4,5,,0.8,92,20
+2,GENERAL,Día 4,Arranque (Alto),Salto Arr. Técnico,3,7,,0.85,85,21
+3,GENERAL,Día 1,Arranque (Media),Arr+OverHeadSquat,5,3,,0.7,67,15
+3,GENERAL,Día 1,Arranque (Media),Arr.Colgado,4,3,,0.7,81,12
+3,GENERAL,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,6,3,,0.8,76,18
+3,GENERAL,Día 1,Arranque (Media),Sentadilla Detrás,5,3,,0.8,76,15
+3,GENERAL,Día 2,Envión (Alta),Envión,5,2,,0.75,75,10
+3,GENERAL,Día 2,Envión (Alta),Clean Colgado,4,2,,0.7,70,8
+3,GENERAL,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,6,3,,0.95,95,18
+3,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,4,3,,0.8,80,12
+3,GENERAL,Día 3,Envion(Baja),Clean Colgado Parado,4,3,,0.7,70,12
+3,GENERAL,Día 3,Envion(Baja),Yerk desde Rack,4,3,,0.8,114,12
+3,GENERAL,Día 3,Envion(Baja),Sentadilla Delante con Pausa,5,3,,0.85,122,15
+3,GENERAL,Día 4,Arranque (Alto),Arranque,5,3,,0.85,85,15
+3,GENERAL,Día 4,Arranque (Alto),Halón Arr. Colg. Alto,5,3,,0.9,86,15
+3,GENERAL,Día 4,Arranque (Alto),Sentadilla Detrás,5,3,,0.8,92,15
+3,GENERAL,Día 4,Arranque (Alto),Salto Arr. Técnico,4,3,,0.85,85,12
+4,GENERAL,Día 1,Arranque (Media),Arr+OverHeadSquat,4,3,,0.85,81,12
+4,GENERAL,Día 1,Arranque (Media),Arr.Colgado,3,2,,0.8,92,6
+4,GENERAL,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,5,3,,0.9,86,15
+4,GENERAL,Día 1,Arranque (Media),Sentadilla Detrás,4,3,,0.85,81,12
+4,GENERAL,Día 2,Envión (Alta),Envión,4,2,,0.85,85,8
+4,GENERAL,Día 2,Envión (Alta),Clean Colgado,3,2,,0.8,80,6
+4,GENERAL,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,5,3,,0.95,95,15
+4,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,4,,0.85,85,12
+4,GENERAL,Día 3,Envion(Baja),Clean Colgado Parado,3,3,,0.8,80,9
+4,GENERAL,Día 3,Envion(Baja),Yerk desde Rack,3,3,,0.85,122,9
+4,GENERAL,Día 3,Envion(Baja),Sentadilla Delante con Pausa,4,3,,0.9,129,12
+4,GENERAL,Día 4,Arranque (Alto),Arranque,4,2,,0.9,90,8
+4,GENERAL,Día 4,Arranque (Alto),Halón Arr. Colg. Alto,4,3,,1,95,12
+4,GENERAL,Día 4,Arranque (Alto),Sentadilla Detrás,4,3,,1,115,12
+4,GENERAL,Día 4,Arranque (Alto),Salto Arr. Técnico,3,5,,1,100,15
