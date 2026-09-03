@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lift Club - Plan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --bg:#0F0F0F;
+    --cyan:#5FCAE7;
+    --pink:#ED1D7E;
+    --yellow:#FDD700;
+    --paper:#17181A;
+    --line:#26282B;
+    --muted:#8b9096;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Inter',sans-serif;
+    color:#EDEFF1;
+  }
+
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 40px;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(10px);
+    z-index:10;
+  }
+
+  nav img.logo{ height:26px; }
+
+  .navLinks{ display:flex; gap:6px; }
+
+  .navLinks a{
+    color:#c9cdd1;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:9px 18px;
+    border-radius:999px;
+  }
+
+  .navLinks a:hover{ color:#fff; background:var(--paper); }
+
+  .wrap{
+    max-width:700px;
+    margin:0 auto;
+    padding:50px 24px 100px;
+  }
+
+  .pageHead{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:30px;
+  }
+
+  .pageHead h1{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:30px;
+    letter-spacing:.5px;
+    margin:0;
+    color:#fff;
+  }
+
+  .backLink{
+    font-size:13px;
+    font-weight:600;
+    color:var(--cyan);
+    text-decoration:none;
+  }
+
+  .prepFisicaBtn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    background:transparent;
+    color:var(--pink);
+    border:1px solid var(--pink);
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:11px 20px;
+    border-radius:10px;
+    margin-bottom:24px;
+    transition:transform .15s ease, background .15s ease;
+  }
+
+  .prepFisicaBtn:hover{
+    background:rgba(237,29,126,.1);
+    transform:translateY(-2px);
+  }
+
+  /* ---- Tarjeta de marcas personales ---- */
+
+  .marcasCard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--pink);
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:30px;
+  }
+
+  .marcasCard h2{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--pink);
+    margin:0 0 6px;
+  }
+
+  .marcasCard .sub{
+    font-size:12.5px;
+    color:var(--muted);
+    margin:0 0 18px;
+    line-height:1.5;
+  }
+
+  .marcasGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:14px;
+    margin-bottom:16px;
+  }
+
+  .marcasGrid label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+
+  .marcasGrid input{
+    width:100%;
+    background:var(--bg);
+    border:1px solid var(--line);
+    color:#fff;
+    font-family:'Bungee', sans-serif;
+    font-size:18px;
+    padding:10px 12px;
+    border-radius:8px;
+  }
+
+  .marcasGrid input:focus{ outline:none; border-color:var(--cyan); }
+
+  .marcasCard button{
+    background:var(--cyan);
+    color:var(--bg);
+    border:none;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+  }
+
+  /* ---- Tarjetas del plan ---- */
+
+  .weekHead{
+    margin:34px 0 8px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .weekHead:first-child{ margin-top:0; }
+
+  .weekTitle{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:16px;
+    color:var(--yellow);
+  }
+
+  .weekMeta{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:4px;
+  }
+
+  .dayLabel{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin:22px 0 12px;
+  }
+
+  .cardGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(230px,1fr));
+    gap:12px;
+  }
+
+  .exCard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cyan);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+
+  .exName{
+    font-size:14.5px;
+    font-weight:600;
+    color:#fff;
+    margin-bottom:14px;
+    line-height:1.35;
+  }
+
+  .exStats{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .exStats span{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:18px;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .exStats small{
+    font-family:'Inter',sans-serif;
+    font-size:9.5px;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--muted);
+    letter-spacing:.5px;
+  }
+
+  .exStats .kgCalc{ color:var(--pink); }
+
+  .pendiente{
+    font-size:10px;
+    color:var(--muted);
+    font-style:italic;
+  }
+
+  .notaAjuste{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:14px;
+    padding:18px 20px;
+    margin-bottom:30px;
+  }
+
+  .notaAjuste p{
+    margin:0 0 10px;
+    font-size:12.5px;
+    color:#c9cdd1;
+    line-height:1.6;
+  }
+
+  .notaAjuste p:last-child{ margin-bottom:0; }
+
+  .notaAjuste ul{
+    margin:0;
+    padding-left:18px;
+  }
+
+  .notaAjuste li{
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+
+  .notaAjuste strong{ color:#fff; }
+
+  .empty{
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  @media (max-width:640px){
+    nav{ padding:16px 20px; }
+    .wrap{ padding:36px 20px 60px; }
+  }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img class="logo" src="../assets/logo.png" alt="Lift Club">
+  <div class="navLinks">
+    <a href="../privado/portal.html">Portal</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="pageHead">
+    <h1>Plan</h1>
+    <a href="../privado/portal.html" class="backLink">&larr; Volver al Portal</a>
+  </div>
+
+  <a href="https://liftclub87.net/culturismo" target="_blank" rel="noopener" class="prepFisicaBtn">
+    Preparación Física
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+  </a>
+
+  <div class="marcasCard">
+    <h2>Tus marcas</h2>
+    <p class="sub">Ingresa tu máximo (PR) actual en cada movimiento. El plan calcula el peso de trabajo automáticamente según el porcentaje de cada ejercicio.</p>
+    <div class="marcasGrid" id="marcasGrid"></div>
+    <button onclick="recalcular()">Calcular pesos</button>
+  </div>
+
+  <div class="notaAjuste">
+    <p>A pesar de los porcentajes, el plan puede ajustarse en la intensidad: si no logras completar el peso establecido, realiza el <strong>peso más próximo</strong> que sí cumpla estos tres criterios en cada repetición:</p>
+    <ul>
+      <li><strong>Sin dolor</strong></li>
+      <li><strong>Técnico</strong></li>
+      <li><strong>Con cierta exigencia</strong></li>
+    </ul>
+  </div>
+
+  <div id="planContenedor">
+    <p class="empty">Cargando plan...</p>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script>
+
+  // Las 4 marcas fijas que usa este plan.
+  const CATEGORIAS_PR = [
+    { clave: "Arranque",   etiqueta: "Arranque" },
+    { clave: "Envion",     etiqueta: "Envión" },
+    { clave: "BackSquat",  etiqueta: "Back Squat" },
+    { clave: "FrontSquat", etiqueta: "Front Squat" },
+  ];
+
+  // Detecta a cuál de las 4 marcas pertenece un ejercicio, por palabras clave en su nombre.
+  function detectarMovimiento(nombreEjercicio) {
+    const n = (nombreEjercicio || "").toLowerCase();
+    if (n.includes("front squat") || n.includes("delante") || n.includes("frontal") || n.includes("del+") || n.includes("del.") || n.includes(".del")) {
+      return "FrontSquat";
+    }
+    if (n.includes("snatch") || n.includes("arr")) return "Arranque";
+    if (n.includes("env") || n.includes("clean") || n.includes("yerk") || n.includes("jerk") || n.includes("push press")) return "Envion";
+    if (n.includes("back squat") || n.includes("sent") || n.includes("squat")) return "BackSquat";
+    return null;
+  }
+
+  function parsePorcentaje(valor) {
+    if (!valor) return null;
+    const limpio = String(valor).replace("%", "").trim();
+    const num = parseFloat(limpio);
+    return isNaN(num) ? null : num;
+  }
+
+  let filasPlan = [];
+
+  function cargarMarcasGuardadas() {
+    const guardado = localStorage.getItem("liftclub_marcas");
+    return guardado ? JSON.parse(guardado) : {};
+  }
+
+  function guardarMarcas(marcas) {
+    localStorage.setItem("liftclub_marcas", JSON.stringify(marcas));
+  }
+
+  function construirInputsMarcas() {
+    const marcasGuardadas = cargarMarcasGuardadas();
+    const grid = document.getElementById("marcasGrid");
+    grid.innerHTML = CATEGORIAS_PR.map(cat => `
+      <div>
+        <label for="marca_${cat.clave}">${cat.etiqueta} (kg)</label>
+        <input type="number" id="marca_${cat.clave}" placeholder="Ej: 60" value="${marcasGuardadas[cat.clave] || ""}">
+      </div>
+    `).join("");
+  }
+
+  function leerMarcasActuales() {
+    const marcas = {};
+    CATEGORIAS_PR.forEach(cat => {
+      const val = parseFloat(document.getElementById("marca_" + cat.clave).value);
+      if (!isNaN(val) && val > 0) marcas[cat.clave] = val;
+    });
+    return marcas;
+  }
+
+  function recalcular() {
+    const marcas = leerMarcasActuales();
+    guardarMarcas(marcas);
+    renderizarPlan(marcas);
+  }
+
+  function renderizarPlan(marcas) {
+    const contenedor = document.getElementById("planContenedor");
+
+    const filasConDatos = filasPlan.filter(f => f["Ejercicio"] && f["Ejercicio"].trim() !== "");
+
+    if (filasConDatos.length === 0) {
+      contenedor.innerHTML = `<p class="empty">Todavía no hay ejercicios cargados en el plan general.</p>`;
+      return;
+    }
+
+    const semanas = {};
+    filasConDatos.forEach(f => {
+      const sKey = f["Semana"] || "Semana 1";
+      if (!semanas[sKey]) semanas[sKey] = { volumen: f["VolumenSemana"] ? parseFloat(f["VolumenSemana"]) : 0, dias: {} };
+      const val70 = parseFloat(f["Reps>=70%"]);
+      if (!f["VolumenSemana"] && !isNaN(val70)) semanas[sKey].volumen += val70;
+      const dKey = f["Día"] || f["Dia"] || "";
+      if (!semanas[sKey].dias[dKey]) semanas[sKey].dias[dKey] = [];
+      semanas[sKey].dias[dKey].push(f);
+    });
+
+    const semanasOrdenadas = Object.keys(semanas).sort((a, b) => {
+      const na = parseInt(a.replace(/\D/g, ""), 10) || 0;
+      const nb = parseInt(b.replace(/\D/g, ""), 10) || 0;
+      return na - nb;
+    });
+
+    let html = "";
+
+    semanasOrdenadas.forEach(sKey => {
+      const numSemana = parseInt(sKey.replace(/\D/g, ""), 10) || sKey;
+      const volumen = semanas[sKey].volumen;
+
+      html += `
+        <div class="weekHead">
+          <div class="weekTitle">Semana ${numSemana}</div>
+          ${volumen ? `<div class="weekMeta">Volumen efectivo: ${volumen} reps (≥70%)</div>` : ""}
+        </div>
+      `;
+
+      const dias = semanas[sKey].dias;
+      const diasOrdenados = Object.keys(dias).sort((a, b) => {
+        const na = parseInt(a.replace(/\D/g, ""), 10) || 0;
+        const nb = parseInt(b.replace(/\D/g, ""), 10) || 0;
+        return na - nb;
+      });
+
+      diasOrdenados.forEach(dKey => {
+        const ejercicios = dias[dKey];
+        const numDia = parseInt(dKey.replace(/\D/g, ""), 10) || dKey;
+        const bloque = ejercicios[0]["Bloque"];
+
+        html += `<div class="dayLabel">Día ${numDia}${bloque ? " · " + bloque : ""}</div><div class="cardGrid">`;
+
+        ejercicios.forEach(ex => {
+          const series = ex["Series"] || "—";
+          const reps = ex["Repeticiones"] || ex["Reps"] || "—";
+          const pct = parsePorcentaje(ex["Porcentaje"]);
+          const mov = detectarMovimiento(ex["Ejercicio"]);
+
+          let kgTexto = "—";
+          let kgClase = "";
+          if (pct && mov) {
+            const max = marcas[mov];
+            if (max) {
+              kgTexto = Math.round(pct * max);
+              kgClase = "kgCalc";
+            } else {
+              kgTexto = `<span class="pendiente">ingresa tu marca</span>`;
+            }
+          }
+
+          html += `
+            <div class="exCard">
+              <div class="exName">${ex["Ejercicio"]}</div>
+              <div class="exStats">
+                <span>${series}<small>series</small></span>
+                <span>${reps}<small>reps</small></span>
+                ${pct ? `<span>${Math.round(pct * 100)}%<small>intensidad</small></span>` : ""}
+                ${pct ? `<span class="${kgClase}">${kgTexto}<small>kg</small></span>` : ""}
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+      });
+    });
+
+    contenedor.innerHTML = html;
+  }
+
+  Papa.parse("general.csv?v=" + Date.now(), {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function (results) {
+      filasPlan = results.data;
+      construirInputsMarcas();
+      renderizarPlan(cargarMarcasGuardadas());
+    },
+    error: function () {
+      document.getElementById("planContenedor").innerHTML =
+        `<p class="empty">No se pudo cargar el plan general.</p>`;
+    }
+  });
+
+</script>
+
+</body>
+</html>
