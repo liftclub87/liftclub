@@ -242,7 +242,7 @@
   // Estas listas solo deciden QUE VE cada persona en esta pantalla.
   // La proteccion real la hace Cloudflare Access sobre cada carpeta.
   // Si agregas a alguien aca, agregalo tambien en la politica de Access.
-  // Quien no este en ninguna de estas dos listas ve el Plan General.
+  // Quien no este en ninguna de estas listas ve el Plan General.
   // ===================================================================
 
   const ADMIN = [
@@ -253,6 +253,14 @@
     "melisonaraya@gmail.com",
     "marotoignacio2@gmail.com",
     "joalmo1712@gmail.com",
+  ];
+
+  const PLAN_KINTSUGI = [
+    "dana.ramkellawan@gmail.com",
+    "melinamaroto01@gmail.com",
+    "marotoignacio2@gmail.com",
+    "joalmo1712@gmail.com",
+    "giancarlocasanova80@outlook.com",
   ];
 
   // ---- Definicion de tarjetas ----
@@ -270,6 +278,13 @@
       color: "",
       titulo: "Plan CRC",
       texto: "Programa de la seleccion nacional.",
+      accion: "Ver mi plan",
+    },
+    kintsugi: {
+      href: "../kintsugi/kintsugi.html",
+      color: "yellow",
+      titulo: "Kintsugi",
+      texto: "Plan de retorno progresivo tras lesion, por percepcion del esfuerzo (RPE).",
       accion: "Ver mi plan",
     },
     metodologia: {
@@ -320,12 +335,17 @@
     const T = TARJETAS;
     const esAdmin = ADMIN.includes(correo);
     const esCRC = PLAN_CRC.includes(correo);
+    const esKintsugi = PLAN_KINTSUGI.includes(correo);
 
     let tarjetas;
     if (esAdmin) {
-      tarjetas = [T.dashboard, T.planGeneral, T.planCRC, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.dashboard, T.planGeneral, T.planCRC, T.kintsugi, T.metodologia, T.cargaIntensidad];
+    } else if (esCRC && esKintsugi) {
+      tarjetas = [T.planCRC, T.kintsugi, T.metodologia, T.cargaIntensidad];
     } else if (esCRC) {
       tarjetas = [T.planCRC, T.metodologia, T.cargaIntensidad];
+    } else if (esKintsugi) {
+      tarjetas = [T.kintsugi, T.metodologia, T.cargaIntensidad];
     } else {
       tarjetas = [T.planGeneral, T.metodologia, T.cargaIntensidad];
     }
