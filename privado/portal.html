@@ -287,6 +287,13 @@
       texto: "Plan de retorno progresivo, por percepcion del esfuerzo (RPE).",
       accion: "Ver mi plan",
     },
+    patrones: {
+      href: "../patrones/patrones.html",
+      color: "",
+      titulo: "Patrones",
+      texto: "Preparacion fisica por patrones de movimiento: elegis el ejercicio segun tu nivel.",
+      accion: "Ver plan",
+    },
     metodologia: {
       href: "metodologia.html",
       color: "pink",
@@ -339,15 +346,15 @@
 
     let tarjetas;
     if (esAdmin) {
-      tarjetas = [T.dashboard, T.planGeneral, T.planCRC, T.kintsugi, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.dashboard, T.planGeneral, T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
     } else if (esCRC && esKintsugi) {
-      tarjetas = [T.planCRC, T.kintsugi, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
     } else if (esCRC) {
-      tarjetas = [T.planCRC, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.planCRC, T.patrones, T.metodologia, T.cargaIntensidad];
     } else if (esKintsugi) {
-      tarjetas = [T.kintsugi, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
     } else {
-      tarjetas = [T.planGeneral, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.planGeneral, T.patrones, T.metodologia, T.cargaIntensidad];
     }
 
     document.getElementById("titulo").textContent = nombre ? `Hola, ${nombre}` : "Bienvenido";
@@ -363,7 +370,7 @@
     document.getElementById("titulo").textContent = "Bienvenido";
     document.getElementById("correo").textContent = "";
     document.getElementById("contenido").innerHTML =
-      pintarTarjetas([TARJETAS.planGeneral, TARJETAS.metodologia, TARJETAS.cargaIntensidad]) +
+      pintarTarjetas([TARJETAS.planGeneral, TARJETAS.patrones, TARJETAS.metodologia, TARJETAS.cargaIntensidad]) +
       `<a class="salir" href="/cdn-cgi/access/logout">Cerrar sesion</a>`;
   }
 
