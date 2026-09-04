@@ -1,0 +1,181 @@
+Semana,Fecha Inicio,Fecha Fin,Día,Bloque,Ejercicio,Series,Reps,RPE,Enfoque
+1,07/09/2026,13/09/2026,1,Rodilla Dominante (Sentadilla),Goblet Squat,3,10-12,6-7,Nivel base
+1,07/09/2026,13/09/2026,1,Rodilla Dominante (Sentadilla),Back Squat,3,10-12,6-7,Nivel intermedio
+1,07/09/2026,13/09/2026,1,Rodilla Dominante (Sentadilla),Front Squat,3,10-12,6-7,Nivel avanzado
+1,07/09/2026,13/09/2026,1,Empuje Horizontal,Push-up,3,10-12,6-7,Nivel base
+1,07/09/2026,13/09/2026,1,Empuje Horizontal,DB Bench Press,3,10-12,6-7,Nivel intermedio
+1,07/09/2026,13/09/2026,1,Empuje Horizontal,Barbell Bench Press,3,10-12,6-7,Nivel avanzado
+1,07/09/2026,13/09/2026,1,Core - Flexión,Tuck Crunch,3,12,6,Nivel base
+1,07/09/2026,13/09/2026,1,Core - Flexión,Hollow Rock,3,12,6,Nivel intermedio
+1,07/09/2026,13/09/2026,1,Core - Flexión,L-sit Knee Extensions,3,12,6,Nivel avanzado
+1,07/09/2026,13/09/2026,1,Salto / Potencia,Jump-and-land Mechanics,3,5,6,Nivel base
+1,07/09/2026,13/09/2026,1,Salto / Potencia,Broad Jump,3,5,6,Nivel intermedio
+1,07/09/2026,13/09/2026,1,Salto / Potencia,Box Jump,3,5,6,Nivel avanzado
+1,07/09/2026,13/09/2026,2,Bisagra de Cadera,Romanian Deadlift,3,10-12,6-7,Nivel base
+1,07/09/2026,13/09/2026,2,Bisagra de Cadera,Deadlift,3,10-12,6-7,Nivel intermedio
+1,07/09/2026,13/09/2026,2,Bisagra de Cadera,Single-leg RDL,3,10-12,6-7,Nivel avanzado
+1,07/09/2026,13/09/2026,2,Tracción Horizontal,Inverted Row (TRX),3,10-12,6-7,Nivel base
+1,07/09/2026,13/09/2026,2,Tracción Horizontal,Ring Row,3,10-12,6-7,Nivel intermedio
+1,07/09/2026,13/09/2026,2,Tracción Horizontal,Remo con Barra,3,10-12,6-7,Nivel avanzado
+1,07/09/2026,13/09/2026,2,Extensión de Cadera/Tronco,Hip Extension,3,12,6,Nivel base
+1,07/09/2026,13/09/2026,2,Extensión de Cadera/Tronco,Back Extension,3,12,6,Nivel intermedio
+1,07/09/2026,13/09/2026,2,Extensión de Cadera/Tronco,Good Morning,3,12,6,Nivel avanzado
+1,07/09/2026,13/09/2026,3,Sentadilla Unilateral,Walking Lunge,3,10/pierna,6-7,Nivel base
+1,07/09/2026,13/09/2026,3,Sentadilla Unilateral,Reverse Lunge c/ Mancuernas,3,10/pierna,6-7,Nivel intermedio
+1,07/09/2026,13/09/2026,3,Sentadilla Unilateral,Bulgarian Split Squat,3,10/pierna,6-7,Nivel avanzado
+1,07/09/2026,13/09/2026,3,Empuje Vertical,DB Press Sentado,3,10-12,6-7,Nivel base
+1,07/09/2026,13/09/2026,3,Empuje Vertical,DB Push Press,3,10-12,6-7,Nivel intermedio
+1,07/09/2026,13/09/2026,3,Empuje Vertical,Barbell Push Press,3,10-12,6-7,Nivel avanzado
+1,07/09/2026,13/09/2026,3,Anti-Rotación / Estabilidad,Bird-dog,3,12,6,Nivel base
+1,07/09/2026,13/09/2026,3,Anti-Rotación / Estabilidad,Plancha con Tracción Unilateral,3,12,6,Nivel intermedio
+1,07/09/2026,13/09/2026,3,Anti-Rotación / Estabilidad,Pallof Press,3,12,6,Nivel avanzado
+1,07/09/2026,13/09/2026,3,Salto Horizontal,Jump-and-land Mechanics,3,5,6,Nivel base
+1,07/09/2026,13/09/2026,3,Salto Horizontal,Broad Jump,3,5,6,Nivel intermedio
+1,07/09/2026,13/09/2026,3,Salto Horizontal,Broad Jump (distancia progresiva),3,5,6,Nivel avanzado
+1,07/09/2026,13/09/2026,4,Tracción Overhead,DB Snatch,3,6,6,Nivel base
+1,07/09/2026,13/09/2026,4,Tracción Overhead,Muscle Snatch,3,6,6,Nivel intermedio
+1,07/09/2026,13/09/2026,4,Tracción Overhead,Power Snatch,3,6,6,Nivel avanzado
+1,07/09/2026,13/09/2026,4,Tracción Vertical,Pull-up c/ Banda,3,AMRAP-2,6-7,Nivel base
+1,07/09/2026,13/09/2026,4,Tracción Vertical,Strict Pull-up,3,AMRAP-2,6-7,Nivel intermedio
+1,07/09/2026,13/09/2026,4,Tracción Vertical,Kipping / C2B Pull-up,3,AMRAP-2,6-7,Nivel avanzado
+1,07/09/2026,13/09/2026,4,Kettlebell,Russian Swing,3,15,6-7,Nivel base
+1,07/09/2026,13/09/2026,4,Kettlebell,American Swing,3,15,6-7,Nivel intermedio
+1,07/09/2026,13/09/2026,4,Kettlebell,Kettlebell Clean,3,15,6-7,Nivel avanzado
+1,07/09/2026,13/09/2026,4,Condicionamiento,Remo (Row) - Intervalos,3 rondas,30/30 seg,7,Nivel base
+1,07/09/2026,13/09/2026,4,Condicionamiento,Wallballs,3 rondas,30/30 seg,7,Nivel intermedio
+1,07/09/2026,13/09/2026,4,Condicionamiento,Double-unders / Rope Skips,3 rondas,30/30 seg,7,Nivel avanzado
+2,14/09/2026,20/09/2026,1,Rodilla Dominante (Sentadilla),Goblet Squat,4,8-10,7,Nivel base
+2,14/09/2026,20/09/2026,1,Rodilla Dominante (Sentadilla),Back Squat,4,8-10,7,Nivel intermedio
+2,14/09/2026,20/09/2026,1,Rodilla Dominante (Sentadilla),Front Squat,4,8-10,7,Nivel avanzado
+2,14/09/2026,20/09/2026,1,Empuje Horizontal,Push-up,4,8-10,7,Nivel base
+2,14/09/2026,20/09/2026,1,Empuje Horizontal,DB Bench Press,4,8-10,7,Nivel intermedio
+2,14/09/2026,20/09/2026,1,Empuje Horizontal,Barbell Bench Press,4,8-10,7,Nivel avanzado
+2,14/09/2026,20/09/2026,1,Core - Flexión,Tuck Crunch,3,15,7,Nivel base
+2,14/09/2026,20/09/2026,1,Core - Flexión,Hollow Rock,3,15,7,Nivel intermedio
+2,14/09/2026,20/09/2026,1,Core - Flexión,L-sit Knee Extensions,3,15,7,Nivel avanzado
+2,14/09/2026,20/09/2026,1,Salto / Potencia,Jump-and-land Mechanics,3,6,7,Nivel base
+2,14/09/2026,20/09/2026,1,Salto / Potencia,Broad Jump,3,6,7,Nivel intermedio
+2,14/09/2026,20/09/2026,1,Salto / Potencia,Box Jump,3,6,7,Nivel avanzado
+2,14/09/2026,20/09/2026,2,Bisagra de Cadera,Romanian Deadlift,4,8-10,7,Nivel base
+2,14/09/2026,20/09/2026,2,Bisagra de Cadera,Deadlift,4,8-10,7,Nivel intermedio
+2,14/09/2026,20/09/2026,2,Bisagra de Cadera,Single-leg RDL,4,8-10,7,Nivel avanzado
+2,14/09/2026,20/09/2026,2,Tracción Horizontal,Inverted Row (TRX),4,8-10,7,Nivel base
+2,14/09/2026,20/09/2026,2,Tracción Horizontal,Ring Row,4,8-10,7,Nivel intermedio
+2,14/09/2026,20/09/2026,2,Tracción Horizontal,Remo con Barra,4,8-10,7,Nivel avanzado
+2,14/09/2026,20/09/2026,2,Extensión de Cadera/Tronco,Hip Extension,3,15,7,Nivel base
+2,14/09/2026,20/09/2026,2,Extensión de Cadera/Tronco,Back Extension,3,15,7,Nivel intermedio
+2,14/09/2026,20/09/2026,2,Extensión de Cadera/Tronco,Good Morning,3,15,7,Nivel avanzado
+2,14/09/2026,20/09/2026,3,Sentadilla Unilateral,Walking Lunge,3,12/pierna,7,Nivel base
+2,14/09/2026,20/09/2026,3,Sentadilla Unilateral,Reverse Lunge c/ Mancuernas,3,12/pierna,7,Nivel intermedio
+2,14/09/2026,20/09/2026,3,Sentadilla Unilateral,Bulgarian Split Squat,3,12/pierna,7,Nivel avanzado
+2,14/09/2026,20/09/2026,3,Empuje Vertical,DB Press Sentado,4,8-10,7,Nivel base
+2,14/09/2026,20/09/2026,3,Empuje Vertical,DB Push Press,4,8-10,7,Nivel intermedio
+2,14/09/2026,20/09/2026,3,Empuje Vertical,Barbell Push Press,4,8-10,7,Nivel avanzado
+2,14/09/2026,20/09/2026,3,Anti-Rotación / Estabilidad,Bird-dog,3,15,7,Nivel base
+2,14/09/2026,20/09/2026,3,Anti-Rotación / Estabilidad,Plancha con Tracción Unilateral,3,15,7,Nivel intermedio
+2,14/09/2026,20/09/2026,3,Anti-Rotación / Estabilidad,Pallof Press,3,15,7,Nivel avanzado
+2,14/09/2026,20/09/2026,3,Salto Horizontal,Jump-and-land Mechanics,3,6,7,Nivel base
+2,14/09/2026,20/09/2026,3,Salto Horizontal,Broad Jump,3,6,7,Nivel intermedio
+2,14/09/2026,20/09/2026,3,Salto Horizontal,Broad Jump (distancia progresiva),3,6,7,Nivel avanzado
+2,14/09/2026,20/09/2026,4,Tracción Overhead,DB Snatch,4,5,7,Nivel base
+2,14/09/2026,20/09/2026,4,Tracción Overhead,Muscle Snatch,4,5,7,Nivel intermedio
+2,14/09/2026,20/09/2026,4,Tracción Overhead,Power Snatch,4,5,7,Nivel avanzado
+2,14/09/2026,20/09/2026,4,Tracción Vertical,Pull-up c/ Banda,4,máx-2,7,Nivel base
+2,14/09/2026,20/09/2026,4,Tracción Vertical,Strict Pull-up,4,máx-2,7,Nivel intermedio
+2,14/09/2026,20/09/2026,4,Tracción Vertical,Kipping / C2B Pull-up,4,máx-2,7,Nivel avanzado
+2,14/09/2026,20/09/2026,4,Kettlebell,Russian Swing,4,15,7,Nivel base
+2,14/09/2026,20/09/2026,4,Kettlebell,American Swing,4,15,7,Nivel intermedio
+2,14/09/2026,20/09/2026,4,Kettlebell,Kettlebell Clean,4,15,7,Nivel avanzado
+2,14/09/2026,20/09/2026,4,Condicionamiento,Remo (Row) - Intervalos,4 rondas,30/30 seg,7-8,Nivel base
+2,14/09/2026,20/09/2026,4,Condicionamiento,Wallballs,4 rondas,30/30 seg,7-8,Nivel intermedio
+2,14/09/2026,20/09/2026,4,Condicionamiento,Double-unders / Rope Skips,4 rondas,30/30 seg,7-8,Nivel avanzado
+3,21/09/2026,27/09/2026,1,Rodilla Dominante (Sentadilla),Goblet Squat,4,5-6,8,Nivel base
+3,21/09/2026,27/09/2026,1,Rodilla Dominante (Sentadilla),Back Squat,4,5-6,8,Nivel intermedio
+3,21/09/2026,27/09/2026,1,Rodilla Dominante (Sentadilla),Front Squat,4,5-6,8,Nivel avanzado
+3,21/09/2026,27/09/2026,1,Empuje Horizontal,Push-up,4,5-6,8,Nivel base
+3,21/09/2026,27/09/2026,1,Empuje Horizontal,DB Bench Press,4,5-6,8,Nivel intermedio
+3,21/09/2026,27/09/2026,1,Empuje Horizontal,Barbell Bench Press,4,5-6,8,Nivel avanzado
+3,21/09/2026,27/09/2026,1,Core - Flexión,Tuck Crunch,4,10,7-8,Nivel base
+3,21/09/2026,27/09/2026,1,Core - Flexión,Hollow Rock,4,10,7-8,Nivel intermedio
+3,21/09/2026,27/09/2026,1,Core - Flexión,L-sit Knee Extensions,4,10,7-8,Nivel avanzado
+3,21/09/2026,27/09/2026,1,Salto / Potencia,Jump-and-land Mechanics,4,5,7-8,Nivel base
+3,21/09/2026,27/09/2026,1,Salto / Potencia,Broad Jump,4,5,7-8,Nivel intermedio
+3,21/09/2026,27/09/2026,1,Salto / Potencia,Box Jump,4,5,7-8,Nivel avanzado
+3,21/09/2026,27/09/2026,2,Bisagra de Cadera,Romanian Deadlift,4,5-6,8,Nivel base
+3,21/09/2026,27/09/2026,2,Bisagra de Cadera,Deadlift,4,5-6,8,Nivel intermedio
+3,21/09/2026,27/09/2026,2,Bisagra de Cadera,Single-leg RDL,4,5-6,8,Nivel avanzado
+3,21/09/2026,27/09/2026,2,Tracción Horizontal,Inverted Row (TRX),4,5-6,8,Nivel base
+3,21/09/2026,27/09/2026,2,Tracción Horizontal,Ring Row,4,5-6,8,Nivel intermedio
+3,21/09/2026,27/09/2026,2,Tracción Horizontal,Remo con Barra,4,5-6,8,Nivel avanzado
+3,21/09/2026,27/09/2026,2,Extensión de Cadera/Tronco,Hip Extension,4,10,7-8,Nivel base
+3,21/09/2026,27/09/2026,2,Extensión de Cadera/Tronco,Back Extension,4,10,7-8,Nivel intermedio
+3,21/09/2026,27/09/2026,2,Extensión de Cadera/Tronco,Good Morning,4,10,7-8,Nivel avanzado
+3,21/09/2026,27/09/2026,3,Sentadilla Unilateral,Walking Lunge,4,8/pierna,8,Nivel base
+3,21/09/2026,27/09/2026,3,Sentadilla Unilateral,Reverse Lunge c/ Mancuernas,4,8/pierna,8,Nivel intermedio
+3,21/09/2026,27/09/2026,3,Sentadilla Unilateral,Bulgarian Split Squat,4,8/pierna,8,Nivel avanzado
+3,21/09/2026,27/09/2026,3,Empuje Vertical,DB Press Sentado,4,5-6,8,Nivel base
+3,21/09/2026,27/09/2026,3,Empuje Vertical,DB Push Press,4,5-6,8,Nivel intermedio
+3,21/09/2026,27/09/2026,3,Empuje Vertical,Barbell Push Press,4,5-6,8,Nivel avanzado
+3,21/09/2026,27/09/2026,3,Anti-Rotación / Estabilidad,Bird-dog,4,10,7-8,Nivel base
+3,21/09/2026,27/09/2026,3,Anti-Rotación / Estabilidad,Plancha con Tracción Unilateral,4,10,7-8,Nivel intermedio
+3,21/09/2026,27/09/2026,3,Anti-Rotación / Estabilidad,Pallof Press,4,10,7-8,Nivel avanzado
+3,21/09/2026,27/09/2026,3,Salto Horizontal,Jump-and-land Mechanics,4,5,7-8,Nivel base
+3,21/09/2026,27/09/2026,3,Salto Horizontal,Broad Jump,4,5,7-8,Nivel intermedio
+3,21/09/2026,27/09/2026,3,Salto Horizontal,Broad Jump (distancia progresiva),4,5,7-8,Nivel avanzado
+3,21/09/2026,27/09/2026,4,Tracción Overhead,DB Snatch,4,3,8,Nivel base
+3,21/09/2026,27/09/2026,4,Tracción Overhead,Muscle Snatch,4,3,8,Nivel intermedio
+3,21/09/2026,27/09/2026,4,Tracción Overhead,Power Snatch,4,3,8,Nivel avanzado
+3,21/09/2026,27/09/2026,4,Tracción Vertical,Pull-up c/ Banda,4,máx-1,8,Nivel base
+3,21/09/2026,27/09/2026,4,Tracción Vertical,Strict Pull-up,4,máx-1,8,Nivel intermedio
+3,21/09/2026,27/09/2026,4,Tracción Vertical,Kipping / C2B Pull-up,4,máx-1,8,Nivel avanzado
+3,21/09/2026,27/09/2026,4,Kettlebell,Russian Swing,4,12,8,Nivel base
+3,21/09/2026,27/09/2026,4,Kettlebell,American Swing,4,12,8,Nivel intermedio
+3,21/09/2026,27/09/2026,4,Kettlebell,Kettlebell Clean,4,12,8,Nivel avanzado
+3,21/09/2026,27/09/2026,4,Condicionamiento,Remo (Row) - Intervalos,4 rondas,40/20 seg,8,Nivel base
+3,21/09/2026,27/09/2026,4,Condicionamiento,Wallballs,4 rondas,40/20 seg,8,Nivel intermedio
+3,21/09/2026,27/09/2026,4,Condicionamiento,Double-unders / Rope Skips,4 rondas,40/20 seg,8,Nivel avanzado
+4,28/09/2026,04/10/2026,1,Rodilla Dominante (Sentadilla),Goblet Squat,3,3-5,8-9,Nivel base
+4,28/09/2026,04/10/2026,1,Rodilla Dominante (Sentadilla),Back Squat,3,3-5,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,1,Rodilla Dominante (Sentadilla),Front Squat,3,3-5,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,1,Empuje Horizontal,Push-up,3,3-5,8-9,Nivel base
+4,28/09/2026,04/10/2026,1,Empuje Horizontal,DB Bench Press,3,3-5,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,1,Empuje Horizontal,Barbell Bench Press,3,3-5,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,1,Core - Flexión,Tuck Crunch,3,8,8,Nivel base
+4,28/09/2026,04/10/2026,1,Core - Flexión,Hollow Rock,3,8,8,Nivel intermedio
+4,28/09/2026,04/10/2026,1,Core - Flexión,L-sit Knee Extensions,3,8,8,Nivel avanzado
+4,28/09/2026,04/10/2026,1,Salto / Potencia,Jump-and-land Mechanics,3,3,8,Nivel base
+4,28/09/2026,04/10/2026,1,Salto / Potencia,Broad Jump,3,3,8,Nivel intermedio
+4,28/09/2026,04/10/2026,1,Salto / Potencia,Box Jump,3,3,8,Nivel avanzado
+4,28/09/2026,04/10/2026,2,Bisagra de Cadera,Romanian Deadlift,3,3-5,8-9,Nivel base
+4,28/09/2026,04/10/2026,2,Bisagra de Cadera,Deadlift,3,3-5,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,2,Bisagra de Cadera,Single-leg RDL,3,3-5,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,2,Tracción Horizontal,Inverted Row (TRX),3,3-5,8-9,Nivel base
+4,28/09/2026,04/10/2026,2,Tracción Horizontal,Ring Row,3,3-5,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,2,Tracción Horizontal,Remo con Barra,3,3-5,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,2,Extensión de Cadera/Tronco,Hip Extension,3,8,8,Nivel base
+4,28/09/2026,04/10/2026,2,Extensión de Cadera/Tronco,Back Extension,3,8,8,Nivel intermedio
+4,28/09/2026,04/10/2026,2,Extensión de Cadera/Tronco,Good Morning,3,8,8,Nivel avanzado
+4,28/09/2026,04/10/2026,3,Sentadilla Unilateral,Walking Lunge,3,6/pierna,8-9,Nivel base
+4,28/09/2026,04/10/2026,3,Sentadilla Unilateral,Reverse Lunge c/ Mancuernas,3,6/pierna,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,3,Sentadilla Unilateral,Bulgarian Split Squat,3,6/pierna,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,3,Empuje Vertical,DB Press Sentado,3,3-5,8-9,Nivel base
+4,28/09/2026,04/10/2026,3,Empuje Vertical,DB Push Press,3,3-5,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,3,Empuje Vertical,Barbell Push Press,3,3-5,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,3,Anti-Rotación / Estabilidad,Bird-dog,3,8,8,Nivel base
+4,28/09/2026,04/10/2026,3,Anti-Rotación / Estabilidad,Plancha con Tracción Unilateral,3,8,8,Nivel intermedio
+4,28/09/2026,04/10/2026,3,Anti-Rotación / Estabilidad,Pallof Press,3,8,8,Nivel avanzado
+4,28/09/2026,04/10/2026,3,Salto Horizontal,Jump-and-land Mechanics,3,3,8,Nivel base
+4,28/09/2026,04/10/2026,3,Salto Horizontal,Broad Jump,3,3,8,Nivel intermedio
+4,28/09/2026,04/10/2026,3,Salto Horizontal,Broad Jump (distancia progresiva),3,3,8,Nivel avanzado
+4,28/09/2026,04/10/2026,4,Tracción Overhead,DB Snatch,3,2,8-9,Nivel base
+4,28/09/2026,04/10/2026,4,Tracción Overhead,Muscle Snatch,3,2,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,4,Tracción Overhead,Power Snatch,3,2,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,4,Tracción Vertical,Pull-up c/ Banda,3,máx,8-9,Nivel base
+4,28/09/2026,04/10/2026,4,Tracción Vertical,Strict Pull-up,3,máx,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,4,Tracción Vertical,Kipping / C2B Pull-up,3,máx,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,4,Kettlebell,Russian Swing,3,10,8-9,Nivel base
+4,28/09/2026,04/10/2026,4,Kettlebell,American Swing,3,10,8-9,Nivel intermedio
+4,28/09/2026,04/10/2026,4,Kettlebell,Kettlebell Clean,3,10,8-9,Nivel avanzado
+4,28/09/2026,04/10/2026,4,Condicionamiento,Remo (Row) - Intervalos,AMRAP,8-10 min,9,Nivel base
+4,28/09/2026,04/10/2026,4,Condicionamiento,Wallballs,AMRAP,8-10 min,9,Nivel intermedio
+4,28/09/2026,04/10/2026,4,Condicionamiento,Double-unders / Rope Skips,AMRAP,8-10 min,9,Nivel avanzado
