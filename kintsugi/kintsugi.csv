@@ -1,0 +1,33 @@
+Semana,Fecha Inicio,Fecha Fin,Atleta,Dia,Bloque,Ejercicio,Series,Reps,Enfoque,RPE,Reps>=70%
+1,14/09/2026,19/09/2026,KINTSUGI,Día 1,Técnica,Arranque Parado,4,2,ESTABILIDAD,6,8
+1,14/09/2026,19/09/2026,KINTSUGI,Día 1,Técnica,Arr. Colgado o Bloques,3,3,VELOCIDAD,7,9
+1,14/09/2026,19/09/2026,KINTSUGI,Día 1,Fuerza,Sentadilla Detrás Rack Alto,4,3,CERCO,8,12
+1,14/09/2026,19/09/2026,KINTSUGI,Día 1,Fuerza,Halón Arr. Colgado,4,3,ESTABILIDAD,8,12
+1,14/09/2026,19/09/2026,KINTSUGI,Día 2,Técnica,Clean Parado+Push Press,4,2,ESTABILIDAD,7,8
+1,14/09/2026,19/09/2026,KINTSUGI,Día 2,Técnica,Clean Colgado o Bloques,3,3,VELOCIDAD,7,9
+1,14/09/2026,19/09/2026,KINTSUGI,Día 2,Fuerza,Sentadilla Delante Dinámica,4,3,CERCO,8,12
+1,14/09/2026,19/09/2026,KINTSUGI,Día 2,Fuerza,Halón Hombros Bloques,4,3,,7,12
+2,21/09/2026,26/09/2026,KINTSUGI,Día 1,Técnica,Arranque Parado,4,3,ESTABILIDAD,7,12
+2,21/09/2026,26/09/2026,KINTSUGI,Día 1,Técnica,Arr. Colgado o Bloques,4,3,VELOCIDAD,7,12
+2,21/09/2026,26/09/2026,KINTSUGI,Día 1,Fuerza,Sentadilla Detrás Rack Alto,5,3,CERCO,8,15
+2,21/09/2026,26/09/2026,KINTSUGI,Día 1,Fuerza,Halón Arr. Colgado,5,3,ESTABILIDAD,8,15
+2,21/09/2026,26/09/2026,KINTSUGI,Día 2,Técnica,Clean Parado+Push Press,4,3,ESTABILIDAD,7,12
+2,21/09/2026,26/09/2026,KINTSUGI,Día 2,Técnica,Clean Colgado o Bloques,4,3,VELOCIDAD,7,12
+2,21/09/2026,26/09/2026,KINTSUGI,Día 2,Fuerza,Sentadilla Delante Dinámica,5,3,CERCO,8,15
+2,21/09/2026,26/09/2026,KINTSUGI,Día 2,Fuerza,Halón Hombros Bloques,5,3,,8,15
+3,28/09/2026,03/10/2026,KINTSUGI,Día 1,Técnica,Arranque Parado,5,3,ESTABILIDAD,7,15
+3,28/09/2026,03/10/2026,KINTSUGI,Día 1,Técnica,Arr. Colgado o Bloques,4,3,VELOCIDAD,7,12
+3,28/09/2026,03/10/2026,KINTSUGI,Día 1,Fuerza,Sentadilla Detrás Rack Alto,4,3,CERCO,8,12
+3,28/09/2026,03/10/2026,KINTSUGI,Día 1,Fuerza,Halón Arr. Colgado,4,3,ESTABILIDAD,8,12
+3,28/09/2026,03/10/2026,KINTSUGI,Día 2,Técnica,Clean Parado+Push Press,5,3,ESTABILIDAD,7,15
+3,28/09/2026,03/10/2026,KINTSUGI,Día 2,Técnica,Clean Colgado o Bloques,4,3,VELOCIDAD,8,12
+3,28/09/2026,03/10/2026,KINTSUGI,Día 2,Fuerza,Sentadilla Delante Dinámica,4,3,CERCO,8,12
+3,28/09/2026,03/10/2026,KINTSUGI,Día 2,Fuerza,Halón Hombros Bloques,4,3,,8,12
+4,05/10/2026,10/10/2026,KINTSUGI,Día 1,Técnica,Arranque Parado,3,2,ESTABILIDAD,8,6
+4,05/10/2026,10/10/2026,KINTSUGI,Día 1,Técnica,Arr. Colgado o Bloques,5,2,VELOCIDAD,8,10
+4,05/10/2026,10/10/2026,KINTSUGI,Día 1,Fuerza,Sentadilla Detrás Rack Alto,4,2,CERCO,9,8
+4,05/10/2026,10/10/2026,KINTSUGI,Día 1,Fuerza,Halón Arr. Colgado,4,2,ESTABILIDAD,8,8
+4,05/10/2026,10/10/2026,KINTSUGI,Día 2,Técnica,Clean Parado+Push Press,3,2,ESTABILIDAD,8,6
+4,05/10/2026,10/10/2026,KINTSUGI,Día 2,Técnica,Clean Colgado o Bloques,5,2,VELOCIDAD,8,10
+4,05/10/2026,10/10/2026,KINTSUGI,Día 2,Fuerza,Sentadilla Delante Dinámica,4,2,CERCO,8,8
+4,05/10/2026,10/10/2026,KINTSUGI,Día 2,Fuerza,Halón Hombros Bloques,4,2,,8,8

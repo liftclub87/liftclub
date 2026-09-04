@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lift Club - Kintsugi</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --bg:#0F0F0F;
+    --cyan:#5FCAE7;
+    --pink:#ED1D7E;
+    --yellow:#FDD700;
+    --paper:#17181A;
+    --line:#26282B;
+    --muted:#8b9096;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Inter',sans-serif;
+    color:#EDEFF1;
+  }
+
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 40px;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(10px);
+    z-index:10;
+  }
+
+  nav img.logo{ height:26px; }
+
+  .navLinks{ display:flex; gap:6px; }
+
+  .navLinks a{
+    color:#c9cdd1;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:9px 18px;
+    border-radius:999px;
+  }
+
+  .navLinks a:hover{ color:#fff; background:var(--paper); }
+
+  .wrap{
+    max-width:700px;
+    margin:0 auto;
+    padding:50px 24px 100px;
+  }
+
+  .pageHead{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:6px;
+  }
+
+  .pageHead h1{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:30px;
+    letter-spacing:.5px;
+    margin:0;
+    color:#fff;
+  }
+
+  .pageSub{
+    font-size:13px;
+    color:var(--muted);
+    margin:0 0 24px;
+    font-style:italic;
+  }
+
+  .backLink{
+    font-size:13px;
+    font-weight:600;
+    color:var(--cyan);
+    text-decoration:none;
+  }
+
+  .prepFisicaBtn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    background:transparent;
+    color:var(--pink);
+    border:1px solid var(--pink);
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:11px 20px;
+    border-radius:10px;
+    margin-bottom:24px;
+    transition:transform .15s ease, background .15s ease;
+  }
+
+  .prepFisicaBtn:hover{
+    background:rgba(237,29,126,.1);
+    transform:translateY(-2px);
+  }
+
+  /* ---- Tarjeta explicativa del RPE ---- */
+
+  .rpeCard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:16px;
+    padding:22px;
+    margin-bottom:30px;
+  }
+
+  .rpeCard h2{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin:0 0 10px;
+  }
+
+  .rpeCard p{
+    font-size:13px;
+    color:#c9cdd1;
+    line-height:1.65;
+    margin:0 0 16px;
+  }
+
+  .rpeCard p:last-of-type{ margin-bottom:0; }
+
+  .rpeScale{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+
+  .rpeScale .barTrack{
+    flex:1;
+    height:8px;
+    border-radius:999px;
+    background:linear-gradient(90deg, var(--cyan), var(--yellow) 55%, var(--pink));
+  }
+
+  .rpeScale .end{
+    font-family:'Bungee', sans-serif;
+    font-size:13px;
+    color:#fff;
+    flex-shrink:0;
+  }
+
+  .rpeScaleLabels{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    color:var(--muted);
+    margin-top:-10px;
+  }
+
+  /* ---- Tarjetas del plan ---- */
+
+  .weekHead{
+    margin:34px 0 8px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .weekHead:first-child{ margin-top:0; }
+
+  .weekTitle{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:16px;
+    color:var(--yellow);
+  }
+
+  .weekMeta{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:4px;
+  }
+
+  .dayLabel{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin:22px 0 12px;
+  }
+
+  .bloqueLabel{
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:14px 0 8px;
+  }
+
+  .bloqueLabel:first-of-type{ margin-top:0; }
+
+  .cardGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(230px,1fr));
+    gap:12px;
+  }
+
+  .exCard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cyan);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+
+  .exTag{
+    display:inline-block;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--cyan);
+    margin-bottom:8px;
+  }
+
+  .exName{
+    font-size:14.5px;
+    font-weight:600;
+    color:#fff;
+    margin-bottom:14px;
+    line-height:1.35;
+  }
+
+  .exStats{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .exStats span{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:18px;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .exStats small{
+    font-family:'Inter',sans-serif;
+    font-size:9.5px;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--muted);
+    letter-spacing:.5px;
+  }
+
+  .exStats .rpeVal{ color:var(--yellow); }
+
+  .empty{
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  @media (max-width:640px){
+    nav{ padding:16px 20px; }
+    .wrap{ padding:36px 20px 60px; }
+  }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img class="logo" src="../assets/logo.png" alt="Lift Club">
+  <div class="navLinks">
+    <a href="../privado/portal.html">Portal</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="pageHead">
+    <h1>Kintsugi</h1>
+    <a href="../privado/portal.html" class="backLink">&larr; Volver al Portal</a>
+  </div>
+  <p class="pageSub">金継ぎ — el arte japonés de reparar con oro. Plan de retorno progresivo tras lesión.</p>
+
+  <a href="https://liftclub87.net/culturismo" target="_blank" rel="noopener" class="prepFisicaBtn">
+    Preparación Física
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+  </a>
+
+  <div class="rpeCard">
+    <h2>Cómo se trabaja este plan</h2>
+    <p>Acá no trabajamos con kilos ni porcentajes: trabajamos por <strong style="color:#fff">percepción del esfuerzo (RPE)</strong>. Vos elegís el peso que te haga sentir el número de RPE indicado en cada ejercicio — así es el cuerpo el que te va diciendo, día a día, cómo te vas sintiendo durante las fases de adaptación.</p>
+    <div class="rpeScale">
+      <span class="end">0</span>
+      <div class="barTrack"></div>
+      <span class="end">10</span>
+    </div>
+    <div class="rpeScaleLabels">
+      <span>Cero esfuerzo</span>
+      <span>Esfuerzo máximo</span>
+    </div>
+    <p>Si un día el cuerpo no da para el RPE marcado, bajá el peso hasta sentir ese número — nunca al revés.</p>
+  </div>
+
+  <div id="planContenedor">
+    <p class="empty">Cargando plan...</p>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script>
+
+  function formatearFecha(f) {
+    return (f || "").trim();
+  }
+
+  function renderizarPlan(filasPlan) {
+    const contenedor = document.getElementById("planContenedor");
+
+    const filasConDatos = filasPlan.filter(f => f["Ejercicio"] && f["Ejercicio"].trim() !== "");
+
+    if (filasConDatos.length === 0) {
+      contenedor.innerHTML = `<p class="empty">Todavía no hay ejercicios cargados en el plan Kintsugi.</p>`;
+      return;
+    }
+
+    const semanas = {};
+    filasConDatos.forEach(f => {
+      const sKey = f["Semana"] || "1";
+      if (!semanas[sKey]) {
+        semanas[sKey] = {
+          volumen: 0,
+          inicio: f["Fecha Inicio"] || "",
+          fin: f["Fecha Fin"] || "",
+          dias: {}
+        };
+      }
+      const val70 = parseFloat(f["Reps>=70%"]);
+      if (!isNaN(val70)) semanas[sKey].volumen += val70;
+      const dKey = f["Día"] || f["Dia"] || "";
+      if (!semanas[sKey].dias[dKey]) semanas[sKey].dias[dKey] = [];
+      semanas[sKey].dias[dKey].push(f);
+    });
+
+    const semanasOrdenadas = Object.keys(semanas).sort((a, b) => {
+      const na = parseInt(a.replace(/\D/g, ""), 10) || 0;
+      const nb = parseInt(b.replace(/\D/g, ""), 10) || 0;
+      return na - nb;
+    });
+
+    let html = "";
+
+    semanasOrdenadas.forEach(sKey => {
+      const numSemana = parseInt(sKey.replace(/\D/g, ""), 10) || sKey;
+      const semana = semanas[sKey];
+      const rangoFechas = (semana.inicio && semana.fin) ? `${formatearFecha(semana.inicio)} al ${formatearFecha(semana.fin)}` : "";
+
+      html += `
+        <div class="weekHead">
+          <div class="weekTitle">Semana ${numSemana}</div>
+          <div class="weekMeta">
+            ${rangoFechas ? rangoFechas + " · " : ""}${semana.volumen ? "Volumen efectivo: " + semana.volumen + " reps" : ""}
+          </div>
+        </div>
+      `;
+
+      const dias = semana.dias;
+      const diasOrdenados = Object.keys(dias).sort((a, b) => {
+        const na = parseInt(a.replace(/\D/g, ""), 10) || 0;
+        const nb = parseInt(b.replace(/\D/g, ""), 10) || 0;
+        return na - nb;
+      });
+
+      diasOrdenados.forEach(dKey => {
+        const ejercicios = dias[dKey];
+        const numDia = parseInt(dKey.replace(/\D/g, ""), 10) || dKey;
+
+        html += `<div class="dayLabel">Día ${numDia}</div>`;
+
+        // Agrupar por Bloque, respetando el orden en que aparecen en el CSV.
+        const bloques = [];
+        const indiceBloque = {};
+        ejercicios.forEach(ex => {
+          const b = (ex["Bloque"] || "").trim() || "Ejercicios";
+          if (!(b in indiceBloque)) {
+            indiceBloque[b] = bloques.length;
+            bloques.push({ nombre: b, items: [] });
+          }
+          bloques[indiceBloque[b]].items.push(ex);
+        });
+
+        bloques.forEach(bloque => {
+          html += `<div class="bloqueLabel">${bloque.nombre}</div><div class="cardGrid">`;
+
+          bloque.items.forEach(ex => {
+            const series = ex["Series"] || "—";
+            const reps = ex["Reps"] || ex["Repeticiones"] || "—";
+            const rpe = ex["RPE"] || "—";
+            const enfoque = (ex["Enfoque"] || "").trim();
+
+            html += `
+              <div class="exCard">
+                ${enfoque ? `<div class="exTag">${enfoque}</div>` : ""}
+                <div class="exName">${ex["Ejercicio"]}</div>
+                <div class="exStats">
+                  <span>${series}<small>series</small></span>
+                  <span>${reps}<small>reps</small></span>
+                  <span class="rpeVal">${rpe}<small>rpe</small></span>
+                </div>
+              </div>
+            `;
+          });
+
+          html += `</div>`;
+        });
+      });
+    });
+
+    contenedor.innerHTML = html;
+  }
+
+  Papa.parse("kintsugi.csv?v=" + Date.now(), {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function (results) {
+      renderizarPlan(results.data);
+    },
+    error: function () {
+      document.getElementById("planContenedor").innerHTML =
+        `<p class="empty">No se pudo cargar el plan Kintsugi.</p>`;
+    }
+  });
+
+</script>
+
+</body>
+</html>
