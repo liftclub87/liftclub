@@ -1,19 +1,17 @@
 ﻿Semana,Atleta,Dia,Bloque,Ejercicio,Series,Reps,Enfoque,Porcentaje,Kg,Reps>=70%
-1,GENERAL,Día 1,Arranque (Media),Arr+OverHeadSquat,4,3,,0.8,67,12
-1,GENERAL,Día 1,Arranque (Media),Arr.Colgado,3,2,,0.7,81,6
-1,GENERAL,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,5,3,,0.8,76,15
-1,GENERAL,Día 1,Arranque (Media),Sentadilla Detrás,4,3,,0.8,76,12
-1,GENERAL,Día 2,Envión (Alta),Envión,4,2,,0.75,75,8
-1,GENERAL,Día 2,Envión (Alta),Clean Colgado,3,2,,0.7,70,6
-1,GENERAL,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,5,3,,0.95,95,15
-1,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,4,,0.8,80,12
-1,GENERAL,Día 3,Envion(Baja),Clean Colgado Parado,3,3,,0.7,70,9
-1,GENERAL,Día 3,Envion(Baja),Yerk desde Rack,3,3,,0.8,114,9
-1,GENERAL,Día 3,Envion(Baja),Sentadilla Delante con Pausa,4,3,,0.85,122,12
-1,GENERAL,Día 4,Arranque (Alto),Arranque,4,2,,0.85,85,8
-1,GENERAL,Día 4,Arranque (Alto),Halón Arr. Colg. Alto,4,3,,0.9,86,12
-1,GENERAL,Día 4,Arranque (Alto),Sentadilla Detrás,4,3,,0.8,92,12
-1,GENERAL,Día 4,Arranque (Alto),Salto Arr. Técnico,3,5,,0.85,85,15
+1,Melisson,Día 1,Recuperación (sola),Movilidad de cadera + tobillo (10-15 min),,,Movilidad,,,
+1,Melisson,Día 1,Recuperación (sola),Core anti-extensión + anti-rotación,3,10,Core,,,
+1,Melisson,Día 1,Recuperación (sola),Gemelo sentado (sóleo) — suave,3,15,Accesorio,,,
+1,Melisson,Día 1,Recuperación (sola),Estiramiento general,,,Movilidad,,,
+1,Melisson,Día 2,Activación (con vos),Arranque técnico,,a criterio,Técnica (RPE bajo),,,
+1,Melisson,Día 2,Activación (con vos),Estabilidad de hombro/muñeca (banda),3,12,Accesorio,,,
+1,Melisson,Día 2,Activación (con vos),Core,3,10,Accesorio,,,
+1,Melisson,Día 3,Fisioterapia / movilidad (sola),Fisioterapia / masaje (si aplica),,,Recuperación,,,
+1,Melisson,Día 3,Fisioterapia / movilidad (sola),Movilidad de tobillo + sóleo excéntrico suave,3,12,Accesorio,,,
+1,Melisson,Día 3,Fisioterapia / movilidad (sola),Core,3,10,Accesorio,,,
+1,Melisson,Día 4,Activación (con vos),Envión  técnico ,,a criterio,Técnica (RPE bajo),,,
+1,Melisson,Día 4,Activación (con vos),Pistols,3,12,Accesorio,,,
+1,Melisson,Día 4,Activación (con vos),Core,3,10,Accesorio,,,
 2,GENERAL,Día 1,Arranque (Media),Arr+OverHeadSquat,4,5,,0.7,67,20
 2,GENERAL,Día 1,Arranque (Media),Arr.Colgado,3,4,,0.7,81,12
 2,GENERAL,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,5,5,,0.8,76,25
