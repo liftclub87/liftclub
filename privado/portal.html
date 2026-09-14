@@ -200,6 +200,110 @@
 
   .salir:hover{ color:var(--pink); border-color:var(--pink); }
 
+  .pagoAviso{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:12px;
+    padding:14px 18px;
+    margin:22px 0 0;
+  }
+
+  .pagoAviso p{
+    font-size:13px;
+    color:#c9cdd1;
+    margin:0;
+    line-height:1.5;
+  }
+
+  /* ---- Fichas de precio ---- */
+
+  .precioGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:16px;
+    margin-bottom:16px;
+  }
+
+  .precioCard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cyan);
+    border-radius:16px;
+    padding:22px;
+  }
+
+  .precioCard.seleccion{ border-left-color:var(--yellow); }
+  .precioCard.complemento{ border-left-color:var(--pink); margin-bottom:24px; }
+
+  .precioCard .etiqueta{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:8px;
+  }
+
+  .precioCard .precioTitulo{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:15px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:#fff;
+    margin-bottom:10px;
+  }
+
+  .precioCard .monto{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:26px;
+    color:#fff;
+    margin-bottom:14px;
+  }
+
+  .precioCard .monto span{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    color:var(--muted);
+    margin-left:4px;
+  }
+
+  .precioCard ul{
+    margin:0;
+    padding-left:18px;
+  }
+
+  .precioCard li{
+    font-size:13px;
+    color:#c9cdd1;
+    line-height:1.6;
+    margin-bottom:6px;
+  }
+
+  .precioCard.complemento p{
+    font-size:13px;
+    color:#c9cdd1;
+    line-height:1.6;
+    margin:0;
+  }
+
+  .precioNota{
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.65;
+    margin:24px 0 0;
+    font-style:italic;
+  }
+
+  .precioBox{
+    margin-bottom:44px;
+    padding-bottom:38px;
+    border-bottom:1px solid var(--line);
+  }
+
   @media (max-width:640px){
     nav{ padding:16px 20px; }
     .wrap{ padding:36px 20px 60px; }
@@ -228,6 +332,12 @@
     <h1 id="titulo">Cargando...</h1>
     <p class="correo" id="correo"></p>
   </div>
+
+  <div class="pagoAviso">
+    <p>Cuota mensual — el pago vence el día 15 de cada mes.</p>
+  </div>
+
+  <div class="precioBox" id="precioBox"></div>
 
   <div id="contenido">
     <p class="estado">Verificando tu acceso...</p>
@@ -260,6 +370,60 @@
     "joalmo1712@gmail.com",
     "giancarlocasanova80@outlook.com",
   ];
+
+  // Atletas de Plan General o Kintsugi que pertenecen a Seleccion Nacional
+  // o a un proceso de Juegos Nacionales (JDN). Quien ya esta en PLAN_CRC
+  // no hace falta agregarlo aca, porque Plan CRC ya implica Seleccion.
+  // Mantener esta lista igual que en precios.html.
+  const SELECCION_JDN = [
+  ];
+
+  // ---- Ficha de precio segun categoria ----
+
+  function pintarPrecio(esAdmin, esSeleccion) {
+    const fichaGeneral = `
+      <div class="precioCard">
+        <div class="precioTitulo">Plan General</div>
+        <div class="monto">&#8353;30.000<span>/ mes</span></div>
+        <ul>
+          <li>Acceso completo a la plataforma</li>
+          <li>Seguimiento y ajustes en tiempo real de tu entrenamiento</li>
+          <li>Acompañamiento constante en la gestión de tu proceso</li>
+          <li>Ejercicios básicos de preparación física incluidos (no es una periodización)</li>
+        </ul>
+      </div>`;
+
+    const fichaSeleccion = `
+      <div class="precioCard seleccion">
+        <div class="etiqueta">Selección Nacional / Juegos Nacionales</div>
+        <div class="precioTitulo">Tu cuota</div>
+        <div class="monto">&#8353;20.000<span>/ mes</span></div>
+        <ul>
+          <li>Acceso completo a la plataforma</li>
+          <li>Seguimiento y ajustes en tiempo real de tu entrenamiento</li>
+          <li>Acompañamiento constante en la gestión de tu proceso</li>
+          <li>Ejercicios básicos de preparación física incluidos (no es una periodización)</li>
+        </ul>
+      </div>`;
+
+    const complemento = `
+      <div class="precioCard complemento">
+        <div class="precioTitulo">Periodización de preparación física</div>
+        <div class="monto">+&#8353;20.000</div>
+        <p>Tu plan de halterofilia incluye ejercicios básicos de preparación física, pero no es una periodización. Si querés un programa de preparación física planificado específicamente para vos, es un servicio aparte que se suma a tu plan.</p>
+      </div>`;
+
+    let fichas;
+    if (esAdmin) {
+      fichas = fichaGeneral + fichaSeleccion;
+    } else if (esSeleccion) {
+      fichas = fichaSeleccion;
+    } else {
+      fichas = fichaGeneral;
+    }
+
+    return `<div class="precioGrid">${fichas}</div>${complemento}<p class="precioNota">Un precio accesible para todo lo que representa la gestión de tu proceso: temporadas de trabajo, ajustes, seguimiento y acompañamiento constante.</p>`;
+  }
 
   // ---- Definicion de tarjetas ----
 
@@ -341,6 +505,9 @@
     const esAdmin = ADMIN.includes(correo);
     const esCRC = PLAN_CRC.includes(correo);
     const esKintsugi = PLAN_KINTSUGI.includes(correo);
+    const esSeleccion = esCRC || SELECCION_JDN.includes(correo);
+
+    document.getElementById("precioBox").innerHTML = pintarPrecio(esAdmin, esSeleccion);
 
     let tarjetas;
     if (esAdmin) {
@@ -367,6 +534,7 @@
   function renderSinIdentidad() {
     document.getElementById("titulo").textContent = "Bienvenido";
     document.getElementById("correo").textContent = "";
+    document.getElementById("precioBox").innerHTML = pintarPrecio(false, false);
     document.getElementById("contenido").innerHTML =
       pintarTarjetas([TARJETAS.planGeneral, TARJETAS.patrones, TARJETAS.metodologia, TARJETAS.cargaIntensidad]) +
       `<a class="salir" href="/cdn-cgi/access/logout">Cerrar sesion</a>`;
