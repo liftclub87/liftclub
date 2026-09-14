@@ -6,7 +6,7 @@
 1,GENERAL,Día 2,Envión (Alta),Envión,4,2,,0.75,75,8
 1,GENERAL,Día 2,Envión (Alta),Clean Colgado,3,2,,0.7,70,6
 1,GENERAL,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,5,3,,0.95,95,15
-1,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,4,,0.8,80,12
+1,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,5,,0.8,80,12
 1,GENERAL,Día 3,Envion(Baja),Clean Colgado Parado,3,3,,0.7,70,9
 1,GENERAL,Día 3,Envion(Baja),Yerk desde Rack,3,3,,0.8,114,9
 1,GENERAL,Día 3,Envion(Baja),Sentadilla Delante con Pausa,4,3,,0.85,122,12
@@ -21,7 +21,7 @@
 2,GENERAL,Día 2,Envión (Alta),Envión,4,4,,0.75,75,16
 2,GENERAL,Día 2,Envión (Alta),Clean Colgado,3,4,,0.7,70,12
 2,GENERAL,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,5,5,,0.95,95,25
-2,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,6,,0.8,80,18
+2,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,4,6,,0.8,80,18
 2,GENERAL,Día 3,Envion(Baja),Clean Colgado Parado,3,5,,0.7,70,15
 2,GENERAL,Día 3,Envion(Baja),Yerk desde Rack,3,5,,0.8,114,15
 2,GENERAL,Día 3,Envion(Baja),Sentadilla Delante con Pausa,4,5,,0.85,122,20
@@ -36,7 +36,7 @@
 3,GENERAL,Día 2,Envión (Alta),Envión,5,2,,0.75,75,10
 3,GENERAL,Día 2,Envión (Alta),Clean Colgado,4,2,,0.7,70,8
 3,GENERAL,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,6,3,,0.95,95,18
-3,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,4,3,,0.8,80,12
+3,GENERAL,Día 2,Envión (Alta),Sentadilla Delante Dinámica,4,4,,0.8,80,12
 3,GENERAL,Día 3,Envion(Baja),Clean Colgado Parado,4,3,,0.7,70,12
 3,GENERAL,Día 3,Envion(Baja),Yerk desde Rack,4,3,,0.8,114,12
 3,GENERAL,Día 3,Envion(Baja),Sentadilla Delante con Pausa,5,3,,0.85,122,15
