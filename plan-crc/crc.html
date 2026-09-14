@@ -114,6 +114,48 @@
     transform:translateY(-2px);
   }
 
+  /* ---- Aviso de pago ---- */
+
+  .pagoAviso{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:12px;
+    padding:14px 18px;
+    margin-bottom:24px;
+  }
+
+  .pagoAviso p{
+    font-size:13px;
+    color:#c9cdd1;
+    margin:0;
+    line-height:1.5;
+  }
+
+  .preciosBtn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    background:transparent;
+    color:var(--cyan);
+    border:1px solid var(--cyan);
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:11px 20px;
+    border-radius:10px;
+    margin:0 10px 24px 0;
+    transition:transform .15s ease, background .15s ease;
+  }
+
+  .preciosBtn:hover{
+    background:rgba(95,202,231,.1);
+    transform:translateY(-2px);
+  }
+
   /* ---- Tarjeta de marcas personales ---- */
 
   .marcasCard{
@@ -331,6 +373,14 @@
     <h1>Plan CRC</h1>
     <a href="../privado/portal.html" class="backLink">&larr; Volver al Portal</a>
   </div>
+
+  <div class="pagoAviso">
+    <p>Cuota mensual — el pago vence el día 15 de cada mes.</p>
+  </div>
+
+  <a href="../privado/precios.html" class="preciosBtn">
+    Ver planes y precios
+  </a>
 
   <a href="https://liftclub87.net/culturismo" target="_blank" rel="noopener" class="prepFisicaBtn">
     Preparación Física
