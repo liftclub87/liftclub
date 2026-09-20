@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lift Club - Portal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/logo.png">
+<meta name="theme-color" content="#0F0F0F">
+
+<style>
+
+  :root{
+    --bg:#0F0F0F;
+    --cyan:#5FCAE7;
+    --pink:#ED1D7E;
+    --yellow:#FDD700;
+    --paper:#17181A;
+    --line:#26282B;
+    --muted:#8b9096;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Inter',sans-serif;
+    color:#EDEFF1;
+  }
+
+  ::selection{ background:var(--pink); color:#fff; }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--cyan);
+    outline-offset:3px;
+  }
+
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 40px;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(10px);
+    z-index:10;
+  }
+
+  nav img.logo{ height:26px; display:block; }
+
+  .navLinks{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+
+  .navLinks a{
+    color:#c9cdd1;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:9px 18px;
+    border-radius:999px;
+    transition:all .15s ease;
+  }
+
+  .navLinks a:hover{ color:#fff; background:var(--paper); }
+
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:56px 24px 100px;
+  }
+
+  .pageHead .eyebrow{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:10px;
+  }
+
+  .pageHead h1{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:32px;
+    letter-spacing:.5px;
+    margin:0 0 8px;
+    color:#fff;
+  }
+
+  .pageHead .correo{
+    font-size:13px;
+    color:var(--muted);
+    margin:0;
+  }
+
+  /* ---- Animaciones ---- */
+
+  @keyframes pulseFade{
+    0%,100%{ opacity:.55; }
+    50%{ opacity:1; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+  }
+
+  /* Elementos que aparecen con fade al entrar en pantalla (carga o scroll) */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);
+  }
+
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:16px;
+    margin-top:34px;
+  }
+
+  a.tarjeta{
+    text-decoration:none;
+    color:inherit;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:4px solid var(--cyan);
+    border-radius:16px;
+    padding:24px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition:border-color .25s cubic-bezier(.22,1,.36,1), transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, opacity .6s cubic-bezier(.22,1,.36,1);
+  }
+
+  a.tarjeta.pink{ border-left-color:var(--pink); }
+  a.tarjeta.yellow{ border-left-color:var(--yellow); }
+
+  a.tarjeta:hover{
+    border-color:var(--cyan);
+    transform:translateY(-4px) scale(1.015);
+    box-shadow:0 10px 26px -10px rgba(95,202,231,.4);
+  }
+  a.tarjeta.pink:hover{ border-color:var(--pink); box-shadow:0 10px 26px -10px rgba(237,29,126,.4); }
+  a.tarjeta.yellow:hover{ border-color:var(--yellow); box-shadow:0 10px 26px -10px rgba(253,215,0,.4); }
+
+  a.tarjeta:active{
+    transform:translateY(-1px) scale(.98);
+    transition-duration:.08s;
+  }
+
+  .tarjeta h2{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:19px;
+    letter-spacing:.5px;
+    margin:0;
+    color:#fff;
+  }
+
+  .tarjeta p{
+    font-size:13px;
+    color:var(--muted);
+    margin:0;
+    line-height:1.55;
+  }
+
+  .tarjeta .go{
+    margin-top:auto;
+    padding-top:6px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:var(--cyan);
+  }
+
+  a.tarjeta.pink .go{ color:var(--pink); }
+  a.tarjeta.yellow .go{ color:var(--yellow); }
+
+  .sectionHead{
+    margin:52px 0 0;
+    padding-top:32px;
+    border-top:1px solid var(--line);
+  }
+
+  .sectionHead .eyebrow{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:10px;
+  }
+
+  .sectionHead h2{
+    font-family:'Bungee', sans-serif;
+    font-size:22px;
+    font-weight:400;
+    letter-spacing:.5px;
+    margin:0;
+    color:#fff;
+  }
+
+  .estado{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+    animation:pulseFade 1.4s ease-in-out infinite;
+  }
+
+  .salir{
+    display:inline-block;
+    margin-top:44px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--muted);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .2s ease, border-color .2s ease, transform .15s ease;
+  }
+
+  .salir:hover{ color:var(--pink); border-color:var(--pink); }
+  .salir:active{ transform:scale(.97); }
+
+  .pagoAviso{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:12px;
+    padding:14px 18px;
+    margin:22px 0 0;
+  }
+
+  .pagoAviso p{
+    font-size:13px;
+    color:#c9cdd1;
+    margin:0;
+    line-height:1.5;
+  }
+
+  /* ---- Fichas de precio ---- */
+
+  .precioGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:16px;
+    margin-bottom:16px;
+  }
+
+  .precioCard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cyan);
+    border-radius:16px;
+    padding:22px;
+  }
+
+  .precioCard.seleccion{ border-left-color:var(--yellow); }
+  .precioCard.complemento{ border-left-color:var(--pink); margin-bottom:24px; }
+
+  .precioCard .etiqueta{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:8px;
+  }
+
+  .precioCard .precioTitulo{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:15px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:#fff;
+    margin-bottom:10px;
+  }
+
+  .precioCard .monto{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:26px;
+    color:#fff;
+    margin-bottom:14px;
+  }
+
+  .precioCard .monto span{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    color:var(--muted);
+    margin-left:4px;
+  }
+
+  .precioCard ul{
+    margin:0;
+    padding-left:18px;
+  }
+
+  .precioCard li{
+    font-size:13px;
+    color:#c9cdd1;
+    line-height:1.6;
+    margin-bottom:6px;
+  }
+
+  .precioCard.complemento p{
+    font-size:13px;
+    color:#c9cdd1;
+    line-height:1.6;
+    margin:0;
+  }
+
+  .precioNota{
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.65;
+    margin:24px 0 0;
+    font-style:italic;
+  }
+
+  .precioBox{
+    margin-bottom:44px;
+    padding-bottom:38px;
+    border-bottom:1px solid var(--line);
+  }
+
+  @media (max-width:640px){
+    nav{ padding:16px 20px; }
+    .wrap{ padding:36px 20px 60px; }
+    .pageHead h1{ font-size:26px; }
+  }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img class="logo" src="../assets/logo.png" alt="Lift Club 87">
+  <div class="navLinks">
+    <a href="../index.html">Home</a>
+    <a href="../ranking.html">Ranking</a>
+    <a href="../records.html">Records</a>
+    <a href="../calculadora.html">Calculadora</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div class="pageHead">
+    <div class="eyebrow">Portal</div>
+    <h1 id="titulo">Cargando...</h1>
+    <p class="correo" id="correo"></p>
+  </div>
+
+  <div class="pagoAviso reveal">
+    <p>Cuota mensual — el pago vence el día 15 de cada mes.</p>
+  </div>
+
+  <div class="precioBox" id="precioBox"></div>
+
+  <div id="contenido">
+    <p class="estado">Verificando tu acceso...</p>
+  </div>
+
+</div>
+
+<script>
+
+  // ===================================================================
+  // LISTAS DE ACCESO
+  // Estas listas solo deciden QUE VE cada persona en esta pantalla.
+  // La proteccion real la hace Cloudflare Access sobre cada carpeta.
+  // Si agregas a alguien aca, agregalo tambien en la politica de Access.
+  // Quien no este en ninguna de estas listas ve el Plan General.
+  // ===================================================================
+
+  const ADMIN = [
+    "chlinton87@gmail.com",
+  ];
+
+  const PLAN_CRC = [
+    "melisonaraya@gmail.com",
+  ];
+
+  const PLAN_KINTSUGI = [
+    "dana.ramkellawan@gmail.com",
+    "melinamaroto01@gmail.com",
+    "marotoignacio2@gmail.com",
+    "joalmo1712@gmail.com",
+    "giancarlocasanova80@outlook.com",
+    "melania-prado@hotmail.com",
+  ];
+
+  // Atletas de Plan General o Kintsugi que pertenecen a Seleccion Nacional
+  // o a un proceso de Juegos Nacionales (JDN). Quien ya esta en PLAN_CRC
+  // no hace falta agregarlo aca, porque Plan CRC ya implica Seleccion.
+  // Mantener esta lista igual que en precios.html.
+  const SELECCION_JDN = [
+  ];
+
+  // ---- Ficha de precio segun categoria ----
+
+  function pintarPrecio(esAdmin, esSeleccion) {
+    const fichaGeneral = `
+      <div class="precioCard reveal" style="transition-delay:60ms">
+        <div class="precioTitulo">Plan General</div>
+        <div class="monto">&#8353;30.000<span>/ mes</span></div>
+        <ul>
+          <li>Acceso completo a la plataforma</li>
+          <li>Seguimiento y ajustes en tiempo real de tu entrenamiento</li>
+          <li>Acompañamiento constante en la gestión de tu proceso</li>
+          <li>Ejercicios básicos de preparación física incluidos (no es una periodización)</li>
+        </ul>
+      </div>`;
+
+    const fichaSeleccion = `
+      <div class="precioCard seleccion reveal" style="transition-delay:120ms">
+        <div class="etiqueta">Selección Nacional / Juegos Nacionales</div>
+        <div class="precioTitulo">Tu cuota</div>
+        <div class="monto">&#8353;20.000<span>/ mes</span></div>
+        <ul>
+          <li>Acceso completo a la plataforma</li>
+          <li>Seguimiento y ajustes en tiempo real de tu entrenamiento</li>
+          <li>Acompañamiento constante en la gestión de tu proceso</li>
+          <li>Ejercicios básicos de preparación física incluidos (no es una periodización)</li>
+        </ul>
+      </div>`;
+
+    const complemento = `
+      <div class="precioCard complemento reveal" style="transition-delay:180ms">
+        <div class="precioTitulo">Periodización de preparación física</div>
+        <div class="monto">+&#8353;20.000</div>
+        <p>Tu plan de halterofilia incluye ejercicios básicos de preparación física, pero no es una periodización. Si querés un programa de preparación física planificado específicamente para vos, es un servicio aparte que se suma a tu plan.</p>
+      </div>`;
+
+    let fichas;
+    if (esAdmin) {
+      fichas = fichaGeneral + fichaSeleccion;
+    } else if (esSeleccion) {
+      fichas = fichaSeleccion;
+    } else {
+      fichas = fichaGeneral;
+    }
+
+    return `<div class="precioGrid">${fichas}</div>${complemento}<p class="precioNota">Un precio accesible para todo lo que representa la gestión de tu proceso: temporadas de trabajo, ajustes, seguimiento y acompañamiento constante.</p>`;
+  }
+
+  // ---- Definicion de tarjetas ----
+
+  const TARJETAS = {
+    planGeneral: {
+      href: "../plan-general/general.html",
+      color: "",
+      titulo: "Plan General",
+      texto: "Tu programa de entrenamiento con series, repeticiones e intensidad.",
+      accion: "Ver mi plan",
+    },
+    planCRC: {
+      href: "../plan-crc/crc.html",
+      color: "",
+      titulo: "Plan CRC",
+      texto: "Programa de la seleccion nacional.",
+      accion: "Ver mi plan",
+    },
+    kintsugi: {
+      href: "../kintsugi/kintsugi.html",
+      color: "yellow",
+      titulo: "Kintsugi",
+      texto: "Plan de retorno progresivo, por percepcion del esfuerzo (RPE).",
+      accion: "Ver mi plan",
+    },
+    patrones: {
+      href: "../patrones/patrones.html",
+      color: "",
+      titulo: "Patrones",
+      texto: "Preparacion fisica por patrones de movimiento: elegis el ejercicio segun tu nivel.",
+      accion: "Ver plan",
+    },
+    metodologia: {
+      href: "metodologia.html",
+      color: "pink",
+      titulo: "Metodologia",
+      texto: "Los Tres Saberes y los pilares tecnicos del club.",
+      accion: "Leer",
+    },
+    cargaIntensidad: {
+      href: "carga-intensidad.html",
+      color: "yellow",
+      titulo: "Carga e Intensidad",
+      texto: "Calcula volumen, intensidad promedio y zona de entrenamiento.",
+      accion: "Abrir calculadora",
+    },
+    dashboard: {
+      href: "../coach/dashboard.html",
+      color: "pink",
+      titulo: "Dashboard",
+      texto: "Panel del coach: acceso a todos los planes.",
+      accion: "Abrir panel",
+    },
+  };
+
+  function pintarTarjetas(lista) {
+    return `<div class="grid">` + lista.map((t, i) => `
+      <a href="${t.href}" class="tarjeta reveal${t.color ? " " + t.color : ""}" style="transition-delay:${i * 60}ms">
+        <h2>${t.titulo}</h2>
+        <p>${t.texto}</p>
+        <div class="go">${t.accion} &rarr;</div>
+      </a>
+    `).join("") + `</div>`;
+  }
+
+  // Hace aparecer con fade los elementos .reveal apenas entran en pantalla
+  // (al cargar si ya estan visibles, o al hacer scroll hasta ellos).
+  function activarReveal() {
+    const els = document.querySelectorAll(".reveal:not(.visible)");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(el => el.classList.add("visible"));
+      return;
+    }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(el => obs.observe(el));
+  }
+
+  function primerNombre(nombreCompleto, correo) {
+    if (nombreCompleto && nombreCompleto.trim()) {
+      return nombreCompleto.trim().split(/\s+/)[0];
+    }
+    if (correo) return correo.split("@")[0];
+    return "";
+  }
+
+  function render(identidad) {
+    const correo = (identidad && identidad.email ? identidad.email : "").toLowerCase();
+    const nombre = primerNombre(identidad && identidad.name, correo);
+
+    const T = TARJETAS;
+    const esAdmin = ADMIN.includes(correo);
+    const esCRC = PLAN_CRC.includes(correo);
+    const esKintsugi = PLAN_KINTSUGI.includes(correo);
+    const esSeleccion = esCRC || SELECCION_JDN.includes(correo);
+
+    document.getElementById("precioBox").innerHTML = pintarPrecio(esAdmin, esSeleccion);
+
+    let tarjetas;
+    if (esAdmin) {
+      tarjetas = [T.dashboard, T.planGeneral, T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
+    } else if (esCRC && esKintsugi) {
+      tarjetas = [T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
+    } else if (esCRC) {
+      tarjetas = [T.planCRC, T.patrones, T.metodologia, T.cargaIntensidad];
+    } else if (esKintsugi) {
+      tarjetas = [T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
+    } else {
+      tarjetas = [T.planGeneral, T.patrones, T.metodologia, T.cargaIntensidad];
+    }
+
+    document.getElementById("titulo").textContent = nombre ? `Hola, ${nombre}` : "Bienvenido";
+    document.getElementById("correo").textContent = correo;
+    document.getElementById("contenido").innerHTML =
+      pintarTarjetas(tarjetas) +
+      `<a class="salir" href="/cdn-cgi/access/logout">Cerrar sesion</a>`;
+
+    activarReveal();
+  }
+
+  // Si no logramos leer la identidad, no dejamos la pantalla vacia:
+  // mostramos la vista general, que es la que le toca a la mayoria.
+  function renderSinIdentidad() {
+    document.getElementById("titulo").textContent = "Bienvenido";
+    document.getElementById("correo").textContent = "";
+    document.getElementById("precioBox").innerHTML = pintarPrecio(false, false);
+    document.getElementById("contenido").innerHTML =
+      pintarTarjetas([TARJETAS.planGeneral, TARJETAS.patrones, TARJETAS.metodologia, TARJETAS.cargaIntensidad]) +
+      `<a class="salir" href="/cdn-cgi/access/logout">Cerrar sesion</a>`;
+
+    activarReveal();
+  }
+
+  fetch("/cdn-cgi/access/get-identity")
+    .then(r => {
+      if (!r.ok) throw new Error("sin identidad");
+      return r.json();
+    })
+    .then(render)
+    .catch(renderSinIdentidad);
+
+</script>
+
+</body>
+</html>
