@@ -22,7 +22,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@900&text=%E7%A8%B3&display=swap" rel="stylesheet">
 
 <style>
 
@@ -115,14 +114,13 @@
 
   .hero .glyphBg{
     position:absolute;
-    top:-40px;
-    right:-10px;
-    font-family:'Noto Sans SC', sans-serif;
-    font-weight:900;
-    font-size:280px;
-    color:var(--cyan);
-    opacity:.06;
-    line-height:1;
+    top:16px;
+    left:50%;
+    transform:translateX(-50%);
+    height:280px;
+    width:auto;
+    opacity:.15;
+    z-index:-1;
     pointer-events:none;
     user-select:none;
   }
@@ -419,7 +417,7 @@
     nav{ padding:16px 20px; }
     .navLinks a{ padding:8px 12px; font-size:11px; }
     .hero{ padding:48px 20px 32px; }
-    .hero .glyphBg{ font-size:160px; }
+    .hero .glyphBg{ height:170px; }
     .hero .lead{ font-size:15px; }
     .hero .sub{ font-size:14px; }
     .wrap{ padding:20px 20px 60px; }
@@ -445,7 +443,7 @@
 </nav>
 
 <div class="hero">
-  <div class="glyphBg" aria-hidden="true">稳</div>
+  <img class="glyphBg" src="assets/sello.png" alt="" aria-hidden="true">
   <img class="wordmark" src="assets/logo.png" alt="Lift Club 87">
   <p class="lead">Un club que forma a través del deporte. Técnica, Criterio y Carácter.</p>
   <p class="sub">Acá encontrás los rankings, records y eventos de la halterofilia nacional.</p>
