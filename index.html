@@ -47,6 +47,24 @@
 
   ::selection{ background:var(--pink); color:#fff; }
 
+  /* ---- Animaciones ---- */
+
+  @keyframes pulseFade{
+    0%,100%{ opacity:.55; }
+    50%{ opacity:1; }
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);
+  }
+
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--cyan);
     outline-offset:3px;
@@ -166,8 +184,10 @@
     font-size:13px;
     letter-spacing:.8px;
     text-transform:uppercase;
-    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease;
+    transition:transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, border-color .25s ease, color .25s ease, opacity .6s cubic-bezier(.22,1,.36,1);
   }
+
+  .btn:active{ transform:translateY(0) scale(.96); transition-duration:.08s; }
 
   .btn.primary{
     background:var(--cyan);
@@ -175,8 +195,8 @@
   }
 
   .btn.primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 24px rgba(95,202,231,.25);
+    transform:translateY(-3px) scale(1.02);
+    box-shadow:0 12px 28px -6px rgba(95,202,231,.45);
   }
 
   .btn.ghost{
@@ -188,6 +208,8 @@
   .btn.ghost:hover{
     border-color:var(--cyan);
     color:var(--cyan);
+    transform:translateY(-3px) scale(1.02);
+    box-shadow:0 12px 28px -8px rgba(95,202,231,.3);
   }
 
   .btn svg{
@@ -214,13 +236,16 @@
     border-radius:16px;
     padding:26px 28px;
     margin-top:36px;
-    transition:border-color .15s ease, transform .15s ease;
+    transition:border-color .25s cubic-bezier(.22,1,.36,1), transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, opacity .6s cubic-bezier(.22,1,.36,1);
   }
 
   .evento:hover{
     border-color:var(--yellow);
-    transform:translateY(-2px);
+    transform:translateY(-3px) scale(1.01);
+    box-shadow:0 10px 26px -10px rgba(253,215,0,.4);
   }
+
+  .evento:active{ transform:translateY(-1px) scale(.985); transition-duration:.08s; }
 
   .evento .tag{
     font-size:11px;
@@ -271,17 +296,20 @@
     border-left:4px solid var(--cyan);
     border-radius:16px;
     padding:26px 28px;
-    transition:border-color .15s ease, transform .15s ease;
+    transition:border-color .25s cubic-bezier(.22,1,.36,1), transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, opacity .6s cubic-bezier(.22,1,.36,1);
   }
 
   a.destacado.records{ border-left-color:var(--pink); }
 
   a.destacado:hover{
     border-color:var(--cyan);
-    transform:translateY(-2px);
+    transform:translateY(-3px) scale(1.015);
+    box-shadow:0 10px 26px -10px rgba(95,202,231,.4);
   }
 
-  a.destacado.records:hover{ border-color:var(--pink); }
+  a.destacado.records:hover{ border-color:var(--pink); box-shadow:0 10px 26px -10px rgba(237,29,126,.4); }
+
+  a.destacado:active{ transform:translateY(-1px) scale(.98); transition-duration:.08s; }
 
   .destacado h3{
     font-family:'Bungee', sans-serif;
@@ -336,6 +364,13 @@
     padding:22px;
   }
 
+  .announceEstado{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+    animation:pulseFade 1.4s ease-in-out infinite;
+  }
+
   .announce.pink{ border-left-color:var(--pink); }
   .announce.yellow{ border-left-color:var(--yellow); }
 
@@ -376,7 +411,8 @@
   }
 
   @media (prefers-reduced-motion: reduce){
-    *{ transition:none !important; }
+    *{ transition:none !important; animation-duration:.001ms !important; animation-iteration-count:1 !important; }
+    .reveal{ opacity:1 !important; transform:none !important; }
   }
 
   @media (max-width:640px){
@@ -414,7 +450,7 @@
   <p class="lead">Un club que forma a través del deporte. Técnica, Criterio y Carácter.</p>
   <p class="sub">Acá encontrás los rankings, records y eventos de la halterofilia nacional.</p>
   <div class="heroBtns">
-    <a href="privado/portal.html" class="btn primary">Ingresar</a>
+    <a href="privado/portal.html" class="btn primary reveal">Ingresar</a>
   </div>
   <p class="accesoNota">Acceso para miembros del club. Para unirte, <a href="mailto:gestion@liftclub87.com">escríbenos</a>.</p>
 </div>
@@ -426,7 +462,7 @@
        Quitar o reemplazar después del 15 de noviembre de 2026.
        Si queda un evento vencido publicado, es peor que no mostrar nada.
        ================================================================ -->
-  <a class="evento"
+  <a class="evento reveal"
      href="https://drive.google.com/drive/folders/1JzsTONlBK2-t4ckGU9ckG2nLFm-FqWrc?usp=sharing"
      target="_blank" rel="noopener">
     <div class="tag">Próximo evento</div>
@@ -437,11 +473,11 @@
   <!-- ================= FIN PRÓXIMO EVENTO ================= -->
 
   <div class="destacados">
-    <a href="ranking.html" class="destacado">
+    <a href="ranking.html" class="destacado reveal" style="transition-delay:60ms">
       <h3>Ranking</h3>
       <p>Las marcas de los atletas del club, ordenadas y actualizadas.</p>
     </a>
-    <a href="records.html" class="destacado records">
+    <a href="records.html" class="destacado records reveal" style="transition-delay:120ms">
       <h3>Records</h3>
       <p>Los mejores levantamientos registrados por categoría.</p>
     </a>
@@ -460,7 +496,7 @@
   </div>
 
   <div class="contactoBtns">
-    <a href="https://www.instagram.com/liftclub87?igsh=bnFha28xMzYwYTdh" target="_blank" rel="noopener" class="btn ghost">
+    <a href="https://www.instagram.com/liftclub87?igsh=bnFha28xMzYwYTdh" target="_blank" rel="noopener" class="btn ghost reveal" style="transition-delay:60ms">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <rect x="2" y="2" width="20" height="20" rx="5"></rect>
         <circle cx="12" cy="12" r="4"></circle>
@@ -468,7 +504,7 @@
       </svg>
       Instagram
     </a>
-    <a href="mailto:gestion@liftclub87.com" class="btn ghost">
+    <a href="mailto:gestion@liftclub87.com" class="btn ghost reveal" style="transition-delay:120ms">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="3"></rect>
         <path d="M2.5 7l9.5 6.5L21.5 7"></path>
@@ -484,7 +520,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
 
+  // Hace aparecer con fade los elementos .reveal apenas entran en pantalla
+  // (al cargar si ya estan visibles, o al hacer scroll hasta ellos).
+  function activarReveal() {
+    const els = document.querySelectorAll(".reveal:not(.visible)");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(el => el.classList.add("visible"));
+      return;
+    }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(el => obs.observe(el));
+  }
+
+  activarReveal();
+
   const aGrid = document.getElementById("announceGrid");
+  aGrid.innerHTML = `<p class="announceEstado">Cargando anuncios...</p>`;
 
   function vacio(){
     aGrid.innerHTML = `<p style="color:var(--muted);font-size:14px;">Información en construcción.</p>`;
@@ -500,9 +558,10 @@
         return;
       }
 
+      aGrid.innerHTML = "";
       let pintados = 0;
 
-      results.data.forEach(a => {
+      results.data.forEach((a, i) => {
         const tag    = (a["Tag"]    || "").trim();
         const titulo = (a["Titulo"] || "").trim();
         const texto  = (a["Texto"]  || "").trim();
@@ -511,7 +570,8 @@
         if (!titulo && !texto) return;
 
         const el = document.createElement("div");
-        el.className = "announce" + (color ? " " + color : "");
+        el.className = "announce reveal" + (color ? " " + color : "");
+        el.style.transitionDelay = (i * 60) + "ms";
 
         let html = "";
         if (tag)    html += `<div class="tag">${tag}</div>`;
@@ -523,7 +583,11 @@
         pintados++;
       });
 
-      if (pintados === 0) vacio();
+      if (pintados === 0) {
+        vacio();
+      } else {
+        activarReveal();
+      }
     },
     error: vacio
   });
