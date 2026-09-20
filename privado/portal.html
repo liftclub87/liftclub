@@ -100,6 +100,22 @@
     margin:0;
   }
 
+  /* ---- Animaciones ---- */
+
+  @keyframes fadeInUp{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  @keyframes pulseFade{
+    0%,100%{ opacity:.55; }
+    50%{ opacity:1; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  }
+
   .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
@@ -118,15 +134,33 @@
     display:flex;
     flex-direction:column;
     gap:10px;
-    transition:border-color .15s ease, transform .15s ease;
+    transition:border-color .25s cubic-bezier(.22,1,.36,1), transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease;
+    animation:fadeInUp .5s cubic-bezier(.22,1,.36,1) both;
   }
+
+  .grid a.tarjeta:nth-child(1){ animation-delay:.03s; }
+  .grid a.tarjeta:nth-child(2){ animation-delay:.09s; }
+  .grid a.tarjeta:nth-child(3){ animation-delay:.15s; }
+  .grid a.tarjeta:nth-child(4){ animation-delay:.21s; }
+  .grid a.tarjeta:nth-child(5){ animation-delay:.27s; }
+  .grid a.tarjeta:nth-child(6){ animation-delay:.33s; }
+  .grid a.tarjeta:nth-child(7){ animation-delay:.39s; }
 
   a.tarjeta.pink{ border-left-color:var(--pink); }
   a.tarjeta.yellow{ border-left-color:var(--yellow); }
 
-  a.tarjeta:hover{ border-color:var(--cyan); transform:translateY(-3px); }
-  a.tarjeta.pink:hover{ border-color:var(--pink); }
-  a.tarjeta.yellow:hover{ border-color:var(--yellow); }
+  a.tarjeta:hover{
+    border-color:var(--cyan);
+    transform:translateY(-4px) scale(1.015);
+    box-shadow:0 10px 26px -10px rgba(95,202,231,.4);
+  }
+  a.tarjeta.pink:hover{ border-color:var(--pink); box-shadow:0 10px 26px -10px rgba(237,29,126,.4); }
+  a.tarjeta.yellow:hover{ border-color:var(--yellow); box-shadow:0 10px 26px -10px rgba(253,215,0,.4); }
+
+  a.tarjeta:active{
+    transform:translateY(-1px) scale(.98);
+    transition-duration:.08s;
+  }
 
   .tarjeta h2{
     font-family:'Bungee', sans-serif;
@@ -185,6 +219,7 @@
     color:var(--muted);
     font-size:14px;
     line-height:1.6;
+    animation:pulseFade 1.4s ease-in-out infinite;
   }
 
   .salir{
@@ -196,9 +231,11 @@
     text-decoration:none;
     border-bottom:1px solid var(--line);
     padding-bottom:2px;
+    transition:color .2s ease, border-color .2s ease, transform .15s ease;
   }
 
   .salir:hover{ color:var(--pink); border-color:var(--pink); }
+  .salir:active{ transform:scale(.97); }
 
   .pagoAviso{
     background:var(--paper);
@@ -207,6 +244,7 @@
     border-radius:12px;
     padding:14px 18px;
     margin:22px 0 0;
+    animation:fadeInUp .5s cubic-bezier(.22,1,.36,1) both;
   }
 
   .pagoAviso p{
@@ -231,7 +269,12 @@
     border-left:3px solid var(--cyan);
     border-radius:16px;
     padding:22px;
+    animation:fadeInUp .5s cubic-bezier(.22,1,.36,1) both;
   }
+
+  .precioGrid .precioCard:nth-child(1){ animation-delay:.06s; }
+  .precioGrid .precioCard:nth-child(2){ animation-delay:.12s; }
+  .precioCard.complemento{ animation-delay:.18s; }
 
   .precioCard.seleccion{ border-left-color:var(--yellow); }
   .precioCard.complemento{ border-left-color:var(--pink); margin-bottom:24px; }
