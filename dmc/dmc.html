@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lift Club - DMC</title>
+<link rel="icon" href="../assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --bg:#0F0F0F;
+    --cyan:#5FCAE7;
+    --pink:#ED1D7E;
+    --yellow:#FDD700;
+    --paper:#17181A;
+    --line:#26282B;
+    --muted:#8b9096;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Inter',sans-serif;
+    color:#EDEFF1;
+  }
+
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 40px;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    background:rgba(15,15,15,.9);
+    backdrop-filter:blur(10px);
+    z-index:10;
+  }
+
+  nav img.logo{ height:26px; }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:50px 24px 100px;
+  }
+
+  .pageHead{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:6px;
+  }
+
+  .pageHead h1{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:30px;
+    letter-spacing:.5px;
+    margin:0;
+    color:#fff;
+  }
+
+  .pageSub{
+    font-size:13px;
+    color:var(--muted);
+    margin:0 0 24px;
+    font-style:italic;
+  }
+
+  .formBtn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    background:transparent;
+    color:var(--cyan);
+    border:1px solid var(--cyan);
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:11px 20px;
+    border-radius:10px;
+    margin-bottom:30px;
+    transition:transform .2s cubic-bezier(.2,.8,.2,1), background .2s ease, box-shadow .2s ease;
+  }
+
+  .formBtn:hover{
+    background:rgba(95,202,231,.1);
+    transform:translateY(-2px);
+    box-shadow:0 6px 20px rgba(95,202,231,.25);
+  }
+
+  .formBtn:active{
+    transform:translateY(0) scale(.96);
+    transition-duration:.08s;
+  }
+
+  .leyenda{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-bottom:30px;
+    padding:14px 18px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+
+  .leyendaItem{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    color:var(--muted);
+    font-weight:600;
+  }
+
+  .leyendaDot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+  }
+
+  .leyendaDot.c1{ background:var(--cyan); }
+  .leyendaDot.c2{ background:var(--pink); }
+  .leyendaDot.c3{ background:var(--yellow); }
+
+  .dayLabel{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin:26px 0 12px;
+  }
+
+  .dayLabel:first-of-type{ margin-top:0; }
+
+  .cardGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+    gap:12px;
+  }
+
+  .claseCard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cyan);
+    border-radius:14px;
+    padding:16px 18px;
+    transition:transform .2s cubic-bezier(.2,.8,.2,1), box-shadow .2s ease;
+  }
+
+  .claseCard:hover{
+    transform:translateY(-3px);
+  }
+
+  .claseCard.clase1{ border-left-color:var(--cyan); }
+  .claseCard.clase1:hover{ box-shadow:0 6px 20px rgba(95,202,231,.2); }
+
+  .claseCard.clase2{ border-left-color:var(--pink); }
+  .claseCard.clase2:hover{ box-shadow:0 6px 20px rgba(237,29,126,.2); }
+
+  .claseCard.clase3{ border-left-color:var(--yellow); }
+  .claseCard.clase3:hover{ box-shadow:0 6px 20px rgba(253,215,0,.2); }
+
+  .claseTag{
+    display:inline-block;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:8px;
+  }
+
+  .claseHora{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:20px;
+    color:#fff;
+    margin-bottom:6px;
+  }
+
+  .claseEnfoque{
+    font-size:13px;
+    color:#c9cdd1;
+    font-weight:600;
+  }
+
+  .claseNotas{
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:8px;
+    line-height:1.4;
+  }
+
+  .empty{
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  /* ---- Scroll reveal ---- */
+
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s cubic-bezier(.2,.8,.2,1), transform .6s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+  }
+
+  @media (max-width:640px){
+    nav{ padding:16px 20px; }
+    .wrap{ padding:36px 20px 60px; }
+  }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <img class="logo" src="../assets/logo.png" alt="Lift Club">
+</nav>
+
+<div class="wrap">
+
+  <div class="pageHead">
+    <h1>DMC</h1>
+  </div>
+  <p class="pageSub">Programa de halterofilia — San Roque. Uso interno de coaches.</p>
+
+  <a href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAApTkxkRUMDBJU1Q2OUNSSk5MVk5JMk1MTkxLREJSRC4u&route=shorturl" target="_blank" rel="noopener" class="formBtn">
+    Reportar clase (Formulario)
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+  </a>
+
+  <div class="leyenda">
+    <div class="leyendaItem"><span class="leyendaDot c1"></span>Clase 1</div>
+    <div class="leyendaItem"><span class="leyendaDot c2"></span>Clase 2</div>
+    <div class="leyendaItem"><span class="leyendaDot c3"></span>Clase 3</div>
+  </div>
+
+  <div id="horarioContenedor">
+    <p class="empty">Cargando horario...</p>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script>
+
+  function activarReveal() {
+    const elementos = document.querySelectorAll(".reveal:not(.visible)");
+    const observer = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visible");
+          observer.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    elementos.forEach(el => observer.observe(el));
+  }
+
+  const ORDEN_DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+  function renderizarHorario(filas) {
+    const contenedor = document.getElementById("horarioContenedor");
+
+    const filasConDatos = filas.filter(f => f["Día"] && f["Hora"]);
+
+    if (filasConDatos.length === 0) {
+      contenedor.innerHTML = `<p class="empty">Todavía no hay clases cargadas.</p>`;
+      return;
+    }
+
+    const dias = {};
+    filasConDatos.forEach(f => {
+      const dKey = (f["Día"] || "").trim();
+      if (!dias[dKey]) dias[dKey] = [];
+      dias[dKey].push(f);
+    });
+
+    const diasOrdenados = Object.keys(dias).sort((a, b) => {
+      return ORDEN_DIAS.indexOf(a) - ORDEN_DIAS.indexOf(b);
+    });
+
+    let html = "";
+    let contadorGlobal = 0;
+
+    diasOrdenados.forEach(dKey => {
+      html += `<div class="dayLabel reveal">${dKey}</div><div class="cardGrid">`;
+
+      dias[dKey].forEach(clase => {
+        const numClase = (clase["Clase"] || "1").trim();
+        const hora = clase["Hora"] || "";
+        const enfoque = clase["Enfoque"] || "";
+        const notas = (clase["Notas"] || "").trim();
+        const delay = (contadorGlobal % 6) * 60;
+        contadorGlobal++;
+
+        html += `
+          <div class="claseCard clase${numClase} reveal" style="transition-delay:${delay}ms">
+            <div class="claseTag">Clase ${numClase}</div>
+            <div class="claseHora">${hora}</div>
+            <div class="claseEnfoque">${enfoque}</div>
+            ${notas ? `<div class="claseNotas">${notas}</div>` : ""}
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+    });
+
+    contenedor.innerHTML = html;
+    activarReveal();
+  }
+
+  Papa.parse("dmc.csv?v=" + Date.now(), {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function (results) {
+      renderizarHorario(results.data);
+    },
+    error: function () {
+      document.getElementById("horarioContenedor").innerHTML =
+        `<p class="empty">No se pudo cargar el horario.</p>`;
+    }
+  });
+
+</script>
+
+</body>
+</html>
