@@ -206,6 +206,175 @@
     line-height:1.4;
   }
 
+  /* ---- Selector de semana ---- */
+
+  .semanas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:24px;
+  }
+
+  .semanaBtn{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:#c9cdd1;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:9px 18px;
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+
+  .semanaBtn:hover{ border-color:var(--cyan); color:#fff; }
+
+  .semanaBtn.activa{
+    background:var(--cyan);
+    border-color:var(--cyan);
+    color:#0F0F0F;
+  }
+
+  /* ---- Ficha que se abre con el plan ---- */
+
+  .claseCard{ cursor:pointer; scroll-margin-top:90px; }
+
+  .claseCard.reveal.visible:hover{ transform:translateY(-3px); }
+
+  .claseCard:focus-visible{ outline:2px solid var(--cyan); outline-offset:2px; }
+
+  .claseCard.abierta{
+    grid-column:1 / -1;
+    cursor:default;
+  }
+
+  .claseCard.abierta:hover{ transform:none; }
+
+  .claseCab{ cursor:pointer; }
+
+  .verPlan{
+    display:inline-block;
+    margin-top:12px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--cyan);
+  }
+
+  .claseCard.clase2 .verPlan{ color:var(--pink); }
+  .claseCard.clase3 .verPlan{ color:var(--yellow); }
+
+  .flecha{
+    display:inline-block;
+    transition:transform .2s ease;
+  }
+
+  .claseCard.abierta .flecha{ transform:rotate(180deg); }
+
+  .planDetalle{
+    display:none;
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+  }
+
+  .claseCard.abierta .planDetalle{ display:block; }
+
+  .bloqueLabel{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin:18px 0 8px;
+  }
+
+  .bloqueLabel:first-child{ margin-top:0; }
+
+  .ejercicio{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:14px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .ejercicio:last-child{ border-bottom:none; }
+
+  .ejNombre{
+    font-size:14px;
+    font-weight:600;
+    color:#fff;
+    line-height:1.35;
+  }
+
+  .ejNota{
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:3px;
+  }
+
+  .ejStats{
+    display:flex;
+    gap:16px;
+    flex-shrink:0;
+  }
+
+  .ejStats span{
+    font-family:'Bungee', sans-serif;
+    font-size:15px;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+  }
+
+  .ejStats small{
+    font-family:'Inter',sans-serif;
+    font-size:9px;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--muted);
+    letter-spacing:.5px;
+  }
+
+  .ejStats .carga{ color:var(--yellow); }
+
+  .cerrarPlan{
+    display:block;
+    width:100%;
+    margin-top:16px;
+    padding:10px;
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:10px;
+    color:var(--muted);
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    cursor:pointer;
+  }
+
+  .cerrarPlan:hover{ color:#fff; border-color:var(--muted); }
+
+  .pendiente{
+    font-size:13px;
+    color:var(--muted);
+    font-style:italic;
+  }
+
+  @media (max-width:480px){
+    .ejercicio{ flex-direction:column; gap:6px; }
+    .ejStats span{ align-items:flex-start; }
+  }
+
   .empty{
     color:var(--muted);
     font-size:14px;
@@ -261,6 +430,8 @@
     <div class="leyendaItem"><span class="leyendaDot c3"></span>Clase 3</div>
   </div>
 
+  <div class="semanas" id="semanas"></div>
+
   <div id="horarioContenedor">
     <p class="empty">Cargando horario...</p>
   </div>
@@ -270,20 +441,150 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
 
+  // ---- Utilidades ----
+
   function activarReveal() {
     const elementos = document.querySelectorAll(".reveal:not(.visible)");
     const observer = new IntersectionObserver((entradas) => {
       entradas.forEach(entrada => {
         if (entrada.isIntersecting) {
-          entrada.target.classList.add("visible");
-          observer.unobserve(entrada.target);
+          const el = entrada.target;
+          el.classList.add("visible");
+          observer.unobserve(el);
+          // Quitar el retraso escalonado para que el hover responda al instante.
+          setTimeout(() => { el.style.transitionDelay = ""; }, 900);
         }
       });
     }, { threshold: 0.15 });
     elementos.forEach(el => observer.observe(el));
   }
 
+  function esc(t) {
+    return String(t == null ? "" : t)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  // "Miércoles", "miercoles " y "MIERCOLES" cuentan como el mismo día.
+  function normalizar(t) {
+    return String(t || "").normalize("NFD").replace(/[̀-ͯ]/g, "").trim().toLowerCase();
+  }
+
+  function numero(t) {
+    const n = parseInt(String(t || "").replace(/\D/g, ""), 10);
+    return isNaN(n) ? "" : String(n);
+  }
+
   const ORDEN_DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+  const ORDEN_BLOQUES = ["calentamiento y activacion", "tecnica", "fuerza", "fisico"];
+
+  // ---- Estado ----
+
+  let PLAN = {};            // PLAN[semana][dia|clase] = [filas]
+  let SEMANAS = ["1", "2", "3", "4"];
+  let semanaActual = "1";
+  let planCargado = false;
+
+  // ---- Plan de entrenamiento ----
+
+  function indexarPlan(filas) {
+    PLAN = {};
+    const semanas = new Set();
+    filas.forEach(f => {
+      const sem = numero(f["Semana"]);
+      const dia = normalizar(f["Día"] || f["Dia"]);
+      if (!sem || !dia) return;
+      semanas.add(sem);
+      if (!(f["Ejercicio"] || "").trim()) return;
+      // Si la columna Clase queda vacía, la fila aplica a todas las clases de ese día.
+      const clase = numero(f["Clase"]) || "*";
+      const key = dia + "|" + clase;
+      if (!PLAN[sem]) PLAN[sem] = {};
+      if (!PLAN[sem][key]) PLAN[sem][key] = [];
+      PLAN[sem][key].push(f);
+    });
+    if (semanas.size) {
+      SEMANAS = [...semanas].sort((a, b) => a - b);
+      if (!SEMANAS.includes(semanaActual)) semanaActual = SEMANAS[0];
+    }
+  }
+
+  function ejerciciosDe(dia, clase) {
+    const s = PLAN[semanaActual] || {};
+    const d = normalizar(dia);
+    return (s[d + "|" + clase] || []).concat(s[d + "|*"] || []);
+  }
+
+  function pintarDetalle(dia, clase) {
+    if (!planCargado) {
+      return `<p class="pendiente">Cargando plan...</p>`;
+    }
+    const filas = ejerciciosDe(dia, clase);
+    if (filas.length === 0) {
+      return `<p class="pendiente">Plan pendiente para la semana ${esc(semanaActual)}.</p>`;
+    }
+
+    // Agrupar por bloque, en el orden fijo del club y luego cualquier otro.
+    const grupos = {};
+    const orden = [];
+    filas.forEach(f => {
+      const nombre = (f["Bloque"] || "").trim() || "Ejercicios";
+      const k = normalizar(nombre);
+      if (!grupos[k]) { grupos[k] = { nombre, items: [] }; orden.push(k); }
+      grupos[k].items.push(f);
+    });
+    orden.sort((a, b) => {
+      const ia = ORDEN_BLOQUES.indexOf(a), ib = ORDEN_BLOQUES.indexOf(b);
+      return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    });
+
+    let html = "";
+    orden.forEach(k => {
+      const g = grupos[k];
+      html += `<div class="bloqueLabel">${esc(g.nombre)}</div>`;
+      g.items.forEach(ex => {
+        const series = (ex["Series"] || "").trim() || "—";
+        const reps = (ex["Reps"] || "").trim() || "—";
+        const carga = (ex["Carga"] || "").trim() || "—";
+        const nota = (ex["Notas"] || "").trim();
+        html += `
+          <div class="ejercicio">
+            <div>
+              <div class="ejNombre">${esc(ex["Ejercicio"])}</div>
+              ${nota ? `<div class="ejNota">${esc(nota)}</div>` : ""}
+            </div>
+            <div class="ejStats">
+              <span>${esc(series)}<small>series</small></span>
+              <span>${esc(reps)}<small>reps</small></span>
+              <span${carga !== "—" ? ' class="carga"' : ""}>${esc(carga)}<small>carga</small></span>
+            </div>
+          </div>`;
+      });
+    });
+    return html + `<button type="button" class="cerrarPlan">Cerrar plan &#9652;</button>`;
+  }
+
+  function refrescarDetalles() {
+    document.querySelectorAll(".claseCard").forEach(card => {
+      card.querySelector(".planDetalle").innerHTML =
+        pintarDetalle(card.dataset.dia, card.dataset.clase);
+    });
+  }
+
+  function pintarSemanas() {
+    document.getElementById("semanas").innerHTML = SEMANAS.map(s =>
+      `<button type="button" class="semanaBtn${s === semanaActual ? " activa" : ""}" data-semana="${esc(s)}">Semana ${esc(s)}</button>`
+    ).join("");
+  }
+
+  document.getElementById("semanas").addEventListener("click", e => {
+    const btn = e.target.closest(".semanaBtn");
+    if (!btn) return;
+    semanaActual = btn.dataset.semana;
+    pintarSemanas();
+    refrescarDetalles();
+  });
+
+  // ---- Horario ----
 
   function renderizarHorario(filas) {
     const contenedor = document.getElementById("horarioContenedor");
@@ -310,10 +611,10 @@
     let contadorGlobal = 0;
 
     diasOrdenados.forEach(dKey => {
-      html += `<div class="dayLabel reveal">${dKey}</div><div class="cardGrid">`;
+      html += `<div class="dayLabel reveal">${esc(dKey)}</div><div class="cardGrid">`;
 
       dias[dKey].forEach(clase => {
-        const numClase = (clase["Clase"] || "1").trim();
+        const numClase = numero(clase["Clase"]) || "1";
         const hora = clase["Hora"] || "";
         const enfoque = clase["Enfoque"] || "";
         const notas = (clase["Notas"] || "").trim();
@@ -321,11 +622,17 @@
         contadorGlobal++;
 
         html += `
-          <div class="claseCard clase${numClase} reveal" style="transition-delay:${delay}ms">
-            <div class="claseTag">Clase ${numClase}</div>
-            <div class="claseHora">${hora}</div>
-            <div class="claseEnfoque">${enfoque}</div>
-            ${notas ? `<div class="claseNotas">${notas}</div>` : ""}
+          <div class="claseCard clase${numClase} reveal" style="transition-delay:${delay}ms"
+               role="button" tabindex="0" aria-expanded="false"
+               data-dia="${esc(dKey)}" data-clase="${numClase}">
+            <div class="claseCab">
+              <div class="claseTag">Clase ${numClase}</div>
+              <div class="claseHora">${esc(hora)}</div>
+              <div class="claseEnfoque">${esc(enfoque)}</div>
+              ${notas ? `<div class="claseNotas">${esc(notas)}</div>` : ""}
+              <div class="verPlan"><span class="txt">Ver plan</span> <span class="flecha">&#9662;</span></div>
+            </div>
+            <div class="planDetalle"></div>
           </div>
         `;
       });
@@ -334,13 +641,48 @@
     });
 
     contenedor.innerHTML = html;
+    refrescarDetalles();
     activarReveal();
   }
 
-  Papa.parse("dmc.csv?v=" + Date.now(), {
+  function alternar(card) {
+    const abierta = card.classList.toggle("abierta");
+    card.setAttribute("aria-expanded", abierta ? "true" : "false");
+    card.querySelector(".verPlan .txt").textContent = abierta ? "Cerrar" : "Ver plan";
+    card.scrollIntoView({ block: abierta ? "nearest" : "start", behavior: "smooth" });
+  }
+
+  const contenedorHorario = document.getElementById("horarioContenedor");
+
+  contenedorHorario.addEventListener("click", e => {
+    const card = e.target.closest(".claseCard");
+    if (!card) return;
+    // Con la ficha abierta, solo el encabezado la cierra
+    // (así se puede leer y seleccionar el plan sin que se cierre).
+    if (card.classList.contains("abierta") && !e.target.closest(".claseCab, .cerrarPlan")) return;
+    alternar(card);
+  });
+
+  contenedorHorario.addEventListener("keydown", e => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const card = e.target.closest(".claseCard");
+    if (!card || e.target !== card) return;
+    e.preventDefault();
+    alternar(card);
+  });
+
+  // ---- Carga de datos ----
+
+  pintarSemanas();
+
+  const opcionesCSV = {
     download: true,
     header: true,
     skipEmptyLines: true,
+    transformHeader: h => h.replace(/^﻿/, "").trim(),
+  };
+
+  Papa.parse("dmc.csv?v=" + Date.now(), Object.assign({}, opcionesCSV, {
     complete: function (results) {
       renderizarHorario(results.data);
     },
@@ -348,7 +690,20 @@
       document.getElementById("horarioContenedor").innerHTML =
         `<p class="empty">No se pudo cargar el horario.</p>`;
     }
-  });
+  }));
+
+  Papa.parse("dmc-plan.csv?v=" + Date.now(), Object.assign({}, opcionesCSV, {
+    complete: function (results) {
+      indexarPlan(results.data);
+      planCargado = true;
+      pintarSemanas();
+      refrescarDetalles();
+    },
+    error: function () {
+      planCargado = true;
+      refrescarDetalles();
+    }
+  }));
 
 </script>
 
