@@ -415,6 +415,13 @@
   const SELECCION_JDN = [
   ];
 
+  // Coaches del programa DMC. Ven la tarjeta DMC en el portal.
+  // Mantener igual que la politica DMCCOACHES de Cloudflare Access.
+  const COACHES_DMC = [
+    "chlinton87@gmail.com",
+    "marotoignacio2@gmail.com",
+  ];
+
   // ---- Ficha de precio segun categoria ----
 
   function pintarPrecio(esAdmin, esSeleccion) {
@@ -514,6 +521,13 @@
       texto: "Panel del coach: acceso a todos los planes.",
       accion: "Abrir panel",
     },
+    dmc: {
+      href: "../dmc/dmc.html",
+      color: "",
+      titulo: "DMC",
+      texto: "Horario del programa de halterofilia en San Roque y reporte de clases.",
+      accion: "Abrir",
+    },
   };
 
   function pintarTarjetas(lista) {
@@ -562,20 +576,27 @@
     const esCRC = PLAN_CRC.includes(correo);
     const esKintsugi = PLAN_KINTSUGI.includes(correo);
     const esSeleccion = esCRC || SELECCION_JDN.includes(correo);
+    const esCoachDMC = COACHES_DMC.includes(correo);
 
     document.getElementById("precioBox").innerHTML = pintarPrecio(esAdmin, esSeleccion);
 
+    // La tarjeta Carga e Intensidad queda oculta para todos menos el admin
+    // (la pagina sigue existiendo, solo no se muestra la tarjeta).
     let tarjetas;
     if (esAdmin) {
-      tarjetas = [T.dashboard, T.planGeneral, T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.dashboard, T.dmc, T.planGeneral, T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
     } else if (esCRC && esKintsugi) {
-      tarjetas = [T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.planCRC, T.kintsugi, T.patrones, T.metodologia];
     } else if (esCRC) {
-      tarjetas = [T.planCRC, T.patrones, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.planCRC, T.patrones, T.metodologia];
     } else if (esKintsugi) {
-      tarjetas = [T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.kintsugi, T.patrones, T.metodologia];
     } else {
-      tarjetas = [T.planGeneral, T.patrones, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.planGeneral, T.patrones, T.metodologia];
+    }
+
+    if (esCoachDMC && !tarjetas.includes(T.dmc)) {
+      tarjetas.unshift(T.dmc);
     }
 
     document.getElementById("titulo").textContent = nombre ? `Hola, ${nombre}` : "Bienvenido";
@@ -594,7 +615,7 @@
     document.getElementById("correo").textContent = "";
     document.getElementById("precioBox").innerHTML = pintarPrecio(false, false);
     document.getElementById("contenido").innerHTML =
-      pintarTarjetas([TARJETAS.planGeneral, TARJETAS.patrones, TARJETAS.metodologia, TARJETAS.cargaIntensidad]) +
+      pintarTarjetas([TARJETAS.planGeneral, TARJETAS.patrones, TARJETAS.metodologia]) +
       `<a class="salir" href="/cdn-cgi/access/logout">Cerrar sesion</a>`;
 
     activarReveal();
