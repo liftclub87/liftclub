@@ -586,34 +586,43 @@
 
   // ---- Horario ----
 
+  // El horario sale del mismo dmc-plan.csv: cada combinación distinta de
+  // Día + Clase es una ficha, con la Hora y el Enfoque de su primera fila.
   function renderizarHorario(filas) {
     const contenedor = document.getElementById("horarioContenedor");
 
-    const filasConDatos = filas.filter(f => f["Día"] && f["Hora"]);
+    const dias = {};
+    const vistos = new Set();
+    filas.forEach(f => {
+      const dia = (f["Día"] || f["Dia"] || "").trim();
+      const clase = numero(f["Clase"]);
+      if (!dia || !clase) return;
+      const key = normalizar(dia) + "|" + clase;
+      if (vistos.has(key)) return;
+      vistos.add(key);
+      const dKey = normalizar(dia);
+      if (!dias[dKey]) dias[dKey] = { nombre: dia, clases: [] };
+      dias[dKey].clases.push({ "Clase": clase, "Hora": f["Hora"] || "", "Enfoque": f["Enfoque"] || "" });
+    });
 
-    if (filasConDatos.length === 0) {
+    if (vistos.size === 0) {
       contenedor.innerHTML = `<p class="empty">Todavía no hay clases cargadas.</p>`;
       return;
     }
 
-    const dias = {};
-    filasConDatos.forEach(f => {
-      const dKey = (f["Día"] || "").trim();
-      if (!dias[dKey]) dias[dKey] = [];
-      dias[dKey].push(f);
-    });
-
-    const diasOrdenados = Object.keys(dias).sort((a, b) => {
-      return ORDEN_DIAS.indexOf(a) - ORDEN_DIAS.indexOf(b);
-    });
+    const ordenNorm = ORDEN_DIAS.map(normalizar);
+    const pos = d => { const i = ordenNorm.indexOf(d); return i === -1 ? 99 : i; };
+    const diasOrdenados = Object.keys(dias).sort((a, b) => pos(a) - pos(b));
+    diasOrdenados.forEach(d => dias[d].clases.sort((a, b) => a["Clase"] - b["Clase"]));
 
     let html = "";
     let contadorGlobal = 0;
 
-    diasOrdenados.forEach(dKey => {
+    diasOrdenados.forEach(d => {
+      const dKey = dias[d].nombre;
       html += `<div class="dayLabel reveal">${esc(dKey)}</div><div class="cardGrid">`;
 
-      dias[dKey].forEach(clase => {
+      dias[d].clases.forEach(clase => {
         const numClase = numero(clase["Clase"]) || "1";
         const hora = clase["Hora"] || "";
         const enfoque = clase["Enfoque"] || "";
@@ -682,26 +691,17 @@
     transformHeader: h => h.replace(/^﻿/, "").trim(),
   };
 
-  Papa.parse("dmc.csv?v=" + Date.now(), Object.assign({}, opcionesCSV, {
-    complete: function (results) {
-      renderizarHorario(results.data);
-    },
-    error: function () {
-      document.getElementById("horarioContenedor").innerHTML =
-        `<p class="empty">No se pudo cargar el horario.</p>`;
-    }
-  }));
-
+  // Todo sale de un solo archivo: dmc-plan.csv (horario + ejercicios).
   Papa.parse("dmc-plan.csv?v=" + Date.now(), Object.assign({}, opcionesCSV, {
     complete: function (results) {
       indexarPlan(results.data);
       planCargado = true;
       pintarSemanas();
-      refrescarDetalles();
+      renderizarHorario(results.data);
     },
     error: function () {
-      planCargado = true;
-      refrescarDetalles();
+      document.getElementById("horarioContenedor").innerHTML =
+        `<p class="empty">No se pudo cargar el plan (dmc-plan.csv).</p>`;
     }
   }));
 
