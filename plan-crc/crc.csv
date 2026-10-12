@@ -1,59 +1,56 @@
-﻿Semana,Atleta,Dia,Bloque,Ejercicio,Series,Reps,Enfoque,Porcentaje,Kg,Reps>=70%
-1,Melisson,Día 1,Recuperación ,Movilidad de cadera + tobillo (10-15 min),,,Movilidad,,,
-1,Melisson,Día 1,Recuperación ,Core anti-extensión + anti-rotación,3,10,Core,,,
-1,Melisson,Día 1,Recuperación ,Gemelo sentado (sóleo) — suave,3,15,Accesorio,,,
-1,Melisson,Día 1,Recuperación ,Estiramiento general,,,Movilidad,,,
-1,Melisson,Día 2,Activación ,Arranque técnico,,a criterio,Técnica (RPE bajo),,,
-1,Melisson,Día 2,Activación ,Estabilidad de hombro/muñeca (banda),3,12,Accesorio,,,
-1,Melisson,Día 2,Activación ,Core,3,10,Accesorio,,,
-1,Melisson,Día 3,Fisio / movilidad ,Fisioterapia / masaje (si aplica),,,Recuperación,,,
-1,Melisson,Día 3,Fisio/ movilidad ,Movilidad de tobillo + sóleo excéntrico suave,3,12,Accesorio,,,
-1,Melisson,Día 3,Fisio / movilidad ,Core,3,10,Accesorio,,,
-1,Melisson,Día 4,Activación ,Envión  técnico ,,a criterio,Técnica (RPE bajo),,,
-1,Melisson,Día 4,Activación ,Pistols,3,12,Accesorio,,,
-1,Melisson,Día 4,Activación ,Core,3,10,Accesorio,,,
-2,Melisson,Día 1,Arranque (Media),Arr+OverHeadSquat,4,5,,0.7,67,20
-2,Melisson,Día 1,Arranque (Media),Arr.Colgado,3,4,,0.7,81,12
-2,Melisson,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,5,5,,0.8,76,25
-2,Melisson,Día 1,Arranque (Media),Sentadilla Detrás,4,5,,0.8,76,20
-2,Melisson,Día 2,Envión (Alta),Envión,4,4,,0.75,75,16
-2,Melisson,Día 2,Envión (Alta),Clean Colgado,3,4,,0.7,70,12
-2,Melisson,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,5,5,,0.95,95,25
-2,Melisson,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,6,,0.8,80,18
-2,Melisson,Día 3,Envion(Baja),Clean Colgado Parado,3,5,,0.7,70,15
-2,Melisson,Día 3,Envion(Baja),Yerk desde Rack,3,5,,0.8,114,15
-2,Melisson,Día 3,Envion(Baja),Sentadilla Delante con Pausa,4,5,,0.85,122,20
-2,Melisson,Día 4,Arranque (Alto),Arranque,4,4,,0.85,85,16
-2,Melisson,Día 4,Arranque (Alto),Halón Arr. Colg. Alto,4,5,,0.9,86,20
-2,Melisson,Día 4,Arranque (Alto),Sentadilla Detrás,4,5,,0.8,92,20
-2,Melisson,Día 4,Arranque (Alto),Salto Arr. Técnico,3,7,,0.85,85,21
-3,Melisson,Día 1,Arranque (Media),Arranque,5,2,,0.8,67,15
-3,Melisson,Día 1,Arranque (Media),Arr.Colgado Parado,5,3,,0.7,81,12
-3,Melisson,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,6,3,,0.8,76,18
-3,Melisson,Día 1,Arranque (Media),Sentadilla Detrás,5,3,,0.8,76,15
-3,Melisson,Día 2,Envión (Alta),Envión,5,2,,0.75,75,10
-3,Melisson,Día 2,Envión (Alta),Clean Colgado Parado,4,2,,0.7,70,8
-3,Melisson,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,6,3,,0.95,95,18
-3,Melisson,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,4,,0.8,80,12
-3,Melisson,Día 3,Envion(Baja),Clean Colgado Parado,4,3,,0.7,70,12
-3,Melisson,Día 3,Envion(Baja),Yerk desde Rack,4,2,,0.8,90,12
-3,Melisson,Día 3,Envion(Baja),Sentadilla Delante con Pausa,5,2,,0.85,95,15
-3,Melisson,Día 4,Arranque (Alto),Arranque,5,3,,0.85,85,15
-3,Melisson,Día 4,Arranque (Alto),Halón Arr. Colg. Alto,5,3,,0.9,80,15
-3,Melisson,Día 4,Arranque (Alto),Sentadilla Detrás,5,3,,0.8,92,15
-3,Melisson,Día 4,Arranque (Alto),Salto Arr. Técnico,4,3,,0.85,85,12
-4,Melisson,Día 1,Arranque (Media),Arranque,4,3,,0.85,81,12
-4,Melisson,Día 1,Arranque (Media),Arr.Colgado Parado,3,2,,0.8,92,6
-4,Melisson,Día 1,Arranque (Media),Halón Arr. Alto Debajo Rodillas,5,3,,0.9,86,15
-4,Melisson,Día 1,Arranque (Media),Sentadilla Detrás,4,3,,0.85,115,12
-4,Melisson,Día 2,Envión (Alta),Envión,4,2,,0.85,85,8
-4,Melisson,Día 2,Envión (Alta),Clean Colgado Parado,3,2,,0.8,80,6
-4,Melisson,Día 2,Envión (Alta),Hálón Env. Colgado Hombros,5,3,,0.95,95,15
-4,Melisson,Día 2,Envión (Alta),Sentadilla Delante Dinámica,3,4,,0.85,85,12
-4,Melisson,Día 3,Envion(Baja),Clean Colgado Parado,3,3,,0.8,80,9
-4,Melisson,Día 3,Envion(Baja),Yerk desde Rack,3,3,,0.85,80,9
-4,Melisson,Día 3,Envion(Baja),Sentadilla Delante con Pausa,4,3,,0.9,90,12
-4,Melisson,Día 4,Arranque (Alto),Arranque,4,2,,0.9,90,8
-4,Melisson,Día 4,Arranque (Alto),Halón Arr. Colg. Alto,4,3,,1,95,12
-4,Melisson,Día 4,Arranque (Alto),Sentadilla Detrás,4,3,,1,115,12
-4,Melisson,Día 4,Arranque (Alto),Salto Arr. Técnico,3,5,,1,100,15
+﻿Semana,Atleta,Dia,Bloque,Ejercicio,Series,Reps,Porcentaje,Reps>=70%
+1,Melisson,Día 1,Arranque (Media),ARR. COLGADO PARADO,4,2,0.7,8
+1,Melisson,Día 1,Arranque (Media),FINAL ARRANQUE,3,3,0.8,9
+1,Melisson,Día 1,Arranque (Media),HALÓN ARR. TÉCNICO HOMBROS,3,3,0.99,9
+1,Melisson,Día 1,Arranque (Media),SALTO ARR. TÉCNICO DINÁMICO,3,5,0.75,15
+1,Melisson,Día 2,Envión (Alta),CLEAN PARADO + PUSH PRESS,4,2,0.7,8
+1,Melisson,Día 2,Envión (Alta),CLEAN CON PAUSA,3,3,0.7,9
+1,Melisson,Día 2,Envión (Alta),SENTADILLA DELANTE DINÁMICA,3,8,0.7,24
+1,Melisson,Día 3,Envión (Baja),CLEAN COLGADO,3,2,0.7,6
+1,Melisson,Día 3,Envión (Baja),YERK DESDE RACK,4,2,0.75,8
+1,Melisson,Día 3,Envión (Baja),HALÓN ENVION HOMBROS,3,3,0.8,9
+1,Melisson,Día 4,Arranque (Alta),ARRANQUE,4,3,0.75,12
+1,Melisson,Día 4,Arranque (Alta),FINAL ARRANQUE,4,1,0.95,4
+1,Melisson,Día 4,Arranque (Alta),HALÓN ARR. TÉCNICO PANDA,4,3,0.85,12
+1,Melisson,Día 4,Arranque (Alta),SENTADILLA DETRÁS,4,3,0.8,12
+2,Melisson,Día 1,Arranque (Media),ARR. COLGADO PARADO,4,3,0.7,12
+2,Melisson,Día 1,Arranque (Media),FINAL ARRANQUE,4,3,0.8,12
+2,Melisson,Día 1,Arranque (Media),HALÓN ARR. TÉCNICO HOMBROS,4,3,0.99,12
+2,Melisson,Día 1,Arranque (Media),SALTO ARR. TÉCNICO DINÁMICO,4,5,0.75,20
+2,Melisson,Día 2,Envión (Alta),CLEAN PARADO + PUSH PRESS,5,2,0.7,10
+2,Melisson,Día 2,Envión (Alta),CLEAN CON PAUSA,4,3,0.7,12
+2,Melisson,Día 2,Envión (Alta),SENTADILLA DELANTE DINÁMICA,4,5,0.7,20
+2,Melisson,Día 3,Envión (Baja),CLEAN COLGADO,4,2,0.7,8
+2,Melisson,Día 3,Envión (Baja),YERK DESDE RACK,5,2,0.75,10
+2,Melisson,Día 3,Envión (Baja),HALÓN ENVION HOMBROS,4,3,0.85,12
+2,Melisson,Día 4,Arranque (Alta),ARRANQUE,5,3,0.75,15
+2,Melisson,Día 4,Arranque (Alta),FINAL ARRANQUE,5,1,0.95,5
+2,Melisson,Día 4,Arranque (Alta),HALÓN ARR. TÉCNICO PANDA,5,3,0.85,15
+2,Melisson,Día 4,Arranque (Alta),SENTADILLA DETRÁS,5,3,0.8,15
+3,Melisson,Día 1,Arranque (Media),ARR. COLGADO PARADO,4,3,0.78,12
+3,Melisson,Día 1,Arranque (Media),FINAL ARRANQUE,4,3,0.85,12
+3,Melisson,Día 1,Arranque (Media),HALÓN ARR. TÉCNICO HOMBROS,4,3,1,12
+3,Melisson,Día 1,Arranque (Media),SALTO ARR. TÉCNICO DINÁMICO,4,5,0.75,20
+3,Melisson,Día 2,Envión (Alta),ENVION,4,3,0.85,12
+3,Melisson,Día 2,Envión (Alta),CLEAN CON PAUSA,4,4,0.7,16
+3,Melisson,Día 2,Envión (Alta),SENTADILLA DELANTE,4,2,0.95,8
+3,Melisson,Día 3,Envión (Baja),CLEAN COLGADO,4,3,0.7,12
+3,Melisson,Día 3,Envión (Baja),YERK DESDE RACK,5,2,0.85,10
+3,Melisson,Día 3,Envión (Baja),HALÓN ENVION HOMBROS,4,3,0.95,12
+3,Melisson,Día 4,Arranque (Alta),ARRANQUE,5,1,0.92,5
+3,Melisson,Día 4,Arranque (Alta),FINAL ARRANQUE,4,1,0.98,4
+3,Melisson,Día 4,Arranque (Alta),HALÓN ARR. TÉCNICO PANDA,5,3,0.98,15
+3,Melisson,Día 4,Arranque (Alta),SENTADILLA DETRÁS,4,2,0.9,8
+4,Melisson,Día 1,Arranque (Media),ARRANQUE,3,2,0.85,6
+4,Melisson,Día 1,Arranque (Media),FINAL ARRANQUE,4,1,0.9,4
+4,Melisson,Día 1,Arranque (Media),HALÓN ARR. TÉCNICO HOMBROS,4,2,1.1,8
+4,Melisson,Día 2,Envión (Alta),ENVION,4,1,0.9,4
+4,Melisson,Día 2,Envión (Alta),SENTADILLA DELANTE,4,1,1,4
+4,Melisson,Día 3,Envión (Baja),ARRANQUE,5,1,0.92,5
+4,Melisson,Día 3,Envión (Baja),HALÓN ARR. TÉCNICO PANDA,3,2,0.98,6
+4,Melisson,Día 4,Arranque (Alta),ARR 1,1,1,0.95,1
+4,Melisson,Día 4,Arranque (Alta),ARR 2,1,1,0.98,1
+4,Melisson,Día 4,Arranque (Alta),ARR 3,1,1,1,1
+4,Melisson,Día 4,Arranque (Alta),ENV 1,1,1,0.96,1
+4,Melisson,Día 4,Arranque (Alta),ENV 2,1,1,0.99,1
+4,Melisson,Día 4,Arranque (Alta),ENV 3,1,1,1,1
