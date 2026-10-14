@@ -416,7 +416,8 @@
   // Atletas con plan personalizado. Cada correo apunta a su propia pagina.
   // Mantener igual que la politica de Cloudflare Access de cada carpeta.
   const PLAN_PERSONALIZADO = {
-    "marotoignacio2@gmail.com": "../preparatorio/preparatorio.html",
+    "marotoignacio2@gmail.com": { href: "../preparatorio/preparatorio.html", titulo: "Plan Preparatorio" },
+    "27machine4@gmail.com":     { href: "../ale/ale.html",                   titulo: "Plan Personalizado" },
   };
 
   // Coaches del programa DMC. Ven la tarjeta DMC en el portal.
@@ -596,7 +597,7 @@
     // (la pagina sigue existiendo, solo no se muestra la tarjeta).
     let tarjetas;
     if (esAdmin) {
-      tarjetas = [T.dashboard, T.dmc, T.planGeneral, Object.assign({}, T.planPersonalizado, { href: "../preparatorio/preparatorio.html", titulo: "Plan Preparatorio" }), T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
+      tarjetas = [T.dashboard, T.dmc, T.planGeneral, Object.assign({}, T.planPersonalizado, { href: "../preparatorio/preparatorio.html", titulo: "Plan Preparatorio" }), Object.assign({}, T.planPersonalizado, { href: "../ale/ale.html", titulo: "Plan Personalizado · Alejandro" }), T.planCRC, T.kintsugi, T.patrones, T.metodologia, T.cargaIntensidad];
     } else if (esCRC && esKintsugi) {
       tarjetas = [T.planCRC, T.kintsugi, T.patrones, T.metodologia];
     } else if (esCRC) {
@@ -614,7 +615,7 @@
     // Quien tiene plan personalizado lo ve primero, en lugar del Plan General.
     if (rutaPersonal && !esAdmin) {
       tarjetas = tarjetas.filter(t => t !== T.planGeneral);
-      tarjetas.unshift(Object.assign({}, T.planPersonalizado, { href: rutaPersonal }));
+      tarjetas.unshift(Object.assign({}, T.planPersonalizado, rutaPersonal));
     }
 
     document.getElementById("titulo").textContent = nombre ? `Hola, ${nombre}` : "Bienvenido";
