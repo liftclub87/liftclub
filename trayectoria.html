@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Christopher Linton · Trayectoria</title>
+<link rel="icon" href="assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+    --bg:#0F0F0F;
+    --cyan:#5FCAE7;
+    --pink:#ED1D7E;
+    --yellow:#FDD700;
+    --paper:#17181A;
+    --line:#26282B;
+    --muted:#8b9096;
+    --text:#c9cdd1;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Inter',sans-serif;
+    color:#EDEFF1;
+    line-height:1.6;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 40px;
+    border-bottom:1px solid var(--line);
+  }
+
+  nav img.logo{ height:26px; }
+
+  .wrap{
+    max-width:880px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  section{ padding:64px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+
+  .kicker{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin:0 0 10px;
+  }
+
+  h2{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:26px;
+    line-height:1.2;
+    color:#fff;
+    margin:0 0 22px;
+  }
+
+  h3{
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--cyan);
+    margin:36px 0 14px;
+  }
+
+  p{ color:var(--text); margin:0 0 16px; font-size:15.5px; }
+  p strong{ color:#fff; }
+
+  /* ---- Hero ---- */
+
+  .hero{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+    gap:40px;
+    align-items:center;
+    padding:56px 0 64px;
+  }
+
+  .heroFoto{
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    aspect-ratio:4/5;
+  }
+
+  .heroFoto img{ width:100%; height:100%; object-fit:cover; object-position:60% 30%; }
+
+  .hero h1{
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:40px;
+    line-height:1.08;
+    color:#fff;
+    margin:0 0 14px;
+  }
+
+  .hero .rol{
+    font-size:16px;
+    font-weight:600;
+    color:var(--cyan);
+    margin:0 0 26px;
+  }
+
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:10px;
+  }
+
+  .stat{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px 14px 12px;
+  }
+
+  .stat b{
+    display:block;
+    font-family:'Bungee', sans-serif;
+    font-weight:400;
+    font-size:22px;
+    color:#fff;
+    line-height:1.1;
+  }
+
+  .stat span{
+    display:block;
+    margin-top:6px;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:var(--muted);
+    line-height:1.35;
+  }
+
+  /* ---- Bloques con foto ---- */
+
+  .duo{
+    display:grid;
+    grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+    gap:32px;
+    align-items:start;
+  }
+
+  figure{ margin:0; }
+
+  figure img{
+    width:100%;
+    border-radius:16px;
+    border:1px solid var(--line);
+  }
+
+  figcaption{
+    font-size:12.5px;
+    color:var(--muted);
+    margin-top:8px;
+    line-height:1.45;
+  }
+
+  .preguntaCard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--yellow);
+    border-radius:14px;
+    padding:18px 20px;
+    margin-top:22px;
+  }
+
+  .preguntaCard h4{
+    margin:0 0 8px;
+    font-size:15px;
+    color:#fff;
+  }
+
+  .preguntaCard p{ margin:0; font-size:14.5px; }
+
+  .reel{
+    margin-top:32px;
+    display:flex;
+    justify-content:center;
+  }
+
+  .reel blockquote{ margin:0 !important; }
+
+  .reelFallback{
+    display:inline-block;
+    color:var(--cyan);
+    font-weight:700;
+    text-decoration:none;
+    font-size:14px;
+  }
+
+  /* ---- Línea de tiempo ---- */
+
+  .timeline{
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+  }
+
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:7px;
+    top:6px;
+    bottom:6px;
+    width:2px;
+    background:var(--line);
+  }
+
+  .timeline li{
+    position:relative;
+    padding:0 0 22px 36px;
+  }
+
+  .timeline li:last-child{ padding-bottom:0; }
+
+  .timeline li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:6px;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:var(--bg);
+    border:3px solid var(--cyan);
+  }
+
+  .timeline li.master::before{ border-color:var(--pink); }
+  .timeline li.club::before{ border-color:var(--yellow); }
+
+  .timeline .anio{
+    font-family:'Bungee', sans-serif;
+    font-size:16px;
+    color:#fff;
+    display:block;
+    line-height:1.3;
+  }
+
+  .timeline .txt{
+    font-size:14.5px;
+    color:var(--text);
+  }
+
+  /* ---- Resultados ---- */
+
+  .resultados{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:10px;
+  }
+
+  .resultados li{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--cyan);
+    border-radius:12px;
+    padding:12px 16px;
+    font-size:14.5px;
+    color:var(--text);
+  }
+
+  .resultados li b{ color:#fff; }
+  .resultados.rosa li{ border-left-color:var(--pink); }
+
+  .cita{
+    margin:32px 0 0;
+    padding:22px 24px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    font-size:18px;
+    font-style:italic;
+    color:#fff;
+    line-height:1.5;
+    position:relative;
+  }
+
+  .cita::before{
+    content:"“";
+    font-family:'Bungee', sans-serif;
+    font-style:normal;
+    font-size:48px;
+    color:var(--yellow);
+    position:absolute;
+    top:-18px;
+    left:18px;
+    line-height:1;
+  }
+
+  /* ---- Galería ---- */
+
+  .galeria{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:10px;
+    margin-top:30px;
+  }
+
+  .galeria button{
+    padding:0;
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    cursor:zoom-in;
+    background:var(--paper);
+    aspect-ratio:1/1;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+
+  .galeria button:hover{ transform:translateY(-3px); border-color:var(--cyan); }
+  .galeria button:focus-visible{ outline:2px solid var(--cyan); outline-offset:2px; }
+
+  .galeria img{ width:100%; height:100%; object-fit:cover; }
+  .galeria .ancha{ grid-column:span 2; aspect-ratio:auto; }
+
+  .visor{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    z-index:50;
+    cursor:zoom-out;
+  }
+
+  .visor.abierto{ display:flex; }
+
+  .visor img{
+    max-width:100%;
+    max-height:80vh;
+    border-radius:12px;
+  }
+
+  .visor p{
+    color:#fff;
+    font-size:14px;
+    margin:14px 0 0;
+    text-align:center;
+    max-width:600px;
+  }
+
+  .visor .cerrar{
+    position:absolute;
+    top:16px;
+    right:20px;
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:32px;
+    cursor:pointer;
+    line-height:1;
+  }
+
+  /* ---- Formación ---- */
+
+  .formacion{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:12px;
+  }
+
+  .formacion div{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+
+  .formacion b{
+    display:block;
+    color:#fff;
+    font-size:15px;
+    line-height:1.35;
+  }
+
+  .formacion span{
+    display:block;
+    margin-top:4px;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+
+  /* ---- Tres saberes ---- */
+
+  .saberes{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:10px;
+    margin:22px 0 28px;
+  }
+
+  .saberes div{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-top:3px solid var(--cyan);
+    border-radius:12px;
+    padding:14px;
+    text-align:center;
+    font-family:'Bungee', sans-serif;
+    font-size:14px;
+    color:#fff;
+  }
+
+  .saberes div:nth-child(2){ border-top-color:var(--yellow); }
+  .saberes div:nth-child(3){ border-top-color:var(--pink); }
+
+  /* ---- Contacto ---- */
+
+  .contacto{ text-align:center; }
+
+  .btn{
+    display:inline-block;
+    background:var(--cyan);
+    color:#0F0F0F;
+    font-weight:800;
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:12px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(95,202,231,.3); }
+
+  footer{
+    text-align:center;
+    font-size:12px;
+    color:var(--muted);
+    padding:30px 24px 40px;
+    border-top:1px solid var(--line);
+  }
+
+  /* ---- Aparición al hacer scroll ---- */
+
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s cubic-bezier(.2,.8,.2,1), transform .6s cubic-bezier(.2,.8,.2,1);
+  }
+
+  .reveal.visible{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition-duration:.001ms !important; scroll-behavior:auto !important; }
+    .reveal{ opacity:1 !important; transform:none !important; }
+  }
+
+  /* ---- Celular ---- */
+
+  @media (max-width:720px){
+    nav{ padding:16px 20px; }
+    .wrap{ padding:0 20px; }
+    section{ padding:48px 0; }
+    .hero{ grid-template-columns:1fr; gap:26px; padding:32px 0 48px; }
+    .heroFoto{ aspect-ratio:4/4.4; }
+    .hero h1{ font-size:32px; }
+    .duo{ grid-template-columns:1fr; gap:22px; }
+    .galeria{ grid-template-columns:repeat(2, 1fr); }
+    .galeria .ancha{ grid-column:span 2; }
+    .formacion{ grid-template-columns:1fr; }
+    .saberes{ grid-template-columns:1fr; }
+    h2{ font-size:22px; }
+  }
+
+  @media (max-width:380px){
+    .stats{ grid-template-columns:1fr 1fr; }
+  }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html"><img class="logo" src="assets/logo.png" alt="Lift Club 87"></a>
+</nav>
+
+<div class="wrap">
+
+  <!-- ===== Encabezado ===== -->
+  <header class="hero">
+    <div class="heroFoto reveal">
+      <img src="assets/trayectoria/entrenador-competencia.jpg" alt="Christopher Linton dando indicaciones a una atleta en competencia">
+    </div>
+    <div class="reveal" style="transition-delay:80ms">
+      <h1>Christopher Linton</h1>
+      <p class="rol">Entrenador, gestor deportivo y atleta máster de halterofilia · Más de 20 años en el deporte</p>
+      <div class="stats">
+        <div class="stat"><b>20+</b><span>Años en el deporte</span></div>
+        <div class="stat"><b>100+</b><span>Atletas formados</span></div>
+        <div class="stat"><b>2×</b><span>Campeón Panamericano Máster</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== ¿Qué es la halterofilia? ===== -->
+  <section id="halterofilia">
+    <p class="kicker reveal">Para empezar</p>
+    <h2 class="reveal">¿Qué es la halterofilia?</h2>
+    <div class="duo">
+      <div class="reveal">
+        <p>La halterofilia es un deporte olímpico que consiste en levantar una barra desde el suelo hasta por encima de la cabeza en dos movimientos: el <strong>arranque</strong>, en un solo gesto, y el <strong>envión</strong>, en dos tiempos. Gana quien levanta más peso sumando ambos, dentro de su categoría de peso corporal.</p>
+        <p>Más que fuerza, exige técnica, velocidad, coordinación, movilidad y concentración. Por eso también es la base de preparación en muchos otros deportes.</p>
+        <div class="preguntaCard">
+          <h4>¿Es segura para niños y jóvenes?</h4>
+          <p>Sí, cuando se enseña de forma progresiva y con supervisión calificada. Primero se aprende la técnica con cargas livianas, y el peso aumenta solo cuando el movimiento está bien dominado. Además de lo físico, el deporte forma disciplina, constancia y respeto.</p>
+        </div>
+      </div>
+      <figure class="reveal" style="transition-delay:80ms">
+        <img src="assets/trayectoria/dmc-san-roque.jpg" alt="Atleta realizando una sentadilla con la barra sobre la cabeza" loading="lazy">
+        <figcaption>Melina en el programa de halterofilia de DMC Fitness, San Roque.</figcaption>
+      </figure>
+    </div>
+
+    <div class="reel reveal">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZ5fMbbxZW5/" data-instgrm-version="14" style="background:#17181A; border:1px solid #26282B; border-radius:14px; max-width:400px; min-width:280px; width:100%; padding:18px; text-align:center;">
+        <a class="reelFallback" href="https://www.instagram.com/reel/DZ5fMbbxZW5/" target="_blank" rel="noopener">Ver video de competencia en Instagram &rarr;</a>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ===== Trayectoria ===== -->
+  <section id="trayectoria">
+    <p class="kicker reveal">Mi recorrido</p>
+    <h2 class="reveal">Trayectoria</h2>
+    <ol class="timeline">
+      <li class="reveal"><span class="anio">2003</span><span class="txt">Comencé en la halterofilia gracias al programa del Comité Cantonal de Deportes y Recreación de Heredia.</span></li>
+      <li class="reveal"><span class="anio">2004 – 2011</span><span class="txt">Atleta de Juegos Nacionales.</span></li>
+      <li class="reveal"><span class="anio">2008</span><span class="txt">Mi primera competencia con la Selección Nacional.</span></li>
+      <li class="reveal"><span class="anio">2011 – 2024</span><span class="txt">Entrenador en el Comité Cantonal de Deportes de Alajuela.</span></li>
+      <li class="reveal"><span class="anio">2018</span><span class="txt">Mi última competencia como atleta del proceso de selección.</span></li>
+      <li class="reveal"><span class="anio">2020</span><span class="txt">Gestor deportivo en la Federación Halterofílica Costarricense: mapear el contexto nacional y generar iniciativas que tiendan puentes y mejoren la gestión del deporte.</span></li>
+      <li class="reveal master"><span class="anio">2023</span><span class="txt">Inicio de mi etapa como atleta máster. Campeón Panamericano Máster.</span></li>
+      <li class="reveal club"><span class="anio">2024</span><span class="txt">Nace Lift Club 87.</span></li>
+      <li class="reveal master"><span class="anio">2026</span><span class="txt">Campeón Panamericano Máster por segunda vez.</span></li>
+    </ol>
+  </section>
+
+  <!-- ===== Como atleta ===== -->
+  <section id="atleta">
+    <p class="kicker reveal">Sobre la tarima</p>
+    <h2 class="reveal">Resultados como atleta</h2>
+    <div class="duo">
+      <ul class="resultados">
+        <li class="reveal"><b>Subcampeón</b> · Juegos Centroamericanos San José 2013</li>
+        <li class="reveal"><b>Campeón</b> · Torneo Centroamericano 2015</li>
+        <li class="reveal"><b>Tercer lugar</b> · Juegos Centroamericanos Managua 2017</li>
+        <li class="reveal">Representaciones panamericanas en el <b>top 10</b> y <b>top 15</b></li>
+      </ul>
+      <figure class="reveal" style="transition-delay:80ms">
+        <img src="assets/trayectoria/atleta-seleccion.jpg" alt="Christopher Linton en un envión durante una competencia internacional" loading="lazy">
+        <figcaption>Como atleta de la Selección Nacional.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="reveal">Etapa máster</h3>
+    <div class="duo">
+      <div class="reveal">
+        <p>En 2023 comencé una nueva etapa como atleta máster. Siempre me he mantenido activo, y ese mismo año alcancé el título de <strong>Campeón Panamericano Máster</strong>. En 2026 lo logré nuevamente, con marcas muy similares a las de mi mejor momento como atleta de selección.</p>
+        <p>Esta etapa me confirma la importancia del deporte en todas las etapas de la vida. Me vuelve a poner en la tarima y mantiene fresco lo que se siente entrenar y competir, para seguir transmitiendo lo que solo se logra comprender cuando se compite.</p>
+      </div>
+      <figure class="reveal" style="transition-delay:80ms">
+        <img src="assets/trayectoria/master-podio.jpg" alt="Christopher Linton en el primer lugar del podio con la bandera de Costa Rica" loading="lazy">
+        <figcaption>Campeón Panamericano Máster 2026.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Como entrenador ===== -->
+  <section id="entrenador">
+    <p class="kicker reveal">Formando atletas</p>
+    <h2 class="reveal">Resultados como entrenador</h2>
+    <ul class="resultados rosa">
+      <li class="reveal"><b>Más de 100 atletas formados</b> en 14 años de procesos de Juegos Nacionales</li>
+      <li class="reveal"><b>Campeones de Juegos Nacionales</b> por equipo masculino con Alajuela: 2016, 2018, 2022 y 2024</li>
+      <li class="reveal"><b>Múltiples campeones y récords nacionales</b></li>
+      <li class="reveal"><b>2019</b> · Henry Cerdas, campeón panamericano juvenil</li>
+      <li class="reveal"><b>2024 · Torneo Centroamericano</b> · Geiner Gómez, subcampeón · Dana Ramkellawan, subcampeona · Ignacio Maroto, tercer lugar</li>
+      <li class="reveal"><b>2025 · Juegos Centroamericanos Guatemala</b> · Ignacio Maroto, tercer lugar en arranque</li>
+    </ul>
+
+    <blockquote class="cita reveal">El logro más importante ha sido formar atletas y poder transmitirles lo que el deporte ha formado en mí.</blockquote>
+
+    <div class="galeria" id="galeria">
+      <button class="reveal ancha" data-titulo="Torneo Centroamericano 2024."><img src="assets/trayectoria/centroamericano-2024.jpg" alt="Christopher Linton con tres atletas medallistas en el Torneo Centroamericano 2024" loading="lazy"></button>
+      <button class="reveal" data-titulo="Ignacio Maroto, tercer lugar en arranque. Juegos Centroamericanos Guatemala 2025."><img src="assets/trayectoria/guatemala-2025.jpg" alt="Ignacio Maroto con su medalla en los Juegos Centroamericanos Guatemala 2025" loading="lazy"></button>
+      <button class="reveal" data-titulo="Equipo masculino campeón de Juegos Nacionales 2024."><img src="assets/trayectoria/jdn-2024-medallas.jpg" alt="Atletas del equipo masculino mostrando sus medallas de Juegos Nacionales 2024" loading="lazy"></button>
+      <button class="reveal" data-titulo="Antes de salir a la tarima."><img src="assets/trayectoria/atleta-backstage.jpg" alt="Atleta preparándose antes de competir, con Christopher Linton detrás" loading="lazy"></button>
+      <button class="reveal" data-titulo="Melison Araya en competencia."><img src="assets/trayectoria/halterofilia-clean.jpg" alt="Melison Araya realizando un clean en competencia" loading="lazy"></button>
+      <button class="reveal ancha" data-titulo="Juegos Nacionales 2024."><img src="assets/trayectoria/trofeos-equipos.jpg" alt="Entrenadores con los trofeos de Juegos Nacionales 2024" loading="lazy"></button>
+    </div>
+  </section>
+
+  <!-- ===== Formación ===== -->
+  <section id="formacion">
+    <p class="kicker reveal">Preparación</p>
+    <h2 class="reveal">Formación</h2>
+    <div class="formacion">
+      <div class="reveal"><b>Formador de Formadores</b><span>ICODER</span></div>
+      <div class="reveal"><b>Técnico en Gestión Deportiva</b><span>TEC</span></div>
+      <div class="reveal"><b>Técnico en Entrenamiento Deportivo</b><span>Universidad Nacional</span></div>
+      <div class="reveal"><b>Coach Nivel 1</b><span>Federación Internacional de Halterofilia (IWF)</span></div>
+    </div>
+  </section>
+
+  <!-- ===== Lift Club 87 y cómo trabajo ===== -->
+  <section id="como-trabajo">
+    <p class="kicker reveal">Hoy</p>
+    <h2 class="reveal">Lift Club 87</h2>
+    <p class="reveal">Después de recorrer cada una de esas etapas nace Lift Club 87, porque más allá de Juegos Nacionales existe una comunidad de levantamiento, y la experiencia me ha enseñado que el deporte es una vía de formación. Crear puentes con aliados estratégicos es lo que me motiva a continuar.</p>
+
+    <h3 class="reveal">Cómo trabajo</h3>
+    <p class="reveal">De la forma más integral posible, poniendo a la persona primero. Me gusta formar equipos, y el proceso de entrenamiento lo guían tres dimensiones:</p>
+    <div class="saberes">
+      <div class="reveal">Saber</div>
+      <div class="reveal" style="transition-delay:60ms">Saber hacer</div>
+      <div class="reveal" style="transition-delay:120ms">Saber ser</div>
+    </div>
+    <figure class="reveal">
+      <img src="assets/trayectoria/grupo-certificados.jpg" alt="Equipo de atletas de Alajuela con sus certificados de formación" loading="lazy">
+      <figcaption>Equipo de Alajuela: la formación siempre fue parte del proceso.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ===== Contacto ===== -->
+  <section id="contacto" class="contacto">
+    <h2 class="reveal">¿Conversamos?</h2>
+    <p class="reveal">Si desea más información sobre entrenamientos, talleres o procesos de formación, con gusto le atiendo.</p>
+    <a class="btn reveal" href="mailto:gestion@liftclub87.com">Escribir un correo</a>
+  </section>
+
+</div>
+
+<footer>Lift Club 87 · Heredia, Costa Rica</footer>
+
+<div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="cerrar" aria-label="Cerrar">&times;</button>
+  <img id="visorImg" alt="">
+  <p id="visorTxt"></p>
+</div>
+
+<script>
+
+  // Aparición de los bloques al entrar en pantalla.
+  (function () {
+    const els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(el => el.classList.add("visible"));
+      return;
+    }
+    const obs = new IntersectionObserver(entradas => {
+      entradas.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => obs.observe(el));
+  })();
+
+  // Galería: tocar una foto la abre en grande.
+  (function () {
+    const visor = document.getElementById("visor");
+    const img = document.getElementById("visorImg");
+    const txt = document.getElementById("visorTxt");
+
+    document.getElementById("galeria").addEventListener("click", e => {
+      const btn = e.target.closest("button");
+      if (!btn) return;
+      const foto = btn.querySelector("img");
+      img.src = foto.src;
+      img.alt = foto.alt;
+      txt.textContent = btn.dataset.titulo || "";
+      visor.classList.add("abierto");
+    });
+
+    function cerrar() { visor.classList.remove("abierto"); }
+    visor.addEventListener("click", cerrar);
+    document.addEventListener("keydown", e => { if (e.key === "Escape") cerrar(); });
+  })();
+
+</script>
+
+<!-- Video de Instagram (si no carga, queda el enlace para verlo en Instagram) -->
+<script async src="https://www.instagram.com/embed.js"></script>
+
+</body>
+</html>
