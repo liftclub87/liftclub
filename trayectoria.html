@@ -171,6 +171,14 @@
     border:1px solid var(--line);
   }
 
+  figure video.clip{
+    width:100%;
+    border-radius:16px;
+    border:1px solid var(--line);
+    display:block;
+    background:var(--paper);
+  }
+
   figcaption{
     font-size:12.5px;
     color:var(--muted);
@@ -585,8 +593,11 @@
         </div>
       </div>
       <figure class="reveal" style="transition-delay:80ms">
-        <img src="assets/dmc-san-roque.jpg" alt="Atleta realizando una sentadilla con la barra sobre la cabeza" loading="lazy">
-        <figcaption>Melina en el programa de halterofilia de DMC Fitness, San Roque.</figcaption>
+        <video class="clip" poster="assets/melina-arranque.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Atleta realizando un arranque">
+          <source src="assets/melina-arranque.mp4" type="video/mp4">
+          <source src="assets/melina-arranque.webm" type="video/webm">
+        </video>
+        <figcaption>Melina en el programa de halterofilia de DMC Fitness, San Roque. Movimiento: arranque.</figcaption>
       </figure>
     </div>
 
