@@ -453,6 +453,37 @@
 
   .contacto{ text-align:center; }
 
+  .contactoBtns{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin-top:8px;
+  }
+
+  .btnLinea{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+    padding:14px 22px;
+    border:1px solid var(--cyan);
+    border-radius:12px;
+    background:transparent;
+    transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
+  }
+
+  .btnLinea svg{ width:20px; height:20px; color:var(--cyan); flex-shrink:0; }
+
+  .btnLinea:hover{
+    transform:translateY(-2px);
+    background:rgba(95,202,231,.08);
+    box-shadow:0 8px 24px rgba(95,202,231,.2);
+  }
+
   .btn{
     display:inline-block;
     background:var(--cyan);
@@ -600,7 +631,7 @@
       </ul>
       <figure class="reveal" style="transition-delay:80ms">
         <img src="assets/atleta-seleccion.jpg" alt="Christopher Linton en un envión durante una competencia internacional" loading="lazy">
-        <figcaption>Como atleta de la Selección Nacional.</figcaption>
+        <figcaption>Juegos Panamericanos Toronto 2015.</figcaption>
       </figure>
     </div>
 
@@ -663,9 +694,9 @@
     <h3 class="reveal">Cómo trabajo</h3>
     <p class="reveal">De la forma más integral posible, poniendo a la persona primero. Me gusta formar equipos, y el proceso de entrenamiento lo guían tres dimensiones:</p>
     <div class="saberes">
-      <div class="reveal">Saber</div>
-      <div class="reveal" style="transition-delay:60ms">Saber hacer</div>
-      <div class="reveal" style="transition-delay:120ms">Saber ser</div>
+      <div class="reveal">Saber ser</div>
+      <div class="reveal" style="transition-delay:60ms">Saber</div>
+      <div class="reveal" style="transition-delay:120ms">Saber hacer</div>
     </div>
     <figure class="reveal">
       <img src="assets/grupo-certificados.jpg" alt="Equipo de atletas de Alajuela con sus certificados de formación" loading="lazy">
@@ -675,9 +706,19 @@
 
   <!-- ===== Contacto ===== -->
   <section id="contacto" class="contacto">
-    <h2 class="reveal">¿Conversamos?</h2>
+    <p class="kicker reveal">Contacto</p>
+    <h2 class="reveal">Contáctenos</h2>
     <p class="reveal">Si desea más información sobre entrenamientos, talleres o procesos de formación, con gusto le atiendo.</p>
-    <a class="btn reveal" href="mailto:gestion@liftclub87.com">Escribir un correo</a>
+    <div class="contactoBtns">
+      <a class="btnLinea reveal" href="https://www.instagram.com/liftclub87" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+        @liftclub87
+      </a>
+      <a class="btnLinea reveal" style="transition-delay:60ms" href="mailto:gestion@liftclub87.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"></rect><path d="M2.5 7l9.5 6.5L21.5 7"></path></svg>
+        gestion@liftclub87.com
+      </a>
+    </div>
   </section>
 
 </div>
